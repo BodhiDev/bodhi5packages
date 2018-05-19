@@ -1,0 +1,11 @@
+Package: bodhi-desktop
+Version: 1.0bodhi7
+Section: main
+Priority: optional
+Depends: bodhi-icons, bodhi-lightdm-theme, bodhi-slideshow, bodhi-skel, elaptopcheck, moksha, bodhi-profile-moksha, bash-completion, lupin-casper, policykit-desktop-privileges, packagekit, lxmenu-data, xdg-utils, bodhi-quickstart, python-dbus, apturl-elm, udisks, bodhi-dpkg-settings, pm-utils
+Recommends: eepdater, epad, ephoto, pcmanfm, bc, terminology, esudo, bodhi-plymouth-theme, bodhi-plymouth-text, arandr, bodhi-theme-terminology-chrome, bodhi-appcenter, gdebi, gdebi-bodhi-launcher, places-moksha, moksha-pulsemixer, moksha-clipboard
+Architecture: all
+Maintainer: Jeff Hoogland
+Description: Bodhi Moksha Desktop
+ A Bodhi meta-package that pulls in Bodhi related packages for 
+ the Moksha Desktop

@@ -1,0 +1,10 @@
+Package: bodhi-quickstart
+Version: 1.5.9
+Section: main
+Priority: optional
+Architecture: all
+Depends: ttf-ubuntu-font-family
+Installed-Size:
+Maintainer: Jeff Hoogland
+Description: Bodhi Quickstart Guide
+ Bodhi Quick Start Guide Files

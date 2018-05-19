@@ -1,0 +1,13 @@
+Package: apturl-elm
+Version: 0.97.3
+Section: main
+Priority: optional
+Replaces: apturl, apturl-common
+Provides: apturl, apturl-common
+Architecture: all
+Depends: python-efl, esudo | gksu, python-elm-extensions
+Maintainer: Eric Brown
+Uploaders: Jeff Hoogland, Doug Yanez
+#Vcs-Browser: https://github.com/Feneric/bodhi3packages
+Description: apturl-elm (elementary apturl frontend)
+ An Elementary GUI for apturl written in py-efls.
