@@ -317,7 +317,10 @@ class eepDater(object):
         for pkg in self.packagesToUpdate:
             packageList = "%s %s"%(packageList, pkg)
         #Adding running the command in the default xterm to work around ncurses bugs
-        self.win.updateTerm.runCommand("terminology -H -e 'sudo apt-get -y install%s'"%packageList, self.installUpdatesDone)
+        ourCommand = "terminology -H -e 'sudo apt-get -y install%s'"%packageList
+        #this hack doesn't work meh
+        #ourCommand = "./eepDaterUpdateScript%s"%packageList
+        self.win.updateTerm.runCommand(ourCommand, self.installUpdatesDone)
 
     def installUpdatesDone(self):
         del self.packagesToUpdate[:]

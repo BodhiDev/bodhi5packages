@@ -1,9 +1,12 @@
 Package: bodhi-desktop
-Version: 5.0.0bodhi2
+Version: 5.0.0bodhi4
 Section: main
 Priority: optional
-Depends: bodhi-icons, bodhi-lightdm-theme, bodhi-slideshow, bodhi-skel, moksha, bash-completion, lupin-casper, policykit-desktop-privileges, packagekit, lxmenu-data, xdg-utils, bodhi-quickstart, pm-utils
-Recommends: eepdater, epad, ephoto, pcmanfm, bc, terminology, esudo, bodhi-plymouth-theme, bodhi-plymouth-text, arandr, bodhi-theme-terminology-chrome, bodhi-appcenter, gdebi, gdebi-bodhi-launcher, places-moksha, moksha-pulsemixer, moksha-clipboard, udisks2, elaptopcheck, apturl-elm
+Depends: bodhi-icons, bodhi-lightdm-theme, bodhi-slideshow, bodhi-skel, 
+    moksha, bash-completion, lupin-casper, policykit-desktop-privileges, packagekit, lxmenu-data, xdg-utils, bodhi-quickstart, pm-utils
+Recommends: eepdater, epad, ephoto, pcmanfm, bc, terminology, esudo, bodhi-plymouth-theme, 
+    bodhi-plymouth-text, arandr, bodhi-theme-terminology-chrome, bodhi-appcenter, gdebi, 
+    gdebi-bodhi-launcher, udisks2, elaptopcheck, apturl-elm, faenza-icon-theme, pavucontrol
 Architecture: all
 Maintainer: Jeff Hoogland
 Description: Bodhi Moksha Desktop
