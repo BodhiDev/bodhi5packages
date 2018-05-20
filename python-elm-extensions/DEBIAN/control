@@ -1,0 +1,9 @@
+Package: python-elm-extensions
+Version: 0.2.1bodhi3
+Section: python
+Priority: optional
+Architecture: all
+Depends: python-efl
+Maintainer: Jeff Hoogland <JeffHoogland@Linux.com>
+Description: Python Elementary Extensions
+ Extra elementary widget library for python2.

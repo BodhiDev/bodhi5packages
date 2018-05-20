@@ -1,0 +1,1364 @@
+#!/usr/bin/python
+# encoding: utf-8
+
+# ePad - a simple text editor written in Elementary and Python
+#
+# This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+from __future__ import print_function  # May as well bite the bullet
+
+__author__ = "Jeff Hoogland"
+__contributors__ = ["Jeff Hoogland", "Robert Wiley", "Kai Huuhko", "Scimmia22"]
+__copyright__ = "Copyright (C) 2015 Bodhi Linux"
+__appname__ = 'epad'
+__version__ = "0.9.5"
+__description__ = 'A simple text editor for the Enlightenment Desktop.'
+__github__ = 'http://jeffhoogland.github.io/ePad/'
+__source__ = 'Source code and bug reports: {0}'.format(__github__)
+PY_EFL = "https://git.enlightenment.org/bindings/python/python-efl.git/"
+
+AUTHORS = """
+<br>
+<align=center>
+<hilight>Jeff Hoogland (Jef91)</hilight><br>
+<link><a href=http://www.jeffhoogland.com>Contact</a></link><br><br>
+
+<hilight>Robert Wiley (ylee)</hilight><br><br>
+
+<hilight>Kai Huuhko (kuuko)</hilight><br><br>
+</align>
+"""
+
+LICENSE = """<br>
+<align=center>
+<hilight>
+GNU GENERAL PUBLIC LICENSE<br>
+Version 3, 29 June 2007<br><br>
+</hilight>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.<br><br>
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.<br><br>
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see<br>
+<link><a href=http://www.gnu.org/licenses>http://www.gnu.org/licenses/</a></link>
+</align>
+<br>
+"""
+
+INFO = """
+<align=center>
+<hilight>ePad</hilight> is a simple text editor written in Elementary and Python.<br>
+<br>
+<br>
+</align>
+"""
+
+
+import errno
+import sys
+import os
+import urllib
+import io
+import json
+from collections import Mapping
+
+try:
+    # Python3
+    import urllib.request
+except ImportError:
+    pass
+import re
+
+from efl import ecore
+from efl.evas import EVAS_HINT_EXPAND, EVAS_HINT_FILL, \
+    EVAS_CALLBACK_KEY_UP, EVAS_EVENT_FLAG_ON_HOLD
+from efl import elementary
+from efl.elementary.window import StandardWindow
+from efl.elementary.box import Box
+from efl.elementary.button import Button
+from efl.elementary.label import Label, ELM_WRAP_WORD
+from efl.elementary.icon import Icon
+from efl.elementary.notify import Notify, ELM_NOTIFY_ALIGN_FILL
+from efl.elementary.separator import Separator
+from efl.elementary.scroller import Scroller
+from efl.elementary.frame import Frame
+from efl.elementary.entry import Entry, ELM_TEXT_FORMAT_PLAIN_UTF8, \
+        markup_to_utf8, utf8_to_markup, ELM_WRAP_NONE, ELM_WRAP_MIXED
+from efl.elementary.popup import Popup
+from efl.elementary.toolbar import Toolbar, ELM_OBJECT_SELECT_MODE_DEFAULT
+from efl.elementary.flip import Flip, ELM_FLIP_ROTATE_XZ_CENTER_AXIS, \
+        ELM_FLIP_ROTATE_YZ_CENTER_AXIS, ELM_FLIP_INTERACTION_ROTATE
+from efl.elementary.table import Table
+from efl.elementary.check import Check
+from efl.elementary.naviframe import Naviframe
+
+# Imported here to stop class resolver complaining when an input event
+# applies to an internal layout object
+from efl.elementary.layout import Layout
+
+from elmextensions import AboutWindow, InstanceError
+from elmextensions import FileSelector
+from elmextensions import TabbedBox
+
+EXPAND_BOTH = EVAS_HINT_EXPAND, EVAS_HINT_EXPAND
+EXPAND_HORIZ = EVAS_HINT_EXPAND, 0.0
+FILL_BOTH = EVAS_HINT_FILL, EVAS_HINT_FILL
+FILL_HORIZ = EVAS_HINT_FILL, 0.5
+EXPAND_NONE = 0.0, 0.0
+ALIGN_CENTER = 0.5, 0.5
+ALIGN_RIGHT = 1.0, 0.5
+ALIGN_LEFT = 0.0, 0.5
+PADDING = 15, 0
+
+
+def print_err(*args, **kwargs):
+    """
+    error message to stderr
+    """
+    print('[ePad]:', *args, file=sys.stderr, **kwargs)
+
+def errorPopup(window, errorMsg):
+    errorPopup = Popup(window, size_hint_weight=EXPAND_BOTH)
+    errorPopup.callback_block_clicked_add(lambda obj: errorPopup.delete())
+
+    # Add a table to hold dialog image and text to Popup
+    tb = Table(errorPopup, size_hint_weight=EXPAND_BOTH)
+    errorPopup.part_content_set("default", tb)
+    tb.show()
+
+    # Add dialog-error Image to table
+    icon = Icon(errorPopup, resizable=(True, True), 
+                 size_hint_weight=EXPAND_BOTH, size_hint_align=FILL_BOTH)
+    icon.standard_set('dialog-warning')
+    tb.pack(icon, 0, 0, 1, 1)
+    icon.show()
+
+    # Add dialog text to table
+    dialogLabel = Label(errorPopup, line_wrap=ELM_WRAP_WORD,
+                        size_hint_weight=EXPAND_HORIZ,
+                        size_hint_align=FILL_BOTH)
+    dialogLabel.text = errorMsg
+    tb.pack(dialogLabel, 1, 0, 1, 1)
+    dialogLabel.show()
+
+    # Ok Button
+    ok_btt = Button(errorPopup)
+    ok_btt.text = "Ok"
+    ok_btt.callback_clicked_add(lambda obj: errorPopup.delete())
+    ok_btt.show()
+
+    # add button to popup
+    errorPopup.part_content_set("button3", ok_btt)
+    errorPopup.show()
+
+
+def closeMenu(obj, label):
+    if not hasattr(closeMenu, 'count'):
+        closeMenu.count = 0
+    if not hasattr(closeMenu, 'name'):
+        closeMenu.lastItem = label
+    if closeMenu.lastItem != label:
+        closeMenu.count = 0
+    if closeMenu.count:
+        obj.selected_set(False)
+        obj.menu_get().close()
+    closeMenu.count = (closeMenu.count + 1) % 2
+
+
+def resetCloseMenuCount(obj):
+        global closeMenu
+        if hasattr(closeMenu, 'count'):
+            closeMenu.count = 0
+
+class Interface(object):
+    def __init__(self):
+        self.confirmPopup = None
+        self.config = ePadConf()
+
+        self.mainWindow = StandardWindow("epad", "Untitled - ePad",
+                                         size=(600, 400))
+        self.mainWindow.callback_delete_request_add(self.closeChecks)
+        self.mainWindow.elm_event_callback_add(self.eventsCb)
+        #self.mainWindow.repeat_events_set(False)
+
+        icon = Icon(self.mainWindow,
+                    size_hint_weight=EXPAND_BOTH,
+                    size_hint_align=FILL_BOTH)
+        icon.standard_set('accessories-text-editor')
+        icon.show()
+        self.mainWindow.icon_object_set(icon.object_get())
+
+        self.mainBox = Box(self.mainWindow,
+                           size_hint_weight=EXPAND_BOTH,
+                           size_hint_align=FILL_BOTH)
+        self.mainBox.show()
+
+        self.mainTb = ePadToolbar(self, self.mainWindow)
+        self.mainTb.focus_allow = False
+        self.mainTb.show()
+
+        self.mainBox.pack_end(self.mainTb)
+
+        # Root User Notification
+        if os.geteuid() == 0:
+            # print_err("Caution: Root User")
+            if self.config["notify_root"]:
+                notifyBox = Box(self.mainWindow, horizontal=True)
+                notifyLabel = Label(self.mainWindow, size_hint_align=FILL_HORIZ)
+                notifyLabel.text = "<b><i>Root User</i></b>"
+                notifyBox.pack_end(notifyLabel)
+                notifyLabel.show()
+                self.mainBox.pack_end(notifyBox)
+                notifyBox.show()
+
+        self.findBox = ePadFindBox(self, self.mainWindow)
+        self.findVisible = False
+
+        self.tabbs = TabbedBox(self.mainWindow, size_hint_weight=EXPAND_BOTH,
+                           size_hint_align=FILL_BOTH)
+        self.tabbs.closeCallback = self.closeFile
+        self.tabbs.emptyCallback = self.baseFile
+        self.tabbs.tabChangedCallback = self.tabChanged
+        self.tabbs.show()
+
+        self.mainBox.pack_end(self.tabbs)
+
+        # Build our file selector for saving/loading files
+        self.fileBox = Box(self.mainWindow,
+                           size_hint_weight=EXPAND_BOTH,
+                           size_hint_align=FILL_BOTH)
+        self.fileBox.show()
+
+        self.fileLabel = Label(self.mainWindow,
+                               size_hint_weight=EXPAND_HORIZ,
+                               size_hint_align=FILL_BOTH, text="")
+        self.fileLabel.show()
+        self.lastDir = os.getenv("HOME")
+        self.fileSelector = FileSelector(self.mainWindow,
+                                         defaultPath=self.lastDir,
+                                         defaultPopulate=False,
+                                         size_hint_weight=EXPAND_BOTH,
+                                         size_hint_align=FILL_BOTH)
+        self.fileSelector.callback_activated_add(self.fileSelected)
+        self.fileSelector.callback_directory_open_add(self.updateLastDir)
+        self.fileSelector.callback_cancel_add(self.fileSelCancelPressed)
+        self.fileSelector.setMode("Open")
+        self.fileSelector.show()
+
+        self.fileBox.pack_end(self.fileLabel)
+        self.fileBox.pack_end(self.fileSelector)
+
+        # Flip object has the file selector on one side
+        #   and the GUI on the other
+        self.flip = Flip(self.mainWindow, size_hint_weight=EXPAND_BOTH,
+                         size_hint_align=FILL_BOTH)
+        self.flip.part_content_set("front", self.mainBox)
+        self.flip.part_content_set("back", self.fileBox)
+        self.mainWindow.resize_object_add(self.flip)
+        self.flip.show()
+
+    def tabChanged(self, tabbs, widget):
+        self.mainWindow.title = widget.data["button"].text
+        self.mainTb.savebtn.disabled = not widget.dirty
+
+    def addFile(self, filePath):
+        entryBox = ePadEntry(self, self.tabbs)
+        entryBox.show()
+
+        if filePath != "Untitled":
+            entryBox.openFile(filePath)
+            tabName = filePath.split("/")[-1]
+        else:
+            tabName = "Untitled"
+        entryBox.curChanged(entryBox.mainEn, entryBox.line_label)
+        entryBox.checkLineNumbers()
+        self.tabbs.addTab(entryBox, tabName)
+
+    def baseFile(self, tabbs):
+        #This function gets called when all files are closed
+        self.addFile("Untitled")
+
+    def closeFile(self, tabbs, widget):
+        widget.closeChecks()
+
+    def showFile(self, btn):
+        if self.tabbs.currentTab != btn.data["entry"]:
+            self.setFile(btn.data["entry"], btn.text)
+
+    def newFile(self, obj=None, ignoreSave=False):
+        if self.config["new_instance"]:
+            print("Launching new instance")
+            ecore.Exe('epad', ecore.ECORE_EXE_PIPE_READ|ecore.ECORE_EXE_PIPE_ERROR|ecore.ECORE_EXE_PIPE_WRITE)
+            return
+        self.addFile("Untitled")
+
+    def openFile(self, obj=None, ignoreSave=False):
+        self.fileSelector.setMode("Open")
+        self.fileLabel.text = "<b>Select a text file to open:</b>"
+        if self.fileSelector.filepathEntry.text != self.lastDir:
+            self.fileSelector.populateFiles(self.lastDir)
+        self.flip.go(ELM_FLIP_ROTATE_YZ_CENTER_AXIS)
+
+    def fileSelCancelPressed(self, fs):
+        self.flip.go(ELM_FLIP_ROTATE_XZ_CENTER_AXIS)
+
+    def showFind(self, obj=None):
+        if not self.findVisible:
+            self.mainBox.pack_before(self.findBox, self.tabbs)
+            self.findBox.findEntry.text = self.tabbs.currentTab.mainEn.selection_get()
+            self.findBox.findEntry.focus_set(True)
+            self.findBox.findEntry.cursor_end_set()
+            self.findBox.show()
+            self.findVisible = True
+        else:
+            self.hideFind()
+
+    def hideFind(self, obj=None):
+        if self.findVisible:
+            self.mainBox.unpack(self.findBox)
+            self.findBox.hide()
+            self.findVisible = False
+
+    def saveAs(self):
+        self.fileSelector.setMode("Save")
+        self.fileLabel.text = "<b>Save new file to where:</b>"
+        if self.fileSelector.filepathEntry.text != self.lastDir:
+            self.fileSelector.populateFiles(self.lastDir)
+        self.flip.go(ELM_FLIP_ROTATE_XZ_CENTER_AXIS)
+
+    def saveFile(self, obj=False):
+        if self.tabbs.currentTab.mainEn.file_get()[0] is None or self.tabbs.currentTab.isNewFile:
+            self.saveAs()
+        else:
+            if not self.tabbs.currentTab.isSaved:
+                file_selected = self.tabbs.currentTab.mainEn.file_get()[0]
+                # Detect save errors as entry.file_save currently returns no errors
+                #   even in the case where the file fails to save :(
+                try:
+                    newfile = io.open(file_selected, 'w')
+                except IOError as err:
+                    if err.errno == errno.EACCES:
+                        errorMsg = ("Permision denied: <b>'%s'</b>."
+                                    "<br><br>Operation failed !!!"
+                                    % (file_selected))
+                        errorPopup(self.mainWindow, errorMsg)
+                    else:
+                        errorMsg = ("ERROR: %s: '%s'"
+                                    "<br><br>Operation failed !!!"
+                                    % (err.strerror, file_selected))
+                        errorPopup(self.mainWindow, errorMsg)
+                    return
+                newfile.close()
+                # if entry is empty and the file does not exists then
+                #   entry.file_save will destroy the file created about by the
+                #   open statement above for some odd reason ...
+                if not self.tabbs.currentTab.mainEn.is_empty:
+                    self.tabbs.currentTab.mainEn.file_save()
+                self.tabbs.currentTab.setDirty(False)
+                self.tabbs.currentTab.isSaved = True
+
+    def fileSelected(self, fs, file_selected, onStartup=False):
+        if not onStartup:
+            self.flip.go(ELM_FLIP_ROTATE_XZ_CENTER_AXIS)
+            # Markup can end up in file names because file_selector name_entry
+            #   is an elementary entry. So lets sanitize file_selected.
+            file_selected = markup_to_utf8(file_selected)
+        if file_selected:
+            #print("File Selected: {0}".format(file_selected))
+            self.lastDir = os.path.dirname(file_selected)
+            # This fails if file_selected does not exist yet
+
+            fs.fileEntry.text = file_selected.split("/")[-1]
+
+        IsSave = fs.mode
+
+        if file_selected:
+            if IsSave == "save":
+                if os.path.isdir(file_selected):
+                    current_file = os.path.basename(file_selected)
+                    errorMsg = ("<b>'%s'</b> is a folder."
+                                "<br><br>Operation failed !!!"
+                                % (current_file))
+                    errorPopup(self.mainWindow, errorMsg)
+                    return
+                elif os.path.exists(file_selected):
+                    self.tabbs.currentTab.fileExists(file_selected)
+                    return
+                else:
+                    self.tabbs.currentTab.doSelected(file_selected)
+                    return
+            else:
+                self.addFile(file_selected)
+
+    def updateLastDir(self, path):
+        self.lastDir = path
+
+    def showAbout(self):
+        self.about.launch()
+
+    def closeApp(self, obj=False, trash=False):
+        elementary.exit()
+
+    def closeChecks(self, obj=False):
+        allSaved = True
+
+        for en in self.tabbs.tabs:
+            if not en.isSaved:
+                allSaved = False
+
+        if allSaved:
+            self.closeApp()
+        else:
+            self.unsavedWorkPopup()
+
+    def closePopup(self, bt, confirmPopup):
+        self.confirmPopup.delete()
+        self.confirmPopup = None
+
+    def unsavedWorkPopup(self):
+        if self.confirmPopup:
+            return
+        elm_config = Configuration()
+        self.confirmPopup = Popup(self.mainWindow,
+                                  size_hint_weight=EXPAND_BOTH)
+
+        # Add a table to hold dialog image and text to Popup
+        tb = Table(self.confirmPopup, size_hint_weight=EXPAND_BOTH)
+        self.confirmPopup.part_content_set("default", tb)
+        tb.show()
+
+        # Add dialog-error Image to table
+        icon = Icon(self.confirmPopup, resizable=(True, True), 
+                    size_hint_weight=EXPAND_BOTH, size_hint_align=FILL_BOTH)
+        icon.standard_set('dialog-question')
+        tb.pack(icon, 0, 0, 1, 1)
+        icon.show()
+        # Add dialog text to table
+        dialogLabel = Label(self.confirmPopup, line_wrap=ELM_WRAP_WORD,
+                            size_hint_weight=EXPAND_HORIZ,
+                            size_hint_align=FILL_BOTH)
+        dialogLabel.text = "You have unsaved work. Close anyways?<br><br>"
+        tb.pack(dialogLabel, 1, 0, 1, 1)
+        dialogLabel.show()
+
+        # Close without saving button
+        no_btt = Button(self.mainWindow)
+        no_btt.text = "No"
+        no_btt.callback_clicked_add(self.closePopup, self.confirmPopup)
+        no_btt.show()
+        # Save the file and then close button
+        sav_btt = Button(self.mainWindow)
+        sav_btt.text = "Yes"
+        sav_btt.callback_clicked_add(self.closeApp)
+        sav_btt.show()
+
+        # add buttons to popup
+        self.confirmPopup.part_content_set("button1", no_btt)
+        self.confirmPopup.part_content_set("button3", sav_btt)
+        self.confirmPopup.show()
+
+    def eventsCb(self, obj, src, event_type, event):
+
+        if not event_type == EVAS_CALLBACK_KEY_UP:
+            return False
+
+        if event.modifier_is_set("Control"):
+            if event.keyname == "n":
+                #newFile(self.newFile)
+                self.newFile()
+            elif event.keyname == "s" and event.modifier_is_set("Shift"):
+                self.saveAs()
+            elif event.keyname == "s":
+                self.saveFile()
+            elif event.keyname == "z" and event.modifier_is_set("Shift"):
+                self.tabbs.currentTab.reDo()
+            elif event.keyname == "z":
+                self.tabbs.currentTab.unDo()
+            elif event.keyname == "o":
+                self.openFile()
+            elif event.keyname == "h":
+                if not self.flip.front_visible_get():
+                    self.fileSelector.toggleHidden()
+            elif event.keyname == "q":
+                self.closeChecks()
+            elif event.keyname == "f":
+                self.showFind()
+        elif isinstance(src, Entry) and event.key in ["space", "BackSpace", "Return"]:
+            self.tabbs.currentTab.takeSnapShot()
+
+        event.event_flags = event.event_flags | EVAS_EVENT_FLAG_ON_HOLD
+        return True
+
+    def launch(self, start=[]):
+        if start[0]:
+            for count, ourFile in enumerate(start[0]):
+                if os.path.dirname(ourFile) == '':
+                    start[0][count] = os.getcwd() + '/' + ourFile
+
+        if start and start[0]:
+            for ourFile in start[0]:
+                if ourFile[:7] == "file://":
+                    try:
+                        ourFile = urllib.url2pathname(ourFile[7:])
+                    except AttributeError:
+                        # Python3
+                        ourFile = urllib.request.url2pathname(ourFile[7:])
+                if os.path.isdir(os.path.dirname(ourFile)):
+                    if os.path.isfile(ourFile):
+                        ##print(ourFile)
+                        self.addFile(ourFile)
+                else:
+                    errorMsg = ("<b>'%s'</b> is an Invalid path."
+                                "<br><br>Open failed !!!" % (ourFile))
+                    errorPopup(self.mainWindow, errorMsg)
+        if start and start[1]:
+            if os.path.isdir(start[1]):
+                self.lastDir = start[1]
+            else:
+                pass
+
+        if not len(self.tabbs.tabs):
+            self.addFile("Untitled")
+
+        self.mainWindow.show()
+
+class ePadEntry(Box):
+
+    default_font_size = 14
+
+    def __init__(self, parent, canvas):
+        Box.__init__(self, canvas)
+        self._parent = parent
+        self._canvas = canvas
+        self._config = self._parent.config
+
+        self.size_hint_weight = EXPAND_BOTH
+        self.size_hint_align = FILL_BOTH
+        # py-efl doesn't work correctly with fonts that have spaces in names
+        #   Oddly enough remove spaces and works
+        #   versions up to 1.18 (inclusive)
+        font = self._config['font'].replace(' ', '')
+        font_style = self._config['font_style']
+        font_weight = self._config['font_weight']
+        font_width = self._config['font_width']
+        font_size = self._config['font_size']
+
+        self.font_style = "DEFAULT='font={0} font_style={1} font_weight={2} font_width={3} font_size={4}'".format(font, font_style, font_weight, font_width, str(font_size))
+
+        self.entryBox = Box(self._canvas,
+                           size_hint_weight=EXPAND_BOTH,
+                           size_hint_align=FILL_BOTH)
+        self.entryBox.horizontal = True
+        self.entryBox.show()
+
+        # Initialize Text entry box and line label
+        self.lineList = Entry(self._canvas,
+                           scrollable=False, editable=False,
+                           size_hint_weight=(0.0, EVAS_HINT_EXPAND),
+                           size_hint_align=(0.0, 0.0),
+                           line_wrap=ELM_WRAP_NONE)
+
+        self.lineList.text_style_user_push("DEFAULT='font_size={0}'".format(self._config['font_size']))
+        self.currentLinesShown = 1
+        self.lineList.text_set("<i>1<br>")
+
+        self.lineNums = self._parent.config['line_numbers']
+
+        self.mainEn = Entry(self._canvas, scrollable=False,
+                            line_wrap=self._parent.config['word_wrap'],
+                            autosave=self._parent.config['autosave'],
+                            size_hint_weight=(0.85, EVAS_HINT_EXPAND),
+                            size_hint_align=FILL_BOTH)
+        self.mainEn.callback_changed_user_add(self.textEdited)
+        self.mainEn.callback_clicked_add(resetCloseMenuCount)
+        self.mainEn.callback_selection_cut_add(self.takeSnapShot)
+        self.mainEn.callback_selection_paste_add(self.takeSnapShot)
+
+        self.mainEn.text_style_user_push(self.font_style)
+
+        self.totalLines = 0
+        self.mainEn.show()
+        self.mainEn.focus_set(True)
+        self.sep = Separator(self._canvas)
+        self.sep.horizontal_set(False)
+        self.sep.show()
+
+        if self.lineNums:
+            self.lineList.show()
+            self.entryBox.pack_end(self.lineList)
+            self.entryBox.pack_end(self.sep)
+        self.entryBox.pack_end(self.mainEn)
+
+        self.scr = Scroller(self._canvas,
+                           size_hint_weight=EXPAND_BOTH,
+                           size_hint_align=FILL_BOTH)
+        self.scr.content = self.entryBox
+        self.scr.show()
+
+        self.pack_end(self.scr)
+
+        # Add label to show current cursor position
+        if self._parent.config['show_pos']:
+            self.line_label = Label(self._canvas,
+                                    size_hint_weight=EXPAND_HORIZ,
+                                    size_hint_align=ALIGN_RIGHT)
+
+            self.mainEn.callback_cursor_changed_add(self.curChanged,
+                                                    self.line_label)
+            self.curChanged(self.mainEn, self.line_label)
+            self.line_label.show()
+            self.pack_end(self.line_label)
+
+        self.isNewFile = True
+        self.isSaved = True
+        self.doArchive = []
+        self.doSpot = 0
+        self.takeSnapShot()
+        self.setDirty(False)
+
+    def takeSnapShot(self, obj=None):
+        if self.doSpot != len(self.doArchive)-1:
+            for i in range(self.doSpot+1, len(self.doArchive)):
+                self.doArchive.pop(self.doSpot+1)
+
+        curPos = self.mainEn.cursor_pos_get()
+        entryGet = self.mainEn.entry_get()
+
+        if self.doSpot == 0:
+            self.saveSnapShot(curPos, entryGet)
+        elif entryGet != self.doArchive[self.doSpot][1]:
+            self.saveSnapShot(curPos, entryGet)
+
+    def saveSnapShot(self, curPos, entryGet):
+        self.doArchive.append([curPos, entryGet])
+
+        if len(self.doArchive) > 30:
+            self.doArchive.pop(0)
+
+        self.doSpot = len(self.doArchive) - 1
+
+
+    def unDo(self):
+        if self.doSpot > 0:
+            # A check if this is the first time we are undoing that we store the latest data
+            if self.doSpot == len(self.doArchive) - 1:
+                if self.doArchive[self.doSpot][1] != self.mainEn.entry_get():
+                    self.takeSnapShot()
+            self.doSpot -= 1
+            self.mainEn.entry_set(self.doArchive[self.doSpot][1])
+            self.mainEn.cursor_pos_set(self.doArchive[self.doSpot][0])
+
+    def reDo(self):
+        if self.doSpot + 1 < len(self.doArchive):
+            self.doSpot += 1
+            self.mainEn.entry_set(self.doArchive[self.doSpot][1])
+            self.mainEn.cursor_pos_set(self.doArchive[self.doSpot][0])
+
+    def checkLineNumbers(self):
+        if self.currentLinesShown < self.totalLines:
+            lines = ""
+            for i in range(self.currentLinesShown+1, self.totalLines+1):
+                lines += "%s<br>"%(i)
+            self.lineList.entry_append(lines)
+            self.currentLinesShown = self.totalLines
+        elif self.currentLinesShown > self.totalLines:
+            lines = "<i>"
+
+            for i in range(1, self.totalLines+1):
+                lines = "%s%s<br>"%(lines, i)
+
+            self.lineList.entry_set(lines)
+            '''for i in range(self.totalLines+1, self.currentLinesShown+1):
+                ll = self.lineList
+                ll.cursor_end_set()
+                ll.cursor_prev()
+                ll.cursor_selection_begin()
+                ll.cursor_line_begin_set()
+                ll.cursor_prev()
+                ll.cursor_selection_end()
+                ll.selection_cut()'''
+
+            self.currentLinesShown = self.totalLines
+
+    def curChanged(self, entry, label):
+        # get linear index into current text
+        index = entry.cursor_pos_get()
+        # Replace <br /> tag with single char
+        #   to simplify (line, col) calculation
+        tmp_text = markup_to_utf8(entry.entry_get())
+        self.totalLines = tmp_text.count("\n")+1
+        if self.lineNums:
+            self.checkLineNumbers()
+        text_slice = tmp_text[:index]
+        split_line = text_slice.split("\n")
+        line_n = len(split_line)
+        col = len(split_line[-1]) + 1
+        # Update label text with line, col
+        label.text = "Ln {0} Col {1} ".format(line_n, col)
+
+    def setDirty(self, dirty):
+        if dirty:
+            self.dirty = True
+            self._parent.mainWindow.title = "*" + self._parent.mainWindow.title
+            try:
+                self.data["button"].text = "*" + self.data["button"].text
+            except:
+                pass
+            self._parent.mainTb.savebtn.disabled = False
+        else:
+            self.dirty = False
+            self._parent.mainWindow.title = self._parent.mainWindow.title[1:]
+            try:
+                self.data["button"].text = self.data["button"].text[1:]
+            except:
+                pass
+            self._parent.mainTb.savebtn.disabled = True
+
+    def textEdited(self, obj=None):
+        if not self.dirty:
+            self.setDirty(True)
+        self.isSaved = False
+
+    def openFile(self, filePath):
+        try:
+            self.mainEn.file_set(filePath, ELM_TEXT_FORMAT_PLAIN_UTF8)
+        except (RuntimeWarning, RuntimeError) as msg:
+            pass
+        self.isNewFile = False
+        #Reset undo/redo tracks when we open a file
+        self.doArchive = []
+        self.doSpot = 0
+        self.takeSnapShot()
+
+    def closeChecks(self, ourCallback=None):
+        if not self.isSaved:
+            self.confirmSave()
+        else:
+            self._parent.tabbs.deleteTab(self)
+
+    def confirmSave(self):
+        self.confirmPopup = Popup(self._parent.mainWindow,
+                                  size_hint_weight=EXPAND_BOTH)
+        self.confirmPopup.part_text_set("title,text", "File Unsaved")
+        current_file = self.mainEn.file[0]
+        current_file = \
+            os.path.basename(current_file) if current_file else "Untitled"
+        self.confirmPopup.text = "Save changes to '%s'?" % (current_file)
+        # Close without saving button
+        no_btt = Button(self._parent.mainWindow)
+        no_btt.text = "No"
+        no_btt.callback_clicked_add(self.closePopup, self.confirmPopup)
+        no_btt.callback_clicked_add(lambda o: self._parent.tabbs.deleteTab(self))
+        no_btt.show()
+        # cancel close request
+        cancel_btt = Button(self._parent.mainWindow)
+        cancel_btt.text = "Cancel"
+        cancel_btt.callback_clicked_add(self.closePopup, self.confirmPopup)
+        cancel_btt.show()
+        # Save the file and then close button
+        sav_btt = Button(self._parent.mainWindow)
+        sav_btt.text = "Yes"
+        sav_btt.callback_clicked_add(self._parent.saveFile)
+        sav_btt.callback_clicked_add(self.closePopup, self.confirmPopup)
+        sav_btt.show()
+
+        # add buttons to popup
+        self.confirmPopup.part_content_set("button1", no_btt)
+        self.confirmPopup.part_content_set("button2", cancel_btt)
+        self.confirmPopup.part_content_set("button3", sav_btt)
+        self.confirmPopup.show()
+
+    def closePopup(self, bt, confirmPopup):
+        self.confirmPopup.delete()
+        self.confirmPopup = None
+
+    def fileExists(self, filePath):
+        self.confirmPopup = Popup(self._parent.mainWindow,
+                                  size_hint_weight=EXPAND_BOTH)
+
+        # Add a table to hold dialog image and text to Popup
+        tb = Table(self.confirmPopup, size_hint_weight=EXPAND_BOTH)
+        self.confirmPopup.part_content_set("default", tb)
+        tb.show()
+
+        # Add dialog-error Image to table
+        icon = Icon(self.confirmPopup, resizable=(True, True), 
+                 size_hint_weight=EXPAND_BOTH, size_hint_align=FILL_BOTH)
+        icon.standard_set('dialog-question')
+        tb.pack(icon, 0, 0, 1, 1)
+        icon.show()
+        # Add dialog text to table
+        dialogLabel = Label(self.confirmPopup, line_wrap=ELM_WRAP_WORD,
+                            size_hint_weight=EXPAND_HORIZ,
+                            size_hint_align=FILL_BOTH)
+        current_file = os.path.basename(filePath)
+        dialogLabel.text = "'%s' already exists. Overwrite?<br><br>" \
+                           % (current_file)
+        tb.pack(dialogLabel, 1, 0, 1, 1)
+        dialogLabel.show()
+
+        # Close without saving button
+        no_btt = Button(self._parent.mainWindow)
+        no_btt.text = "No"
+        no_btt.callback_clicked_add(self.closePopup, self.confirmPopup)
+        no_btt.show()
+        # Save the file and then close button
+        sav_btt = Button(self._parent.mainWindow)
+        sav_btt.text = "Yes"
+        sav_btt.callback_clicked_add(self.doSelected)
+        sav_btt.callback_clicked_add(self.closePopup, self.confirmPopup)
+        sav_btt.show()
+
+        # add buttons to popup
+        self.confirmPopup.part_content_set("button1", no_btt)
+        self.confirmPopup.part_content_set("button3", sav_btt)
+        self.confirmPopup.show()
+
+    def doSelected(self, obj):
+        # Something I should avoid but here I prefer a polymorphic function
+        if isinstance(obj, Button):
+            file_selected = self._parent.fileSelector.selected_get()
+        else:
+            file_selected = obj
+
+        if file_selected:
+            try:
+                newfile = io.open(file_selected, 'w')
+            except IOError as err:
+                pass
+                #print("ERROR: {0}: '{1}'".format(err.strerror,
+                #                                    file_selected))
+                if err.errno == errno.EACCES:
+                    errorMsg = ("Permision denied: <b>'%s'</b>."
+                                    "<br><br>Operation failed !!!</br>"
+                                    % (file_selected))
+                    errorPopup(self._parent.mainWindow, errorMsg)
+                else:
+                    errorMsg = ("ERROR: %s: '%s'"
+                                    "<br><br>Operation failed !!!</br>"
+                                    % (err.strerror, file_selected))
+                    errorPopup(self._parent.mainWindow, errorMsg)
+                return
+            tmp_text = self.mainEn.entry_get()
+                # FIXME: Why save twice?
+            newfile.write(tmp_text)
+            newfile.close()
+                # Suppress error message when empty file is saved
+            try:
+                self.mainEn.file_set(file_selected,
+                                         ELM_TEXT_FORMAT_PLAIN_UTF8)
+            except RuntimeError:
+                pass
+                #print("Empty file saved:{0}".format(file_selected))
+            self.mainEn.entry_set(tmp_text)
+                # if empty file entry.file_save destroys file :(
+            if len(tmp_text):
+                self.mainEn.file_save()
+            self._parent.mainWindow.title_set(" %s - ePad" % os.path.basename(file_selected))
+            self.data["button"].text = " %s" % os.path.basename(file_selected)
+
+            self.isSaved = True
+            self.isNewFile = False
+            self.setDirty(False)
+
+class ePadFindBox(Box):
+    def __init__(self, parent, canvas):
+        Box.__init__(self, canvas)
+        self._parent = parent
+        self._canvas = canvas
+
+        self.size_hint_weight = EXPAND_HORIZ
+        self.size_hint_align = FILL_HORIZ
+
+        self.currentFind = None
+        self.lastSearch = None
+
+        frameBox = Box(self._canvas, size_hint_weight=EXPAND_HORIZ, size_hint_align=FILL_HORIZ)
+        frameBox.horizontal = True
+        frameBox.show()
+
+        findBox = Frame(self._canvas, size_hint_weight=EXPAND_HORIZ, size_hint_align=FILL_HORIZ)
+        findBox.text = "Find Text:"
+        findBox.show()
+
+        self.findEntry = Entry(self._canvas, size_hint_weight=EXPAND_HORIZ, size_hint_align=FILL_HORIZ)
+        self.findEntry.single_line_set(True)
+        self.findEntry.scrollable_set(True)
+        self.findEntry.callback_activated_add(self.findPressed)
+        self.findEntry.show()
+
+        findBox.content = self.findEntry
+
+        replaceBox = Frame(self._canvas, size_hint_weight=EXPAND_HORIZ, size_hint_align=FILL_HORIZ)
+        replaceBox.text = "Replace Text:"
+        replaceBox.show()
+
+        self.replaceEntry = Entry(self._canvas, size_hint_weight=EXPAND_HORIZ, size_hint_align=FILL_HORIZ)
+        self.replaceEntry.single_line_set(True)
+        self.replaceEntry.scrollable_set(True)
+        self.replaceEntry.show()
+
+        replaceBox.content = self.replaceEntry
+
+        frameBox.pack_end(findBox)
+        frameBox.pack_end(replaceBox)
+
+        buttonBox = Box(self._canvas, size_hint_weight=EXPAND_HORIZ, size_hint_align=FILL_HORIZ)
+        buttonBox.horizontal = True
+        buttonBox.show()
+
+        findButton = Button(self._canvas)
+        findButton.text = "Find Next"
+        findButton.callback_pressed_add(self.findPressed)
+        findButton.show()
+
+        replaceButton = Button(self._canvas)
+        replaceButton.text = "Replace All"
+        replaceButton.callback_pressed_add(self.replacePressed)
+        replaceButton.show()
+
+        closeButton = Button(self._canvas)
+        closeButton.text = "Done"
+        closeButton.callback_pressed_add(self._parent.showFind)
+        closeButton.show()
+
+        self.caseCheck = Check(self._canvas, text = "Case Sensitive")
+        self.caseCheck.state_set(self._parent.config['case_sensitive'])
+        self.caseCheck.callback_changed_add(self.caseUpdate)
+        self.caseCheck.show()
+
+        buttonBox.pack_end(self.caseCheck)
+        buttonBox.pack_end(findButton)
+        buttonBox.pack_end(replaceButton)
+        buttonBox.pack_end(closeButton)
+
+        self.pack_end(frameBox)
+        self.pack_end(buttonBox)
+
+    def replacePressed(self, obj):
+        tmp_text = markup_to_utf8(self._parent.tabbs.currentTab.mainEn.entry_get())
+        if not self.caseCheck.state_get():
+            search_string = self.findEntry.text.lower()
+            locations = list(self.findAll(tmp_text.lower(), search_string))
+        else:
+            search_string = self.findEntry.text
+            locations = list(self.findAll(tmp_text, search_string))
+        search_length = len(search_string)
+        if search_length:
+            replace_string = self.replaceEntry.text
+            #if replace_string:
+            if len(locations):
+                if not self._parent.config['case_sensitive']:
+                    ourRe = re.compile(search_string, re.IGNORECASE)
+                else:
+                    ourRe = re.compile(search_string)
+                tmp_text = ourRe.sub(replace_string, tmp_text).encode('utf-8').strip()
+                tmp_text = utf8_to_markup(tmp_text)
+                curPos = self._parent.tabbs.currentTab.mainEn.cursor_pos_get()
+                self._parent.tabbs.currentTab.mainEn.text_set(tmp_text)
+                try:
+                    self._parent.tabbs.currentTab.mainEn.cursor_pos_set(curPos)
+                except:
+                    pass
+                    #print("Error: Can't set cursor position")
+                self._parent.tabbs.currentTab.textEdited()
+                self._parent.tabbs.currentTab.takeSnapShot()
+            else:
+                errorPopup(self._parent.mainWindow, "Text %s not found. Nothing replaced."%search_string)
+            #else:
+            #    errorPopup(self._parent.mainWindow, "No replacement string entered.")
+        else:
+            errorPopup(self._parent.mainWindow, "No find string entered.")
+
+    def findPressed(self, obj):
+        if not self.caseCheck.state_get():
+            search_string = self.findEntry.text.lower()
+            tmp_text = markup_to_utf8(self._parent.tabbs.currentTab.mainEn.entry_get()).lower()
+        else:
+            search_string = self.findEntry.text
+            tmp_text = markup_to_utf8(self._parent.tabbs.currentTab.mainEn.entry_get())
+        search_length = len(search_string)
+        if search_length:
+            locations = list(self.findAll(tmp_text, search_string))
+            if len(locations):
+                if self.currentFind == None or search_string != self.lastSearch:
+                    self.lastSearch = search_string
+                    self.currentFind = locations[0]
+                else:
+                    lastFind = locations.index(self.currentFind)
+                    if lastFind < len(locations)-1:
+                        self.currentFind = locations[lastFind+1]
+                    else:
+                        self.currentFind = locations[0]
+                self._parent.tabbs.currentTab.mainEn.select_region_set(self.currentFind, self.currentFind+search_length)
+            else:
+                errorPopup(self._parent.mainWindow, "Text %s not found."%search_string)
+        else:
+            errorPopup(self._parent.mainWindow, "No find string entered.")
+
+    def findAll(self, a_str, sub):
+        start = 0
+        while True:
+            start = a_str.find(sub, start)
+            if start == -1: return
+            yield start
+            start += len(sub) + 1
+
+    def caseUpdate(self, ck):
+        self._parent.config['case_sensitive'] = ck.state_get()
+
+
+class ePadToolbar(Toolbar):
+    def __init__(self, parent, canvas):
+        Toolbar.__init__(self, canvas)
+        self._parent = parent
+        self._canvas = canvas
+
+        self.homogeneous = False
+        self.size_hint_weight = (0.0, 0.0)
+        self.size_hint_align = (EVAS_HINT_FILL, 0.0)
+        self.select_mode = ELM_OBJECT_SELECT_MODE_DEFAULT
+        self.icon_size_set(16)
+        self.callback_selected_add(self.itemClicked)
+
+        self.menu_parent = canvas
+
+        self.item_append("document-new", "New",
+                         lambda self, obj: self._parent.newFile())
+        self.item_append("document-open", "Open",
+                         lambda self, obj: self._parent.openFile())
+        self.savebtn = self.item_append("document-save", "Save",
+                         lambda self, obj: self._parent.saveFile())
+        self.savebtn.disabled = True
+        self.item_append("document-save-as", "Save As",
+                         lambda self, obj: self._parent.saveAs())
+        # -- Edit Dropdown Menu --
+        tb_it = self.item_append("edit-copy", "Edit")
+        tb_it.menu = True
+        menu = tb_it.menu
+        menu.item_add(None, "Undo", "edit-undo", self.unDoPress)
+        menu.item_add(None, "Redo", "edit-redo", self.reDoPress)
+        menu.item_separator_add()
+        menu.item_add(None, "Copy", "edit-copy", self.copyPress)
+        menu.item_add(None, "Paste", "edit-paste", self.pastePress)
+        menu.item_add(None, "Cut", "edit-cut", self.cutPress)
+        menu.item_separator_add()
+        menu.item_add(None, "Select All", "edit-select-all",
+                      self.selectAllPress)
+
+        self.item_append("edit-find-replace", "Find",
+                         lambda self, obj: self._parent.showFind())
+        # -----------------------
+        #
+        # -- Options Dropdown Menu --
+        #
+        # self.item_append("settings", "Options", self.optionsPress)
+        tb_it = self.item_append("preferences-desktop", "Options")
+        tb_it.menu = True
+        menu = tb_it.menu
+        self._parent.wordwrap = self._parent.config['word_wrap']
+        it = menu.item_add(None, "Wordwrap", None, self.optionsToggle)
+        chk = Check(canvas)
+        it.content = chk
+        it.content.state = (self._parent.config['word_wrap'] == ELM_WRAP_MIXED)
+        self.menu_item_ww = it
+
+        it = menu.item_add(None, "Line Numbers", None, self.optionsToggle)
+        chk = Check(canvas)
+        it.content = chk
+        it.content.state = self._parent.config['line_numbers']
+        self.menu_item_ln = it
+
+
+        '''it = menu.item_add(None, "New Instance", None, self.optionsNew)
+        chk = Check(canvas, disabled=True)
+        it.content = chk
+        if self._parent.newInstance:
+            it.content.state = True
+        else:
+            it.content.state = False'''
+
+        # ---------------------------
+
+        self.item_append("dialog-information", "About",
+                         self.showAbout)
+
+    def showAbout(self, obj, it):
+        try:
+            AboutWindow(self, title="ePad", standardicon="accessories-text-editor", \
+                        version=__version__, authors=AUTHORS, \
+                        licen=LICENSE, webaddress=__github__, \
+                        info=INFO)
+        except InstanceError:
+            pass
+
+    #############################################################
+    # Hack to toogle word wrap state with line numbers state   ##
+    #############################################################
+    def optionsToggle(self, obj, it):
+        wordwrap = self._parent.config['word_wrap']
+        linenum =  self._parent.config['line_numbers']
+
+        if it.text == "Wordwrap":
+            if wordwrap == ELM_WRAP_MIXED:
+                wordwrap = ELM_WRAP_NONE
+                it.content.state = False
+                linenum = self.menu_item_ln.content.state = True
+            else:
+                wordwrap = ELM_WRAP_MIXED
+                it.content.state = True
+                linenum = self.menu_item_ln.content.state = False
+        else:
+            if linenum:
+                linenum = it.content.state = False
+                wordwrap = ELM_WRAP_MIXED
+                self.menu_item_ww.content.state = True
+            else:
+                linenum = it.content.state = True
+                wordwrap = ELM_WRAP_NONE
+                self.menu_item_ww.content.state = False
+        # Change word wrap state of all open tabs
+        for tab in self._parent.tabbs.tabs:
+            tab.mainEn.line_wrap_set(wordwrap)
+            # for some reason have to reset font style
+            while tab.mainEn.text_style_user_peek():
+                tab.mainEn.text_style_user_pop();
+            tab.mainEn.text_style_user_push(self._parent.tabbs.currentTab.font_style)
+        # Change line number state of all open tabs
+        if linenum:
+            for tab in self._parent.tabbs.tabs:
+                tab.entryBox.pack_before(tab.sep, tab.mainEn)
+                tab.sep.show()
+                tab.entryBox.pack_before(tab.lineList, tab.sep)
+                tab.checkLineNumbers()
+                tab.lineList.show()
+        else:
+            for tab in self._parent.tabbs.tabs:
+                tab.entryBox.unpack(tab.lineList)
+                tab.entryBox.unpack(tab.sep)
+                tab.lineList.hide()
+                tab.sep.hide()
+        # Update Config file
+        self._parent.config['word_wrap'] = wordwrap
+        self._parent.config['line_numbers'] = linenum
+        resetCloseMenuCount(None)
+        
+    def unDoPress(self, obj, it):
+
+        self._parent.tabbs.currentTab.unDo()
+        resetCloseMenuCount(None)
+
+    def reDoPress(self, obj, it):
+        self._parent.tabbs.currentTab.reDo()
+        resetCloseMenuCount(None)
+
+    def copyPress(self, obj, it):
+        self._parent.tabbs.currentTab.mainEn.selection_copy()
+        resetCloseMenuCount(None)
+
+    def itemClicked(self, obj, item):
+        if item.menu_get() is None and item.selected_get():
+            item.selected_set(False)
+        elif item.menu_get():
+            closeMenu(item, item.text_get())
+
+    def pastePress(self, obj, it):
+        self._parent.tabbs.currentTab.mainEn.selection_paste()
+        resetCloseMenuCount(None)
+
+    def cutPress(self, obj, it):
+        self._parent.tabbs.currentTab.mainEn.selection_cut()
+        resetCloseMenuCount(None)
+
+    def selectAllPress(self, obj, it):
+        self._parent.tabbs.currentTab.mainEn.select_all()
+        resetCloseMenuCount(None)
+
+    def optionsNew(self, obj, it):
+        self._parent.newInstance = not self._parent.newInstance
+        if self._parent.newInstance:
+            it.content.state = True
+        else:
+            it.content.state = False
+        resetCloseMenuCount(None)
+
+
+class ePadConf(object):
+    """
+    config file object
+    """
+
+    # Config version follows major:minor format
+    #  an increase in major version number indicates incompatible
+    #     config file format change
+    #  an increase in minor for compatible config file format change
+    __config_version_major = 0
+    __config_version_minor = 1
+    __config_version = '{0}.{1}'.format(__config_version_major,
+                                        __config_version_minor)
+    default = {"version": __config_version,
+               "word_wrap": ELM_WRAP_NONE,
+               "font": "Sans",
+               "font_size": ePadEntry.default_font_size,
+               "font_style": "Normal",
+               "font_weight": "Normal",
+               "font_width": "Normal",
+               "line_numbers": True,
+               "show_hidden": False,
+               "show_pos": True,
+               "max_undo": 100,
+               "case_sensitive": False,
+               "notify_root": True,
+               "new_instance": False,
+               "show_hidden": False,
+               "autosave": False}
+
+    def __init__(self):
+        # sys.platform returns 'linux2' in py2 and linux in py3
+        #   hence hackish way to ensure compatibility
+        if sys.platform[:5] != 'linux':
+            # only support for linux is implemented
+            raise RuntimeError("Unsupported OS: patches accepted.")
+
+        self.__file_name = "{0}.json".format(__appname__)
+        # we follow the XDG spec and support $XDG_CONFIG_HOME.
+        #   Also, traditionally, Linux apps store their data in
+        #    "~/.config/<appname>" instead of "~/.local/share/<appname>".
+        self.__dir_path = os.getenv('XDG_CONFIG_HOME',
+                                    os.path.expanduser('~/.config'))
+        self.__dir_path = os.path.join(self.__dir_path,
+                                       '{0}'.format(__appname__))
+        # Better way to do the below in py3 but ...
+        try:
+            os.makedirs(self.__dir_path)
+        except OSError:
+            if not os.path.isdir(self.__dir_path):
+                raise
+        self.path = os.path.join(self.__dir_path, self.__file_name)
+        # Initialize config data
+        self.get_config()
+
+    def get_config(self):
+        """
+        Initializes the config data
+        """
+        if os.path.exists(self.path):
+            try:
+                with open(self.path) as config_file:
+                    self.data = json.load(config_file)
+            except ValueError:
+                print_err('Config file corruption!')
+                self.default_config()
+        else:
+            self.default_config()
+
+        if not self.__validate():
+            print_err('Config file corruption!')
+            self.default_config()
+
+        version = self.data["version"]
+        if version.split('.')[0] != str(self.__config_version_major):
+            print_err('Config version mismatch')
+            self.default_config()
+
+    def __validate(self):
+        """
+        Return true on Valid config keys. No checks on config values
+        """
+        return set(ePadConf.default) == set(self.data)
+
+    def write(self):
+        with open(self.path, "w") as config_file:
+            json.dump(self.data, config_file, sort_keys=True, indent=4, separators=(',', ': '))
+
+    def default_config(self):
+        """
+        Create a config file
+        """
+        self.data = ePadConf.default
+        self.write()
+
+    def __getitem__(self, setting):
+        """
+        Returns a setting.
+        """
+        try:
+            value = self.data[setting]
+        except KeyError:
+            print_err('Invalid settings: "{0}"'.format(setting))
+            value = None
+        return value
+
+    def __setitem__(self, setting, value):
+        """
+        Update a setting. No validation on Value. Save file after update.
+        """
+        self.__safe_set(setting, value)
+        self.write()
+
+    def __safe_set(self, setting, value):
+        """
+        Update a setting. No validation on Value.
+        """
+        try:
+            if self.data[setting] == value:
+                return
+        except KeyError:
+            print_err('Invalid settings: "{0}"'.format(setting))
+            return
+        self.data[setting] = value
+
+    def update(self, settings=None, **kwargs):
+        """
+        Update Multiple settings. No validation on Value.
+            Saves file after update.
+        Usage:
+                config = ePadConf()
+                config.update(font='Mono',font_size=24)
+                config.update({'font': 'Mono', 'font_size': 24})
+        """
+        if settings is not None:
+            for setting, value in settings.items() if isinstance(settings, Mapping) else settings:
+                self.__safe_set(setting, value)
+        for setting, value in kwargs.items():
+            self.__safe_set(setting, value)
+        self.write()
+
+
+if __name__ == "__main__":
+
+    ourFiles = sys.argv
+
+    #Remove ePad.py from the arguments
+    del ourFiles[0]
+
+    # Start App
+    elementary.init()
+    GUI = Interface()
+    if ourFiles:
+        GUI.launch([ourFiles, None])
+    else:
+        GUI.launch([None, os.getcwd()])
+    elementary.run()
+    GUI.fileSelector.shutdown()
+    # Shutdown App
+    elementary.shutdown()
