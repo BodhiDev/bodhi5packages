@@ -1,0 +1,3 @@
+# Suppress a harmless lintian warnings
+epad: binary-without-manpage
+epad: desktop-entry-invalid-category

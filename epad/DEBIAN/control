@@ -1,9 +1,12 @@
 Package: epad
-Version: 0.9.6bodhi7
-Section: main
+Version: 0.9.6bodhi8
+Section: editors
 Priority: optional
 Architecture: all
-Depends: python-efl, python-elm-extensions
-Maintainer: Jeff Hoogland
-Description: ePad Text Editor
- An Elementary GUI for editing text files
+Depends: python, python-efl, python-elm-extensions (>=0.2.1bodhi2)
+Maintainer: Jeff Hoogland <JeffHoogland@Linux.com>
+Uploaders: Eric Brown, Doug Yanez
+Homepage: https://github.com/JeffHoogland/ePad
+#Vcs-Browser: https://github.com/Feneric/bodhi3packages
+Description: Elementary Text Editor
+ A simple Elementary GUI for editing text files

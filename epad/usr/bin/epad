@@ -22,7 +22,7 @@ __author__ = "Jeff Hoogland"
 __contributors__ = ["Jeff Hoogland", "Robert Wiley", "Kai Huuhko", "Scimmia22"]
 __copyright__ = "Copyright (C) 2015 Bodhi Linux"
 __appname__ = 'epad'
-__version__ = "0.9.5"
+__version__ = "0.9.6"
 __description__ = 'A simple text editor for the Enlightenment Desktop.'
 __github__ = 'http://jeffhoogland.github.io/ePad/'
 __source__ = 'Source code and bug reports: {0}'.format(__github__)
@@ -109,14 +109,14 @@ from efl.elementary.flip import Flip, ELM_FLIP_ROTATE_XZ_CENTER_AXIS, \
         ELM_FLIP_ROTATE_YZ_CENTER_AXIS, ELM_FLIP_INTERACTION_ROTATE
 from efl.elementary.table import Table
 from efl.elementary.check import Check
-from efl.elementary.naviframe import Naviframe
 
 # Imported here to stop class resolver complaining when an input event
 # applies to an internal layout object
 from efl.elementary.layout import Layout
-
+from efl.elementary.theme import Theme
 from elmextensions import AboutWindow, InstanceError
 from elmextensions import FileSelector
+from elmextensions import FontSelector
 from elmextensions import TabbedBox
 
 EXPAND_BOTH = EVAS_HINT_EXPAND, EVAS_HINT_EXPAND
@@ -128,7 +128,6 @@ ALIGN_CENTER = 0.5, 0.5
 ALIGN_RIGHT = 1.0, 0.5
 ALIGN_LEFT = 0.0, 0.5
 PADDING = 15, 0
-
 
 def print_err(*args, **kwargs):
     """
@@ -147,11 +146,11 @@ def errorPopup(window, errorMsg):
 
     # Add dialog-error Image to table
     icon = Icon(errorPopup, resizable=(True, True), 
-                 size_hint_weight=EXPAND_BOTH, size_hint_align=FILL_BOTH)
+                size_hint_weight=EXPAND_BOTH, size_hint_align=FILL_BOTH)
     icon.standard_set('dialog-warning')
     tb.pack(icon, 0, 0, 1, 1)
     icon.show()
-
+    
     # Add dialog text to table
     dialogLabel = Label(errorPopup, line_wrap=ELM_WRAP_WORD,
                         size_hint_weight=EXPAND_HORIZ,
@@ -204,8 +203,7 @@ class Interface(object):
                     size_hint_weight=EXPAND_BOTH,
                     size_hint_align=FILL_BOTH)
         icon.standard_set('accessories-text-editor')
-        icon.show()
-        self.mainWindow.icon_object_set(icon.object_get())
+        self.mainWindow.icon_object_set(icon)
 
         self.mainBox = Box(self.mainWindow,
                            size_hint_weight=EXPAND_BOTH,
@@ -276,6 +274,25 @@ class Interface(object):
         self.mainWindow.resize_object_add(self.flip)
         self.flip.show()
 
+        self.fontBox = FontSelector(self.mainWindow,
+                                    size_hint_weight=EXPAND_BOTH,
+                                    size_hint_align=FILL_BOTH)
+        # FIXME: these two and more should be handled by fs.set_font function
+        if self.config['use_theme']:
+            self.fontBox.use_theme = True
+        else:
+            self.fontBox.set_font(self.config['font'], self.config['font_style'], self.config['font_size'])
+        # FIXME: WTF should all be one function in fontselector obj
+        self.fontBox.default_font = self.config['font']
+        self.fontBox.default_font_style = self.config['font_style']
+        self.fontBox.default_font_size = self.config['font_size']
+        self.fontBox.override_theme_font_size = not self.config['use_theme_font_size']
+        self.fontBox.override_font_size =  ePadEntry.default_font_size
+
+        self.fontBox.callback_cancel_add(self.fontSelCancelPressed)
+        self.fontBox.callback_activated_add(self.fontSelected)
+        # We will show when needed
+
     def tabChanged(self, tabbs, widget):
         self.mainWindow.title = widget.data["button"].text
         self.mainTb.savebtn.disabled = not widget.dirty
@@ -283,6 +300,7 @@ class Interface(object):
     def addFile(self, filePath):
         entryBox = ePadEntry(self, self.tabbs)
         entryBox.show()
+
 
         if filePath != "Untitled":
             entryBox.openFile(filePath)
@@ -316,9 +334,20 @@ class Interface(object):
         self.fileLabel.text = "<b>Select a text file to open:</b>"
         if self.fileSelector.filepathEntry.text != self.lastDir:
             self.fileSelector.populateFiles(self.lastDir)
+
+        self.fileBox.show()
         self.flip.go(ELM_FLIP_ROTATE_YZ_CENTER_AXIS)
+        
 
     def fileSelCancelPressed(self, fs):
+        self.flip.go(ELM_FLIP_ROTATE_XZ_CENTER_AXIS)
+
+    def fontSelCancelPressed(self, fs):
+        self.fontBox.hide()
+        self.flip.part_content_unset("back")
+        self.flip.part_content_set("back", self.fileBox)
+        self.fileBox.show()
+
         self.flip.go(ELM_FLIP_ROTATE_XZ_CENTER_AXIS)
 
     def showFind(self, obj=None):
@@ -339,6 +368,7 @@ class Interface(object):
             self.findVisible = False
 
     def saveAs(self):
+
         self.fileSelector.setMode("Save")
         self.fileLabel.text = "<b>Save new file to where:</b>"
         if self.fileSelector.filepathEntry.text != self.lastDir:
@@ -375,6 +405,33 @@ class Interface(object):
                     self.tabbs.currentTab.mainEn.file_save()
                 self.tabbs.currentTab.setDirty(False)
                 self.tabbs.currentTab.isSaved = True
+
+    def fontSelected(self, fs):
+
+        self.fontBox.hide()
+        self.flip.part_content_unset("back")
+        self.flip.part_content_set("back", self.fileBox)
+        self.fileBox.show()
+        self.flip.go(ELM_FLIP_ROTATE_XZ_CENTER_AXIS)
+        if fs.use_theme:
+            self.config['use_theme'] = True
+            for tab in self.tabbs.tabs:
+                while  tab.mainEn.text_style_user_peek():
+                    tab.mainEn.text_style_user_pop();
+                while  tab.lineList.text_style_user_peek():
+                    tab.lineList.text_style_user_pop();
+                if not self.config['use_theme_font_size']:
+                    tab.mainEn.text_style_user_push("DEFAULT='font_size={0}'".format(ePadEntry.default_font_size))
+                    tab.lineList.text_style_user_push("DEFAULT='font_size={0}'".format(ePadEntry.default_font_size))
+
+        else:
+            for tab in self.tabbs.tabs:
+                tab.mainEn.text_style_user_push(fs.font_style_str)
+                tab.lineList.text_style_user_push(self.fontBox.get_text_style(self.fontBox.selected_font, None, self.fontBox.selected_font_size))
+            self.config['use_theme'] = False
+            self.config['font'] = fs.selected_font
+            self.config['font_style'] = fs.selected_font_style
+            self.config['font_size'] = fs.selected_font_size
 
     def fileSelected(self, fs, file_selected, onStartup=False):
         if not onStartup:
@@ -437,7 +494,6 @@ class Interface(object):
     def unsavedWorkPopup(self):
         if self.confirmPopup:
             return
-        elm_config = Configuration()
         self.confirmPopup = Popup(self.mainWindow,
                                   size_hint_weight=EXPAND_BOTH)
 
@@ -447,11 +503,13 @@ class Interface(object):
         tb.show()
 
         # Add dialog-error Image to table
+
         icon = Icon(self.confirmPopup, resizable=(True, True), 
                     size_hint_weight=EXPAND_BOTH, size_hint_align=FILL_BOTH)
         icon.standard_set('dialog-question')
         tb.pack(icon, 0, 0, 1, 1)
         icon.show()
+        
         # Add dialog text to table
         dialogLabel = Label(self.confirmPopup, line_wrap=ELM_WRAP_WORD,
                             size_hint_weight=EXPAND_HORIZ,
@@ -477,8 +535,9 @@ class Interface(object):
         self.confirmPopup.show()
 
     def eventsCb(self, obj, src, event_type, event):
-
-        if not event_type == EVAS_CALLBACK_KEY_UP:
+        # Ignore if FontSelector is open
+        if not event_type == EVAS_CALLBACK_KEY_UP or \
+           type(self.flip.part_content_get("back")) is FontSelector:
             return False
 
         if event.modifier_is_set("Control"):
@@ -556,14 +615,8 @@ class ePadEntry(Box):
         # py-efl doesn't work correctly with fonts that have spaces in names
         #   Oddly enough remove spaces and works
         #   versions up to 1.18 (inclusive)
-        font = self._config['font'].replace(' ', '')
-        font_style = self._config['font_style']
-        font_weight = self._config['font_weight']
-        font_width = self._config['font_width']
-        font_size = self._config['font_size']
 
-        self.font_style = "DEFAULT='font={0} font_style={1} font_weight={2} font_width={3} font_size={4}'".format(font, font_style, font_weight, font_width, str(font_size))
-
+        self.font_style = self._parent.fontBox.get_text_style(self._config['font'], self._config['font_style'], str(self._config['font_size']))
         self.entryBox = Box(self._canvas,
                            size_hint_weight=EXPAND_BOTH,
                            size_hint_align=FILL_BOTH)
@@ -577,10 +630,8 @@ class ePadEntry(Box):
                            size_hint_align=(0.0, 0.0),
                            line_wrap=ELM_WRAP_NONE)
 
-        self.lineList.text_style_user_push("DEFAULT='font_size={0}'".format(self._config['font_size']))
         self.currentLinesShown = 1
-        self.lineList.text_set("<i>1<br>")
-
+        self.lineList.text_set("1<br>")
         self.lineNums = self._parent.config['line_numbers']
 
         self.mainEn = Entry(self._canvas, scrollable=False,
@@ -593,7 +644,13 @@ class ePadEntry(Box):
         self.mainEn.callback_selection_cut_add(self.takeSnapShot)
         self.mainEn.callback_selection_paste_add(self.takeSnapShot)
 
-        self.mainEn.text_style_user_push(self.font_style)
+        # Set user Font styles
+        if self._config['use_theme'] and not self._config['use_theme_font_size']:
+            self.lineList.text_style_user_push("DEFAULT='font_size={0}'".format(ePadEntry.default_font_size))
+            self.mainEn.text_style_user_push("DEFAULT='font_size={0}'".format(ePadEntry.default_font_size))
+        elif not self._config['use_theme']:
+            self.lineList.text_style_user_push(self._parent.fontBox.get_text_style(self._config['font'], None, str(self._config['font_size'])))
+            self.mainEn.text_style_user_push(self.font_style)
 
         self.totalLines = 0
         self.mainEn.show()
@@ -742,7 +799,11 @@ class ePadEntry(Box):
         try:
             self.mainEn.file_set(filePath, ELM_TEXT_FORMAT_PLAIN_UTF8)
         except (RuntimeWarning, RuntimeError) as msg:
+            print("ePad: Loading Empty File")
             pass
+        self.mainEn.focus_set(True)
+        self.lineList.cursor_end_set()
+        self.checkLineNumbers()
         self.isNewFile = False
         #Reset undo/redo tracks when we open a file
         self.doArchive = []
@@ -806,6 +867,7 @@ class ePadEntry(Box):
         icon.standard_set('dialog-question')
         tb.pack(icon, 0, 0, 1, 1)
         icon.show()
+        
         # Add dialog text to table
         dialogLabel = Label(self.confirmPopup, line_wrap=ELM_WRAP_WORD,
                             size_hint_weight=EXPAND_HORIZ,
@@ -859,7 +921,7 @@ class ePadEntry(Box):
                     errorPopup(self._parent.mainWindow, errorMsg)
                 return
             tmp_text = self.mainEn.entry_get()
-                # FIXME: Why save twice?
+            # FIXME: Why save twice?
             newfile.write(tmp_text)
             newfile.close()
                 # Suppress error message when empty file is saved
@@ -1088,6 +1150,8 @@ class ePadToolbar(Toolbar):
         it.content.state = self._parent.config['line_numbers']
         self.menu_item_ln = it
 
+        it = menu.item_separator_add()
+        it = menu.item_add(None, "Font", "preferences-desktop-font", self.optionsFont)
 
         '''it = menu.item_add(None, "New Instance", None, self.optionsNew)
         chk = Check(canvas, disabled=True)
@@ -1110,6 +1174,7 @@ class ePadToolbar(Toolbar):
                         info=INFO)
         except InstanceError:
             pass
+
 
     #############################################################
     # Hack to toogle word wrap state with line numbers state   ##
@@ -1142,7 +1207,15 @@ class ePadToolbar(Toolbar):
             # for some reason have to reset font style
             while tab.mainEn.text_style_user_peek():
                 tab.mainEn.text_style_user_pop();
-            tab.mainEn.text_style_user_push(self._parent.tabbs.currentTab.font_style)
+            #FIXME SHOULD CHECK THEME
+            # Set user Font styles
+            if self._parent.config['use_theme'] and not self._parent.config['use_theme_font_size']:
+                tab.lineList.text_style_user_push("DEFAULT='font_size={0}'".format(ePadEntry.default_font_size))
+                tab.mainEn.text_style_user_push("DEFAULT='font_size={0}'".format(ePadEntry.default_font_size))
+            elif not self._parent.config['use_theme']:
+                tab.lineList.text_style_user_push(self._parent.fontBox.get_text_style(self._parent.config['font'], None, str(self._parent.config['font_size'])))
+                tab.mainEn.text_style_user_push(self._parent.tabbs.currentTab.font_style)
+            #tab.mainEn.text_style_user_push(self._parent.tabbs.currentTab.font_style)
         # Change line number state of all open tabs
         if linenum:
             for tab in self._parent.tabbs.tabs:
@@ -1161,9 +1234,8 @@ class ePadToolbar(Toolbar):
         self._parent.config['word_wrap'] = wordwrap
         self._parent.config['line_numbers'] = linenum
         resetCloseMenuCount(None)
-        
-    def unDoPress(self, obj, it):
 
+    def unDoPress(self, obj, it):
         self._parent.tabbs.currentTab.unDo()
         resetCloseMenuCount(None)
 
@@ -1201,6 +1273,21 @@ class ePadToolbar(Toolbar):
             it.content.state = False
         resetCloseMenuCount(None)
 
+    def optionsFont(self, obj, it):
+        self._parent.fileBox.hide()
+        self._parent.flip.part_content_unset("back")
+        self._parent.flip.part_content_set("back", self._parent.fontBox)
+        # FIXME: WTF should all be one function in fontselector obj
+        self._parent.fontBox.default_font = self._parent.config['font']
+        self._parent.fontBox.default_font_style = self._parent.config['font_style']
+        self._parent.fontBox.default_font_size = self._parent.config['font_size']
+        self._parent.fontBox.override_theme_font_size = not self._parent.config['use_theme_font_size']
+        ######
+        self._parent.fontBox.show()
+        if True:
+            self._parent.flip.go(ELM_FLIP_ROTATE_XZ_CENTER_AXIS)
+        resetCloseMenuCount(None)
+
 
 class ePadConf(object):
     """
@@ -1219,9 +1306,7 @@ class ePadConf(object):
                "word_wrap": ELM_WRAP_NONE,
                "font": "Sans",
                "font_size": ePadEntry.default_font_size,
-               "font_style": "Normal",
-               "font_weight": "Normal",
-               "font_width": "Normal",
+               "font_style": "Regular",
                "line_numbers": True,
                "show_hidden": False,
                "show_pos": True,
@@ -1230,7 +1315,9 @@ class ePadConf(object):
                "notify_root": True,
                "new_instance": False,
                "show_hidden": False,
-               "autosave": False}
+               "autosave": False,
+               "use_theme": True,
+               "use_theme_font_size": False}
 
     def __init__(self):
         # sys.platform returns 'linux2' in py2 and linux in py3
