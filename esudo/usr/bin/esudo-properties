@@ -1,0 +1,193 @@
+#!/usr/bin/python
+from efl import evas
+from efl import elementary
+from efl.elementary.window import Window, ELM_WIN_DIALOG_BASIC
+from efl.elementary.background import Background
+from efl.elementary.box import Box
+from efl.elementary.label import Label
+from efl.elementary.button import Button
+from efl.elementary.hoversel import Hoversel
+from efl.elementary.separator import Separator
+
+# TODO: formatting fixes
+
+"""eSudo Properties - Part of eSudo package
+
+            Written by :    AntCer           """
+
+def current_service():
+    try:
+        with open("/etc/esudo/service") as readonly:
+            text = readonly.readline().rstrip() #Be sure to truncate newline
+    except IOError as e:
+        if e.errno == errno.ENOENT:
+
+            print("Error: esudo improperly installed or configured, attemping to fix.\n")
+            text = ''
+        else:
+            print("Unknown error: perhaps reinstall esudo.")
+    return text
+
+def set_service(service):
+
+    with open("/etc/esudo/service", "w") as f:
+                f.write("{0}\n".format(service))
+
+class eSudo_Properties():
+    def __init__(self, SERVICES, service):
+        #~ self.SERVICES = SERVICES = {'su' : None, 'sudo' : None, 'passwd' : None, 'login' : None, 'cron' : None}
+        self.SERVICES = SERVICES
+        self.default = 'sudo'
+
+        if service:
+            self.change(None, service)
+            elementary.exit()
+        else:
+            win = self.win = Window("esudo", ELM_WIN_DIALOG_BASIC)
+            win.title = "eSudo Properties"
+            win.size_hint_weight = evas.EVAS_HINT_EXPAND, evas.EVAS_HINT_EXPAND
+            win.size_hint_align = evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL
+            win.resize(300, 150)
+            win.callback_delete_request_add(lambda o: elementary.exit())
+            win.show()
+            win.activate()
+
+            bg = Background(win)
+            bg.size_hint_weight = 1.0, 1.0
+            win.resize_object_add(bg)
+            bg.show()
+
+            bz = Box(win)
+            bz.size_hint_weight = evas.EVAS_HINT_EXPAND, evas.EVAS_HINT_EXPAND
+            bz.size_hint_align = evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL
+            win.resize_object_add(bz)
+            bz.show()
+
+            fil = Box(win)
+            fil.size_hint_weight = evas.EVAS_HINT_EXPAND, 0.2
+            bz.pack_end(fil)
+            fil.show()
+
+            lb = Label(win)
+            lb.scale = 1.2
+            lb.text = "<b>Authentification</>"
+            lb.size_hint_weight = evas.EVAS_HINT_EXPAND, 0.0
+            lb.size_hint_align = 0.0, evas.EVAS_HINT_FILL
+            bz.pack_end(lb)
+            lb.show()
+
+            hz = Box(win)
+            hz.horizontal = True
+            hz.size_hint_weight = evas.EVAS_HINT_EXPAND, 0.0
+            hz.size_hint_align = evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL
+            bz.pack_end(hz)
+            hz.show()
+
+            lb = Label(win)
+            lb.text = "Service: "
+            lb.size_hint_weight = evas.EVAS_HINT_EXPAND, evas.EVAS_HINT_EXPAND
+            lb.size_hint_align = 0.8, evas.EVAS_HINT_FILL
+            hz.pack_end(lb)
+            lb.show()
+
+            hs = Hoversel(win)
+            hs.hover_parent_set(win)
+            if not self.text:
+                set_service(self.default)
+            hs.text_set(self.text)
+            for service in SERVICES.keys():
+                SERVICES[service] = hs.item_add(service)
+            hs.callback_selected_add(self.change)
+            hs.size_hint_weight = evas.EVAS_HINT_EXPAND, evas.EVAS_HINT_EXPAND
+            hs.size_hint_align = -0.1, evas.EVAS_HINT_FILL
+            hz.pack_end(hs)
+            hs.show()
+
+            sep = Separator(win)
+            sep.horizontal = True
+            bz.pack_end(sep)
+            sep.show()
+
+            fil = Box(win)
+            fil.size_hint_weight = evas.EVAS_HINT_EXPAND, evas.EVAS_HINT_EXPAND
+            bz.pack_end(fil)
+            fil.show()
+
+            #~ lb = Label(win)
+            #~ lb.text = "<b>Screen Display</>"
+            #~ lb.size_hint_weight = evas.EVAS_HINT_EXPAND, 0.0
+            #~ lb.size_hint_align = 0.0, evas.EVAS_HINT_FILL
+            #~ bz.pack_end(lb)
+            #~ lb.show()
+
+            bt = Button(win)
+            bt.text = "Close"
+            bt.callback_clicked_add(lambda o: elementary.exit())
+            bt.size_hint_align = 1.0, evas.EVAS_HINT_FILL
+            bt.size_hint_weight = evas.EVAS_HINT_EXPAND, 0.0
+            bz.pack_end(bt)
+            bt.show()
+
+    @property
+    def text(self):
+        return current_service()
+
+    def change(self, hs, lstitem):
+        if hs:
+            for service in self.SERVICES.keys():
+                if self.SERVICES[service] == lstitem:
+                    hs.text_set(service)
+                    set_service(service)
+                    break
+        else:
+            service = lstitem
+            set_service(service)
+        print("Successfully changed authentification service to {0}".format(service))
+
+
+if __name__ == "__main__":
+    import argparse
+    import errno
+    import os
+
+    # Some variables to make life easier
+    SERVICES = {'sudo':   None,
+                'passwd': None,
+                'login':  None}
+    SERVICE_FLAG = 'list'
+    SERVICE_CHOICES = SERVICES.keys()
+    SERVICE_CHOICES.append(SERVICE_FLAG)
+
+    # Parse command line options
+    parser = argparse.ArgumentParser(description="Configures properties for eSudo, an Elementary frontend for 'sudo'. If no arguments are given and called as root, opens a configuration window for esudo.")
+    parser.add_argument("-s", "--service", const = SERVICE_FLAG, nargs='?',choices=SERVICE_CHOICES,
+                        dest='service',
+                        help = "If no service or list is specified, returns a list of services. If a valid argument other than 'list' is given and esudo is called as root, changes authentication service ")
+    args = parser.parse_args()
+
+    # Get Current service and attempt to fix it if broken
+    text = current_service()
+
+    if not text or text not in SERVICES.keys():
+        if os.geteuid() != 0:
+            print text, SERVICES.keys(), len(text)
+            print("Error: please run with sudo.")
+            exit(1)
+        print text
+        text = 'sudo'
+        set_service(text)
+
+    # if service option is 'list' list available servies
+    if args.service == SERVICE_FLAG:
+        for service in sorted(SERVICES.keys()):
+            print(service)
+        print("\nCurrent esudo authentification service selected: {0}".format(text))
+    # otherwise start GUI
+    else:
+        if os.geteuid() != 0:
+            print("Error: please run with sudo.")
+            exit(1)
+        elementary.init()
+        eSudo_Properties(SERVICES, args.service)
+        elementary.run()
+        elementary.shutdown()

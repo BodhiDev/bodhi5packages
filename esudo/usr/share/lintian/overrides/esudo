@@ -1,0 +1,4 @@
+# Suppress a harmless lintian warnings
+esudo: binary-without-manpage
+esudo: desktop-command-not-in-package
+esudo: maintainer-script-should-not-use-recursive-chown-or-chmod

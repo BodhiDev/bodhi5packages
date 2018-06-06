@@ -1,0 +1,12 @@
+Package: esudo
+Version: 1.39bodhi8
+Section: admin
+Priority: optional
+Architecture: all
+Depends: sudo, python, python-efl, python-pam
+Maintainer: Jeff Hoogland <jeffhoogland@linux.com>
+Homepage: https://github.com/JeffHoogland/esudo
+Description: Elementary graphical frontend for sudo elementary
+ This package provides an elementary front-end for sudo (esudo),
+ allowing users to give a password and run graphical commands as root
+ without needing to invoke su or sudo in a terminal emulator.
