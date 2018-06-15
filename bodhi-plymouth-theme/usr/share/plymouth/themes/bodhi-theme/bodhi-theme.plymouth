@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Simply Dark
+Description=Bodhi 5.0 Default theme
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/bodhi-theme
+ScriptFile=/usr/share/plymouth/themes/bodhi-theme/theme.script

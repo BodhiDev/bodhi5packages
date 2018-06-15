@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 # This script can be called in the following ways:
 #
 # After the package was installed:
@@ -15,12 +15,13 @@
 # If prerm fails during replacement due to conflict:
 #       <postinst> abort-remove in-favour <new-package> <version>
 
+set -e
 
 case "$1" in
     configure)
 	update-alternatives \
-		--install /lib/plymouth/themes/default.plymouth default.plymouth \
-		/lib/plymouth/themes/bodhi-theme/bodhi-theme.plymouth 10
+		--install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+		/usr/share/plymouth/themes/bodhi-theme/bodhi-theme.plymouth 10
 
 	if which update-initramfs >/dev/null 2>&1
 	then
@@ -37,5 +38,5 @@ case "$1" in
 	;;
 esac
 
-#DEBHELPER#
+
 exit 0
