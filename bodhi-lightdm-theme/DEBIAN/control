@@ -1,5 +1,5 @@
 Package: bodhi-lightdm-theme
-Version: 1.11
+Version: 1.12
 Architecture: all
 Maintainer: Jeff Hoogland <jeffhoogland@linux.com>
 Depends: ttf-ubuntu-font-family, lightdm-gtk-greeter, bodhi-theme-moksha-arc-dark, faenza-icon-theme
