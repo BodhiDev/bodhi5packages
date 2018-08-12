@@ -1,9 +1,9 @@
 Package: bodhi-apppack
-Version: 0.1
+Version: 0.2
 Section: unknown
 Priority: optional
 Architecture: all
-Depends: xfburn, bodhi-vlc, hexchat, ephoto, geany, evince, pinta, qalculate-gtk, libreoffice, openshot, chromium-browser, bodhi-printing, bodhi-filesharing, transmission-gtk, pidgin, synaptic, steam, playonlinux
+Depends: xfburn, vlc, ephoto, geany, evince, pinta, qalculate-gtk, libreoffice, openshot, chromium-browser, bodhi-printing, bodhi-filesharing, transmission-gtk, pidgin, synaptic, steam, playonlinux
 Maintainer: Jeff hoogland
 Description: A Bodhi Applications Bundle
  Application suite for the Bodhi Linux Desktop
