@@ -1,6 +1,6 @@
 Package: exterminator
 Version: 0.2.4bodhi5
-Section: misc
+Section: x11
 Priority: optional
 Architecture: all
 Depends: python, python-efl, python-elm-extensions, python-psutil
@@ -8,4 +8,8 @@ Maintainer: Jeff Hoogland <JeffHoogland@Linux.com>
 Homepage: https://github.com/JeffHoogland/Exterminator
 #Vcs-Browser: https://github.com/Feneric/bodhi3packages
 Description: EFL Task Manager
- An Elementary GUI for killing tasks written in python
+ Exterminator is a GUI application for Bodhi Linux.
+ .
+ A lightweight and desktop-independent task manager based on
+ the EFL toolkit and written in python.  It allows monitoring 
+ and controlling of running processes. 
