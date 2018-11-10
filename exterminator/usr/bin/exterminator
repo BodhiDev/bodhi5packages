@@ -1,0 +1,414 @@
+#!/usr/bin/python
+# encoding: utf-8
+
+
+__author__ = "Jeff Hoogland"
+__contributors__ = ["Jeff Hoogland", "Scimmia"]
+__copyright__ = "Copyright (C) 2014 Bodhi Linux"
+__version__ = "0.2.4"
+__description__ = 'A simple task manager for the Enlightenment Desktop.'
+__github__ = 'http://jeffhoogland.github.io/Exterminator/'
+__source__ = 'Source code and bug reports: {0}'.format(__github__)
+PY_EFL = "https://git.enlightenment.org/bindings/python/python-efl.git/"
+
+AUTHORS = """
+<br>
+<align=center>
+<hilight>Jeff Hoogland (Jef91)</hilight><br>
+<link><a href=http://www.jeffhoogland.com>Contact</a></link><br><br>
+Scimmia<br><br>
+</align>
+"""
+
+LICENSE = """<br>
+<align=center>
+<hilight>
+Copyright (c) 2015, Jeff Hoogland<br>
+All rights reserved.<br>
+</hilight>
+<br>
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:<br>
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.<br>
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.<br>
+    * Neither the name of the <organization> nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.<br>
+<br>
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</align>
+<br>
+"""
+
+INFO = """
+<align=center>
+<hilight>Exterminator</hilight> is a simple task manager written in Elementary and Python.<br>
+<br>
+<br>
+</align>
+"""
+
+import efl.elementary as elm
+
+from efl.elementary.box import Box
+from efl.elementary.button import Button
+from efl.elementary.check import Check
+from efl.elementary.label import Label
+from efl.elementary.icon import Icon
+from efl.elementary.frame import Frame
+from efl.elementary.progressbar import Progressbar
+from efl.elementary.separator import Separator
+from efl.elementary.window import StandardWindow
+from efl.elementary.flip import Flip, ELM_FLIP_CUBE_DOWN
+from efl.evas import EVAS_HINT_EXPAND, EVAS_HINT_FILL
+from efl import ecore
+import psutil
+import os
+import getpass
+
+import threading
+try:
+    import Queue
+except:
+    import queue as Queue
+
+from elmextensions import AboutWindow, InstanceError
+from elmextensions import SortedList
+
+EXPAND_BOTH = EVAS_HINT_EXPAND, EVAS_HINT_EXPAND
+EXPAND_HORIZ = EVAS_HINT_EXPAND, 0.0
+FILL_BOTH = EVAS_HINT_FILL, EVAS_HINT_FILL
+FILL_HORIZ = EVAS_HINT_FILL, 0.5
+
+class ThreadedFunction(object):
+    def __init__(self, doneCB=None):
+        # private stuff
+        self._commandQueue = Queue.Queue()
+        self._replyQueue = Queue.Queue()
+        self._doneCB = doneCB
+
+        # add a timer to check the data returned by the worker thread
+        self._timer = ecore.Timer(0.1, self.checkReplyQueue)
+
+        # start the working thread
+        threading.Thread(target=self.threadFunc).start()
+
+    def run(self, action):
+        self._commandQueue.put(action)
+
+    def shutdown(self):
+        self._timer.delete()
+        self._commandQueue.put('QUIT')
+
+    def checkReplyQueue(self):
+        if not self._replyQueue.empty():
+            result = self._replyQueue.get()
+            if callable(self._doneCB):
+                self._doneCB()
+        return True
+
+    # all the member below this point run in the thread
+    def threadFunc(self):
+        while True:
+            # wait here until an item in the queue is present
+            func = self._commandQueue.get()
+            if callable(func):
+                func()
+            elif func == 'QUIT':
+                break
+            self._replyQueue.put("done")
+
+class MainWindow(StandardWindow):
+    def __init__(self):
+        StandardWindow.__init__(self, "exterminator", "Exterminator", size=(600, 400))
+        self.callback_delete_request_add(self.quitAll)
+        
+        icon = Icon(self)
+        icon.size_hint_weight_set(EVAS_HINT_EXPAND, EVAS_HINT_EXPAND)
+        icon.size_hint_align_set(EVAS_HINT_FILL, EVAS_HINT_FILL)
+        icon.standard_set('utilities-system-monitor')
+        icon.show()
+        self.icon_object_set(icon.object_get())
+        
+        self.taskManager = TaskManager(self)
+        self.taskManager.show()
+        
+        self.resize_object_add(self.taskManager)
+    
+    def quitAll(self, obj):
+        self.taskManager.threadedFunction.shutdown()
+        elm.exit()
+
+class TaskManager(Box):
+    def __init__(self, parent):
+        Box.__init__(self, parent)
+        self.win = win = parent
+        self.appstokill = []
+        self.process = {}
+        
+        self.threadedFunction = ThreadedFunction(self.refreshGUI)
+        self.gettingData = False
+        
+        self.size_hint_weight = EXPAND_BOTH
+        self.size_hint_align = FILL_BOTH
+        
+        self.loop = ecore.timer_add(0.1, self.update)
+        
+        cpu = psutil.cpu_percent(interval=1) / 100.0
+        ram = psutil.virtual_memory()
+
+        #Totals in MB
+        ramtota = float(ram.total) / (1048576)
+        ramused = ramtota * ram.percent * .01
+
+        ramframe = self.ramframe = Frame(self.win)
+        ramframe.show()
+        ramframe.size_hint_weight = (EVAS_HINT_EXPAND, 0.0)
+        ramframe.size_hint_align = FILL_BOTH
+        ramframe.text_set("Memory Usage:")
+
+        self.rambar = rambar = Progressbar(self.win, span_size=250, size_hint_weight=(EVAS_HINT_EXPAND, 0.0),
+        size_hint_align=FILL_HORIZ)
+        rambar.show()
+        rambar.unit_format = "%.0f MB out of %.0f MB"%(ramused, ramtota)
+        rambar.value_set(ramused/ramtota)
+        ramframe.content = rambar
+
+        cpuframe = self.cpuframe = Frame(self.win)
+        cpuframe.show()
+        cpuframe.text_set("CPU Usage:")
+        cpuframe.size_hint_weight = (EVAS_HINT_EXPAND, 0.0)
+        cpuframe.size_hint_align = FILL_BOTH
+
+        self.cpubar = cpubar = Progressbar(self.win, span_size=250, size_hint_weight=(EVAS_HINT_EXPAND, 0.0),
+        size_hint_align=FILL_HORIZ)
+        cpubar.show()
+        cpubar.value_set(cpu)
+        cpuframe.content = cpubar
+        
+        titles = [("PID", True), ("Process Name", True), ("CPU", True), ("Memory", True), ("User", True)]
+
+        self.slist = slist = SortedList(self, titles=titles,   size_hint_weight=EXPAND_BOTH,
+            size_hint_align=FILL_BOTH, homogeneous=True)
+
+        slist.show()
+
+        kills = Button(self.win, size_hint_weight=EXPAND_HORIZ,
+            size_hint_align=FILL_HORIZ)
+        kills.text = "Kill Selected Processes"
+        kills.callback_clicked_add(self.kill_selected)
+        kills.show()
+        
+        icon = Icon(self.win, thumb='True')
+        icon.standard_set('help-about')
+        
+        about = Button(self.win, size_hint_align=(1.0, 0.0))
+        about.content = icon
+        about.callback_clicked_add(self.showAbout)
+        about.show()
+
+        tbox = Box(win)
+        tbox.horizontal = True
+        tbox.pack_end(cpuframe)
+        tbox.pack_end(ramframe)
+        tbox.show()
+
+        bbox = Box(win, size_hint_weight=EXPAND_HORIZ,
+            size_hint_align=FILL_HORIZ)
+        bbox.horizontal = True
+        bbox.pack_end(kills)
+        bbox.pack_end(about)
+        bbox.show()
+        
+        wheel = Progressbar(self, pulse_mode=True,
+                            size_hint_weight=EXPAND_BOTH,
+                            size_hint_align=FILL_HORIZ)
+        wheel.pulse(True)
+        wheel.show()
+        
+        self.flip = Flip(self, size_hint_weight=EXPAND_BOTH,
+                         size_hint_align=FILL_BOTH)
+        self.flip.part_content_set("back", self.slist)
+        self.flip.part_content_set("front", wheel)
+        self.flip.show()
+
+        self.pack_end(tbox)
+        self.pack_end(self.flip)
+        self.pack_end(bbox)
+        
+        self.pidstoupdate = {}
+        self.pidstoremove = []
+        
+        try:
+            #psutil 2.x method
+            self.cpuCount = psutil.cpu_count()
+        except:
+            #psutil 1.x method
+            self.cpuCount = psutil.NUM_CPUS
+
+    def update(self, stuff=None, otherstuff=None):
+        if not self.gettingData:
+            self.threadedFunction.run(self.getPsUtilData)
+        
+        return 1
+        
+    def refreshGUI(self):
+        for p in self.pidstoupdate:
+            if p in self.process:
+                self.process[p].update(self.pidstoupdate[p])
+            else:
+                cess = Process(self, self.pidstoupdate[p])
+                self.process[p] = cess
+                self.slist.row_pack(cess, sort=False)
+        
+        for p in self.pidstoremove:
+            if p in self.process:
+                self.slist.row_unpack(self.process[p], True)
+                self.process.pop(p, None)
+        
+        self.pidstoupdate.clear()
+        del self.pidstoremove[:]
+        
+        self.slist.update()
+        
+        self.cpubar.value_set(self.cpu)
+        self.rambar.value_set(self.ramused/self.ramtota)
+        self.rambar.unit_format = "%.0f MB out of %.0f MB"%(self.ramused, self.ramtota)
+        
+        if self.flip.front_visible:
+            self.flip.go(ELM_FLIP_CUBE_DOWN)
+
+    def run_command(self, command):
+        cmd = ecore.Exe(command)
+        cmd.on_del_event_add(self.update)
+
+    def kill_selected( self, bt ):
+        for pid in self.appstokill:
+            self.kill_process(pid)
+
+    def check_sel( self, ck ):
+        if ck.state_get():
+            self.appstokill.append(ck.text)
+        else:
+            self.appstokill.remove(ck.text)
+        #print self.appstokill
+
+    def kill_process( self, pid ):
+        self.run_command("kill -9 %s"%pid)
+    
+    def getPsUtilData( self, cmd=False, arg=False ):
+        #print "cmd %s , arg %s"%(cmd, arg)
+        self.gettingData = True
+        tmp = list(psutil.process_iter())
+        currentpids = []
+        for p in tmp:
+            try:
+                #in psutil 1.2.1 we can reference these directly
+                username = p.username
+                name = p.name
+                if callable(name):
+                    #in psutil 2.0 we need to call them
+                    username = p.username()
+                    name = p.name()
+                if username == getpass.getuser():
+                    currentpids.append(p.pid)
+                    self.pidstoupdate[p.pid] = { "pid":p.pid, 
+                            "name": name, 
+                            "username": username, 
+                            "cpu": p.cpu_percent(interval=0) / self.cpuCount, 
+                            "mem": float(p.memory_info().rss)/1048576}
+            except:
+                pass
+        for pid in self.process:
+            if pid not in currentpids:
+                self.pidstoremove.append(pid)
+        
+        self.cpu = psutil.cpu_percent(interval=1) / 100.0
+        ram = psutil.virtual_memory()
+
+        #Totals in MB
+        self.ramtota = float(ram.total) / (1048576)
+        self.ramused = self.ramtota * ram.percent * .01
+        self.gettingData = False
+            
+    def showAbout(self, obj=False):
+        try:
+            AboutWindow(self, title="Exterminator", standardicon="utilities-system-monitor", \
+                        version=__version__, authors=AUTHORS, \
+                        licen=LICENSE, webaddress=__github__, \
+                        info=INFO)
+        except InstanceError:
+            pass
+
+class Process(list):
+    def __init__(self, parent, data):
+        self.win = parent.win
+        self.dt = data
+
+        pd = str(data["pid"])
+
+        pid = Check(self.win,   size_hint_weight=EXPAND_BOTH,
+            size_hint_align=FILL_BOTH)
+        pid.text = pd
+        pid.data["sort_data"] = data["pid"]
+        pid.callback_changed_add(parent.check_sel)
+        pid.show()
+
+        pname = Label(self.win,   size_hint_weight=EXPAND_BOTH,
+            size_hint_align=FILL_BOTH)
+        #pname.text = data["name"][0:25]
+        pname.text = data["name"]
+        pname.show()
+
+        user = Label(self.win,   size_hint_weight=EXPAND_BOTH,
+            size_hint_align=FILL_BOTH)
+        user.text = data["username"]
+        user.show()
+
+        self.cpu = Label(self.win,   size_hint_weight=EXPAND_BOTH,
+            size_hint_align=FILL_BOTH)
+        cpu = data["cpu"]
+        self.cpu.text = "%.0f %%"%cpu
+        self.cpu.data["sort_data"] = cpu
+        self.cpu.show()
+
+        self.mem = Label(self.win,   size_hint_weight=EXPAND_BOTH,
+            size_hint_align=FILL_BOTH)
+        mem = data["mem"]
+        self.mem.text = "%.1f MB"%mem
+        self.mem.data["sort_data"] = mem
+        self.mem.show()
+
+        self.append(pid)
+        self.append(pname)
+        self.append(self.cpu)
+        self.append(self.mem)
+        self.append(user)
+
+    def update(self, data):
+        self.dt = data
+        cpu = data["cpu"]
+        self.cpu.text = "%.0f %%"%cpu
+        self.cpu.data["sort_data"] = cpu
+        mem = data["mem"]
+        self.mem.text = "%.1f MB"%mem
+        self.mem.data["sort_data"] = mem
+
+if __name__ == "__main__":
+    elm.init()
+    GUI = MainWindow()
+    GUI.show()
+    elm.run()
+    elm.shutdown()
