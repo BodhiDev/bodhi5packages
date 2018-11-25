@@ -1,0 +1,15 @@
+Source: terminology
+Section: x11
+Priority: optional
+Maintainer: Robert Wiley <ylee@bodhilinux.com>
+Build-Depends: debhelper (>= 9), libfreetype6-dev, libefl-dev, libexpat1-dev, meson
+Standards-Version: 4.1.4
+Homepage: http://enlightenment.org
+#Vcs-Git: git://git.debian.org/collab-maint/terminology.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/terminology.git;a=summary
+
+Package: terminology
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Enlightenment Terminal emulator
+ An EFL terminal emulator with some extra bells and whistles.
