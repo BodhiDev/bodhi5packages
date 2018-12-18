@@ -1,8 +1,23 @@
+terminology (1.3.1-0bionic0) bionic; urgency=high
+
+  * Release v1.3.1
+  * Add manpages on Terminology's helpers
+  * Do not popup unknown media types (security issue)
+  * Right-click on hyperlinks no longer crashes
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Sun, 16 Dec 2018 02:47:23 +0400
+
+
 terminology (1.3.0-0bionic0) bionic; urgency=low
 
-  * New upstream release
+  * Release v1.3.0
+  * Hyperlink escape code support
+  * Optimize escape code parsing by improving cell copies
+  * Fix issues about settings panel
+  * Do not pass input when tab selector is up
+  * Escape code fixes
 
- -- Arthur (Niko2040) Nikitenko <niko2040@bynets.ru>  Sun, 25 Nov 2018 12:00:07 +0400
+ -- Robert Wiley <ylee@bodhilinux.com>  Sun, 25 Nov 2018 12:00:07 +0400
 
 
 terminology (1.2.1-0bionic0) bionic; urgency=low
