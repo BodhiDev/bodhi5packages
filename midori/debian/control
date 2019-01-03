@@ -1,0 +1,58 @@
+Source: midori
+Section: web
+Priority: optional
+Maintainer: Dominik George <natureshadow@debian.org>
+Uploaders: Sergio Durigan Junior <sergiodj@sergiodj.net>
+Build-Depends:
+ cmake,
+ debhelper (>= 11),
+ intltool,
+ libgcr-3-dev (>= 2.32),
+ libjavascriptcoregtk-4.0-dev,
+ libnotify-dev,
+ libpeas-dev,
+ librsvg2-bin,
+ libsoup-gnome2.4-dev (>= 2.27.90),
+ libsqlite3-dev (>= 3.6.19),
+ libunique-dev (>= 1.0.6),
+ libwebkit2gtk-4.0-dev,
+ libxml2-dev (>= 2.6),
+ libxml2-utils,
+ libxss-dev,
+ libzeitgeist-2.0-dev,
+ lsb-release,
+ valac,
+ xauth,
+ xfonts-base,
+ xvfb,
+Standards-Version: 4.2.1
+Homepage: https://www.midori-browser.org/
+Vcs-Git: https://salsa.debian.org/debian/midori.git
+Vcs-Browser: https://salsa.debian.org/debian/midori
+
+Package: midori
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Recommends:
+ gnome-icon-theme,
+ gnome-keyring,
+Provides:
+ www-browser,
+Conflicts:
+ libsoup2.4-1 (<< 2.25.2),
+Description: fast, lightweight graphical web browser
+ Midori is a lightweight web browser based on WebKit.
+ .
+ Its features include:
+ .
+  * Full integration with GTK+2.
+  * Fast rendering with WebKit.
+  * Tabs, windows and session management.
+  * Flexibly configurable Web Search.
+  * User scripts and user styles support.
+  * Straightforward bookmark management.
+  * Customizable and extensible interface.
+  * Support for extensions (written in C).
+  * Custom context menu actions.
