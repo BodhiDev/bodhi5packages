@@ -1,3 +1,12 @@
+terminology (1.4.1-0bionic0) bionic; urgency=high
+
+  * Release v1.4.1
+  * Decode pasted string as UTF-8, fixing some characters being skipped
+  * Fix theme to ensure default size is 80x24
+  * Fix focus disappearing after going to Settings and back
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Sun, 26 May 2019 05:53:54 +0400
+
 terminology (1.4.0-0bionic0) bionic; urgency=high
 
   * Release v1.4.0
