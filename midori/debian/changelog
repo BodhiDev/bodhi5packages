@@ -1,3 +1,22 @@
+midori (8.1-1) unstable; urgency=medium
+
+  * New upstream version.
+    + Javascript changes confirmation and prompts use dialogs again
+    + Bug fixes in Urlbar as well as Adblock filtering
+    + Headerbar enabled by default only under Budgie, GNOME and Patreon
+    + Support for `--inactivity-reset`, `-e Fullscreen` and `-e ZoomIn`
+    + Support for cross-browser web extensions (not exposed in the GUI yet)
+    + Builds: Glib lowered to 2.46.2, Json-Glib and libarchive are now required
+    + Link to the bug tracker from the About dialog
+    + Correct handling of external URIs such as apt:
+    + Fixed installation path for appdata and plugins
+    + Support for building Midori on Android with Gradle
+    + Better internal distinction of errors from visiting pages
+    + Zoom indicators in the page menu and statusbar features exten
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Sat, 15 Jun 2019 10:36:46 +0400
+
+
 midori (7.1-1) unstable; urgency=medium
 
   * New upstream version.
@@ -7,7 +26,7 @@ midori (7.1-1) unstable; urgency=medium
     + Carry error state and tls certificate in tab
     + Change zoom level in statusbar 
 
- -- Robert Wiley <ylee@bodhilinux.com>  Thu, 03 Jan 2019 06:12:24 +0100
+ -- Robert Wiley <ylee@bodhilinux.com>  Thu, 03 Jan 2019 06:12:24 +0400
 
 midori (7.0-1) unstable; urgency=medium
 
