@@ -1,0 +1,17 @@
+efl (1.22.2-0bionic0) bionic; urgency=low
+
+  * Upstream release
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Fri, 21 Jun 2019 09:12:34 +0400
+
+efl (1.21.0-0bionic0) bionic; urgency=low
+
+  * Upstream release
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Tue, 01 Jan 2019 16:37:42 +0400
+
+efl (1.20.7-0bionic0) bionic; urgency=low
+
+  * Initial build for Bionic flavor
+
+ -- Arthur (Niko2040) Nikitenko <niko2040@bynets.ru>  Sun, 15 Apr 2018 21:33:56 +0300
