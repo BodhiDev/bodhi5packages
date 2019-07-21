@@ -1,3 +1,18 @@
+terminology (1.5.0-0bionic0) bionic; urgency=high
+
+  * Release v1.4.0
+  * Handle emoji has double-width character, introduced in Unicode 9.0.
+  * Add option Treat Emojis as double-width characters, on by default.
+  * Hide mouse cursor when idle, with parameter to set idle time
+  * Add papercolor theme
+  * Themes can now set background color through a color-class
+  * Handle OSC-11 escape-code to report background color
+  * Update Italian and French translations
+  * Fix initial window size hints
+  * Fix focus issues
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Sun, 21 Jul 2019 10:25:17 +0400
+
 terminology (1.4.1-0bionic0) bionic; urgency=high
 
   * Release v1.4.1
