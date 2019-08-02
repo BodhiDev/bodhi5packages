@@ -1,3 +1,21 @@
+midori (9.1-1) unstable; urgency=medium
+
+  * New upstream version.
+   + Use OpenGraph images for Speed Dial shortcuts
+   + Better support for Javascript popups
+   + (Re)store pinned tabs in the session
+   + Re-introduce the Trust (certificate) button
+   + Avoid key input recursion causing high CPU
+   + Close Tab/ Other context menu items
+   + Paste and Proceed option in the urlbar
+   +  Better urlbar suggestion escaping
+   +  Web extensions: Support for a sidebar action (experimental)
+   + Merge app and page menu into one
+   + Better focus handling of re-opened and background tabs
+   + Show volume icon for tabs playing music
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Fri, 02 Aug 2019 8:32:11 +0400
+
 midori (8.1-1) unstable; urgency=medium
 
   * New upstream version.
