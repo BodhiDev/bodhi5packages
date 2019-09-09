@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+FILE="/usr/local/share/xsessions/enlightenment.desktop"
+
+if [ -f $FILE ];
+then
+   cp $FILE /usr/share/xsessions/e23.desktop
+else
+   echo "File $FILE does not exist."
+fi

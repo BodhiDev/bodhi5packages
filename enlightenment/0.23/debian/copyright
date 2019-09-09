@@ -1,0 +1,191 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Enlightenment
+Source: http://enlightenment.org
+
+Files: *
+Copyright: 2000-2019 Carsten Haitzler and various contributors (see AUTHORS)
+	   2000-2017 Lisovszki Sándor <lisovszki@gmail.com>
+	   2000-2017 Yaron <sh.yaron@gmail.com>
+	   2005 Martin Geisler <mgeisler@mgeisler.net>
+	   2005 Niels Abspoel <niels.abspoel@wanadoo.nl>
+	   2005 aboe <niels.abspoel@wanadoo.nl>
+	   2007 Michael Kim <lavnrose@gmail.com>
+	   2009 Miro Glavic <glavicmiro@gmail.com>
+	   2009, 2012, Rosetta Contributors and Canonical Ltd
+	   2010 Vaidotas <joshas@freemail.lt>
+	   2011 Heimen Stoffels <vistausss@gmail.com>
+	   2011-2012 Daniel Juyung Seo <seojuyung2@gmail.com>
+	   2011-2012. Jihoon Kim <jihoon48.kim@samsung.com>
+	   2012 Seong-ho Cho <darkcircle.0426@gmail.com>
+	   2012, 2013, 2015. Саша Петровић <salepetronije@gmail.com>
+	   2012-2013 Aníbal Garrido <khany@member.trisquel.info>
+	   2013 pivotz1 <pivotz1@gmail.com>
+	   2017 scootergrisen <scootergrisen@gmail.com>
+License: BSD-2-clause
+
+Files: po/ar.po
+       po/bg.po
+       po/ca.po
+       po/cs.po
+       po/de.po
+       po/el.po
+       po/eo.po
+       po/es.po
+       po/fi.po
+       po/fr_CH.po
+       po/fr.po
+       po/it.po
+       po/ja.po
+       po/nb.po
+       po/pl.po
+       po/pt_BR.po
+       po/pt.po
+       po/ru.po
+       po/sk.po
+       po/sv.po
+       po/tr.po
+       po/uk.po
+       po/zh_CN.po
+       po/zh_TW.po
+Copyright: none
+License: public-domain
+ Files include this notice:
+ .
+ This file is put in the public domain.
+
+Files: src/bin/e_comp_wl_dmabuf.c
+       src/bin/e_comp_wl_dmabuf.h
+Copyright: 2014-2015, Collabora, Ltd.
+License: NTP~disclaimer
+
+Files: src/bin/e_comp_wl_data.c
+       src/bin/e_comp_wl_data.h
+Copyright: 2011, Kristian Høgsberg
+License: MIT/Expat
+
+Files: src/bin/e_alert_main.c
+Copyright: 2011, Intel Corporation
+License: MIT/Expat
+
+Files: src/modules/wl_weekeyboard/wkb-log.c
+       src/modules/wl_weekeyboard/wkb-log.h
+Copyright: 2013, Intel Corporation
+License: Apache-2.0
+
+Files: src/protocol/xdg-foreign-unstable-v1.xml
+Copyright: 2015-2016, Red Hat Inc.
+License: MIT/Expat
+
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+    1. Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+    2. Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+ OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2 of the License.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this package; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: NTP~disclaimer
+ Permission to use, copy, modify, distribute, and sell this
+ software and its documentation for any purpose is hereby granted
+ without fee, provided that the above copyright notice appear in
+ all copies and that both that copyright notice and this permission
+ notice appear in supporting documentation, and that the name of
+ the copyright holders not be used in advertising or publicity
+ pertaining to distribution of the software without specific,
+ written prior permission.  The copyright holders make no
+ representations about the suitability of this software for any
+ purpose.  It is provided "as is" without express or implied
+ warranty.
+ .
+ THE COPYRIGHT HOLDERS DISCLAIM ALL WARRANTIES WITH REGARD TO THIS
+ SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS, IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+ AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+ ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+ THIS SOFTWARE.
+
+License: MIT/Expat
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: Apache-2.0
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ .
+     http://www.apache.org/licenses/LICENSE-2.0
+ .
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ .
+ On Debian systems, the complete text of the Apache 2.0
+ License can be found in `/usr/share/common-licenses/Apache-2.0'.
+
+Files: debian/*
+Copyright: 2019 Bodhi Linux <moksha@bodhilinux.com>
+License: GPL-3.0+
+ This program is free software: you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free Software
+ Foundation, either version 3 of the License, or (at your option) any later
+ version.
+ .
+ This package is distributed in the hope that it will be useful, but WITHOUT ANY
+ WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+ PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along with
+ this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General Public License version
+ 3 can be found in "/usr/share/common-licenses/GPL-3".

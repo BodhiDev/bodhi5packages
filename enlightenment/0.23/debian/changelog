@@ -1,0 +1,5 @@
+e23 (0.23.0-0bionic0) bionic; urgency=low
+
+  * First packaging for Bodhi linux 5.x
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Mon, 09 Sep 2019 03:51:35 +0400

@@ -1,0 +1,42 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_LDFLAGS_MAINT_APPEND := -Wl,--as-needed
+export DEB_HOST_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+export DEB_TARGET_MULTIARCH ?= $(shell dpkg-architecture -qDEB_TARGET_MULTIARCH)
+export MESON_BUILD_DIR=obj-$(DEB_HOST_GNU_TYPE)
+
+
+%:
+	dh $@ --buildsystem=meson
+	
+override_dh_auto_configure:
+	dh_auto_configure -- --prefix=/usr/local --sysconfdir=/usr/local/etc
+
+override_dh_auto_build:
+	$(CURDIR)/debian/fake_home.sh dh_auto_build --verbose
+
+override_dh_usrlocal:
+	@echo dh_usrlocal disabled
+
+override_dh_lintian:
+	# meson puts the arch-specific module dir in config.h
+	E_MODULE_ARCH=`awk '/MODULE_ARCH/{print $$3}' $(MESON_BUILD_DIR)/config.h | xargs echo`; \
+	sed -e "s/MULTIARCH/$(DEB_TARGET_MULTIARCH)/" \
+		-e "s/ARCH_PATH/$$E_MODULE_ARCH/" \
+		debian/e23.lintian-overrides.in > debian/e23.lintian-overrides
+	dh_lintian
+
+override_dh_missing:
+	dh_missing --fail-missing
+
+override_dh_fixperms-arch:
+	dh_fixperms
+	chmod 4755 debian/e23/usr/local/lib/*/enlightenment/utils/enlightenment_sys
+	chmod 4755 debian/e23/usr/local/lib/*/enlightenment/modules/cpufreq/*/freqset
+	chmod 4755 debian/e23/usr/local/lib/*/enlightenment/utils/enlightenment_backlight \
+		debian/e23/usr/local/lib/*/enlightenment/utils/enlightenment_ckpasswd
+
+override_dh_clean:
+	dh_clean
+	rm -f debian/enlightenment.lintian-overrides

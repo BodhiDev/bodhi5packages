@@ -1,0 +1,21 @@
+systemd activation
+------------------
+
+Upstream provides a systemd unit that can be used to start
+Enlightenment in an X session run directly by systemd.  However, no
+packages in debian currently provide systemd units to accomplish this.
+Upstream's unit is in /usr/share/doc/enlightenment/examples.
+
+ -- Ross Vandegrift <ross@kallisti.us>, Sat, 18 Feb 2017 14:44:41 -0500
+
+Enlightenment DR0.17
+--------------------
+About the menu files
+  Enlightenment handles the menus according to the FDO menu specification.
+  In order to have an 'Applications' menu, you need to use a .menu file.
+  Please see http://wiki.enlightenment.org/index.php/E17_and_Efreet for further
+  information.
+  If no menu is found, then /etc/xdg/menus/enlightenment-applications.menu,
+  provided by the 'e17-data', package, will be used as a fallback
+
+  -- Albin Tonnerre <albin.tonnerre@gmail.com>  Thu, 01 May 2008 12:58:45 +0200

@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+FILE="/usr/share/xsessions/e23.desktop"
+
+if [ -f $FILE ];
+then
+   rm $FILE
+else
+   echo "File $FILE does not exist."
+fi

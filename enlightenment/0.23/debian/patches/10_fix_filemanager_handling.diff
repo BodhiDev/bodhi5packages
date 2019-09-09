@@ -1,0 +1,40 @@
+Description: Don't set x-scheme-handler/file for File manager app.
+ E should set a handlers for inode/directory instead.  Without this
+ change, if the user uses Gnome, all files will be opened with the
+ configured file manager application.  See #917126 for details.
+Author: Ross Vandegrift <ross@kallisti.us>
+Forwarded: https://phab.enlightenment.org/T7521
+Last-Update: 2019-01-15
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/src/bin/e_open.c
++++ b/src/bin/e_open.c
+@@ -438,7 +438,7 @@
+    /* {"browser", "x-scheme-handler/http"}, */
+    {"mail", "x-scheme-handler/mailto"},
+    /*  {"terminal", NULL}, */
+-   {"filemanager", "x-scheme-handler/file"},
++   {"filemanager", "inode/directory"},
+    {"image", "image/jpeg"},
+    {"video", "video/x-mpeg"},
+    {"music", "audio/mp3"},
+--- a/src/modules/conf_applications/e_int_config_defapps.c
++++ b/src/modules/conf_applications/e_int_config_defapps.c
+@@ -131,7 +131,7 @@
+         if (s) cfdata->browser_desktop = eina_stringshare_add(s);
+         s = efreet_ini_string_get(myini, "x-scheme-handler/mailto");
+         if (s) cfdata->mailto_desktop = eina_stringshare_add(s);
+-        s = efreet_ini_string_get(myini, "x-scheme-handler/file");
++        s = efreet_ini_string_get(myini, "inode/directory");
+         if (s) cfdata->file_desktop = eina_stringshare_add(s);
+         s = efreet_ini_string_get(myini, "x-scheme-handler/trash");
+         if (s) cfdata->trash_desktop = eina_stringshare_add(s);
+@@ -385,7 +385,7 @@
+           efreet_ini_string_set(cfdata->ini, "x-scheme-handler/mailto",
+                                 cfdata->mailto_desktop);
+         if ((cfdata->file_desktop) && (cfdata->file_desktop[0]))
+-          efreet_ini_string_set(cfdata->ini, "x-scheme-handler/file",
++          efreet_ini_string_set(cfdata->ini, "inode/directory",
+                                 cfdata->file_desktop);
+         if ((cfdata->trash_desktop) && (cfdata->trash_desktop[0]))
+           efreet_ini_string_set(cfdata->ini, "x-scheme-handler/trash",

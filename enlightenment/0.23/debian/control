@@ -1,0 +1,23 @@
+Source: e23
+Section: x11
+Priority: optional
+Maintainer: Robert Wiley <ylee@bodhilinux.com>
+Build-Depends: debhelper (>= 9), autotools-dev, dh-autoreconf, automake, check, libtool, libxcb-shape0-dev, libxdmcp-dev, libefl-dev, libegl1-mesa-dev, libxau-dev, libxfixes-dev, libfreetype6-dev, libpam0g-dev, x11proto-kb-dev, x11proto-damage-dev, x11proto-xf86vidmode-dev, libxcb-keysyms1-dev, libxdamage-dev, uuid-dev, libpthread-stubs0-dev, libbluetooth-dev, libx11-xcb-dev, libexpat1-dev, libasound2-dev, libpixman-1-dev, x11proto-randr-dev, x11proto-render-dev, x11proto-xf86vidmode-dev, x11proto-composite-dev, libxcursor-dev, libjpeg-dev, libxss-dev, libxcomposite-dev, libxinerama-dev, libxi-dev, libxrandr-dev, systemd, xwayland, wayland-protocols, libxext-dev, meson, systemd, bluez, rfkill
+Build-Depends-Indep: doxygen
+Standards-Version: 3.9.6
+Homepage: http://enlightenment.org
+#Vcs-Git: git://git.debian.org/collab-maint/enlightenment.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/enlightenment.git;a=summary
+
+Package: e23
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, acpid, bc, bluez, packagekit
+Recommends: terminology | x-terminal-emulator, ephoto, udisks2
+Suggests: gdb
+Provides: x-window-manager
+Homepage: http://enlightenment.org
+Description: X11 and wayland window manager based on EFL
+ Enlightenment is an advanced window manager for X11. Unique
+ features include: a fully animated background, nice drop shadows
+ around windows, backed by an extremely clean and optimized
+ foundation of APIs.
