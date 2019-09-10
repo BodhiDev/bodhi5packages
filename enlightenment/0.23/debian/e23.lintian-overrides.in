@@ -2,6 +2,5 @@ e23: setuid-binary
 e23: dir-in-usr-local
 e23: file-in-unusual-dir
 e23: file-in-usr-local
-
 # this module only uses enlightenment symbols, there's no more linking to add
-e23: shared-lib-without-dependency-information usr/local/lib/i386-linux-gnu/enlightenment/modules/wizard/linux-gnu-x86-0.23.0/page_200.so
+e23: shared-lib-without-dependency-information usr/local/lib/MULTIARCH/enlightenment/modules/wizard/ARCH_PATH/page_200.so
