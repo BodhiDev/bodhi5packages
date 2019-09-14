@@ -1,14 +1,11 @@
 Package: bodhi-desktop
-Version: 5.0.0bodhi4
-Section: main
+Version: 5.1.0bodhi1
+Section: x11
 Priority: optional
-Depends: bodhi-icons, bodhi-lightdm-theme, bodhi-slideshow, bodhi-skel, 
-    moksha, bash-completion, lupin-casper, policykit-desktop-privileges, packagekit, lxmenu-data, xdg-utils, bodhi-quickstart, pm-utils
-Recommends: eepdater, epad, ephoto, pcmanfm, bc, terminology, esudo, bodhi-plymouth-theme, 
-    bodhi-plymouth-text, arandr, bodhi-theme-terminology-chrome, bodhi-appcenter, gdebi, 
-    gdebi-bodhi-launcher, udisks2, elaptopcheck, apturl-elm, faenza-icon-theme, pavucontrol
+Depends: bodhi-icons, bodhi-lightdm-theme, bodhi-slideshow, bodhi-skel, moksha, bash-completion, lupin-casper, policykit-desktop-privileges, packagekit, moksha-menu, xdg-utils, bodhi-quickstart, pm-utils, udisks
+Recommends: eepdater, epad, ephoto, pcmanfm, bc, terminology, esudo, bodhi-plymouth-theme, bodhi-plymouth-text, arandr, bodhi-theme-terminology-chrome, bodhi-appcenter, gdebi,  gdebi-bodhi-launcher, udisks2, elaptopcheck, apturl-elm, faenza-icon-theme, pavucontrol, bodhi-theme-moksha-arc-dark, xdg-user-dirs-update, policykit-1-gnome, libcurl4
 Architecture: all
-Maintainer: Jeff Hoogland
+Maintainer: Robert Wiley <ylee@bodhilinux.com>
 Description: Bodhi Moksha Desktop
  A Bodhi meta-package that pulls in Bodhi related packages for 
  the Moksha Desktop
