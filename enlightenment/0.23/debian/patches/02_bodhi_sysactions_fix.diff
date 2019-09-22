@@ -1,0 +1,33 @@
+Author: Robert Wiley <ylee@bodhilinux.com>
+Description: Use /usr/local/etc for sysactions.conf
+Forwarded: no
+
+--- a/data/etc/meson.build	
++++ b/data/etc/meson.build	
+@@ -18,10 +18,10 @@
+   EJECT     = '/usr/sbin/cdcontrol eject'
+ else
+   if systemd_unitdir != ''
+-    HALT      = '/usr/bin/systemctl poweroff'
+-    REBOOT    = '/usr/bin/systemctl reboot'
+-    SUSPEND   = '/usr/bin/systemctl suspend'
+-    HIBERNATE = '/usr/bin/systemctl hibernate'
++    HALT      = '/bin/systemctl poweroff'
++    REBOOT    = '/bin/systemctl reboot'
++    SUSPEND   = '/bin/systemctl suspend'
++    HIBERNATE = '/bin/systemctl hibernate'
+   else
+     sleep = find_program('sleep.sh', '/etc/acpi/sleep.sh', '/sbin/sleep.sh', '/usr/sbin/sleep.sh', required : false)
+     if sleep.found() == true
+
+--- a/src/bin/e_sys_main.c
++++ b/src/bin/e_sys_main.c
+@@ -656,7 +656,7 @@
+    int allow = 0;
+    int deny = 0;
+ 
+-   snprintf(file, sizeof(file), "/etc/enlightenment/sysactions.conf");
++   snprintf(file, sizeof(file), "/usr/local/etc/enlightenment/sysactions.conf");
+    f = fopen(file, "r");
+    if (!f)
+      {
