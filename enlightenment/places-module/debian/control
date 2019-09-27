@@ -1,0 +1,20 @@
+Source: e-module-places
+Section: x11
+Priority: optional
+Maintainer: Robert Wiley <ylee@bodhilinux.com>
+Build-Depends: debhelper (>= 10), autotools-dev, libefl-dev (>=1.20.7), udisks2, e23
+Standards-Version: 4.1.2
+Homepage: https://git.enlightenment.org/enlightenment/modules/places.git/about/
+#Vcs-Git: https://anonscm.debian.org/git/collab-maint/places.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/places.git
+
+Package: e-module-places
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libefl (>=1.20.7), udisks2, e23
+Description: Enlightenment Places Module
+ The places module shows all the filesystem devices attached to the system with 
+ some information  (total space and free space) plus the addition to 
+ unmount/eject the device. Clicking on the volume icon  will open the device in
+ the filemanager (and mount it if necessary).
+ .
+ The module also add a new menu in the enlightenment main menu.

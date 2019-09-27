@@ -1,0 +1,5 @@
+e-module-places: new-package-should-close-itp-bug
+e-module-places: dir-in-usr-local
+e-module-places: file-in-usr-local
+e-module-places: file-in-unusual-dir
+e-module-places: non-empty-dependency_libs-in-la-file
