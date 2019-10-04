@@ -1,0 +1,4 @@
+e-module-desksanity: new-package-should-close-itp-bug
+e-module-desksanity: dir-in-usr-local
+e-module-desksanity: file-in-usr-local
+e-module-desksanity: file-in-unusual-dir

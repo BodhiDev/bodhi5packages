@@ -1,0 +1,16 @@
+Source: e-module-desksanity
+Section: x11
+Priority: optional
+Maintainer: Robert Wiley <ylee@bodhilinux.com>
+Build-Depends: debhelper (>= 10), autotools-dev, libefl-dev (>=1.20.7), e23
+Standards-Version: 4.1.2
+Homepage: https://git.enlightenment.org/enlightenment/modules/desksanity.git/
+#Vcs-Git: https://anonscm.debian.org/git/collab-maint/desksanity.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/desksanity.git
+
+Package: e-module-desksanity
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: : Enlightenment Desksanity Module
+ The desksanity module is an experimental module for various effects and
+ features
