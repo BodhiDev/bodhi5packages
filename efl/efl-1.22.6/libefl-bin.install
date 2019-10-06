@@ -1,0 +1,4 @@
+usr/bin/*
+usr/lib/*/edje/utils/*/epp
+usr/lib/*/efreet/*/*
+usr/lib/*/ethumb_client/utils/*/*
