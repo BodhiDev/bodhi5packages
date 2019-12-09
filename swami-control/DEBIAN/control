@@ -1,0 +1,9 @@
+Package: swami-control
+Version: 0.0.2bodhi17
+Section: utils
+Priority: optional
+Architecture: all
+Depends: python, python-efl, python-neet, python-elm-extensions, python-tz, python-dateutil, ntpdate
+Maintainer: Robert Wiley <ylee@bodhilinux.com>
+Description: Swami Configuration Tool
+ An Elementary GUI for configuring the Moksha Desktop.
