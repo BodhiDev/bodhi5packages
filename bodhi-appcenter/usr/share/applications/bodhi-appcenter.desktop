@@ -2,7 +2,7 @@
 Name=Bodhi AppCenter
 GenericName=Install Software
 Comment=Online Software Center
-Exec=midori -a http://appcenter.bodhilinux.com
+Exec=x-www-browser http://appcenter.bodhilinux.com
 Icon=system-software-install
 Terminal=false
 Type=Application
