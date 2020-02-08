@@ -1,0 +1,9 @@
+bodhibuilder: arch-independent-package-contains-binary-or-object
+bodhibuilder: unstripped-binary-or-object
+bodhibuilder: binary-without-manpage
+bodhibuilder: raster-image-in-scalable-directory
+bodhibuilder: latest-debian-changelog-entry-changed-to-native
+bodhibuilder: executable-not-elf-or-script
+bodhibuilder: depends-on-essential-package-without-using-version
+bodhibuilder: helper-templates-in-copyright
+bodhibuilder: binary-without-english-manpage

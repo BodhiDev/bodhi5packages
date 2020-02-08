@@ -1,0 +1,3 @@
+#Bodhi 5 Repos
+
+deb [trusted=yes] http://packages.bodhilinux.com/bodhi bionic b5main
