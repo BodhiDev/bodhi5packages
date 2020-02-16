@@ -1,9 +1,9 @@
 h1 {
  font-size: 1.26em;
- border-bottom: 1px solid #F60;
+ border-bottom: 1px solid #5a860a;
  border-bottom-width: auto;
  display: inline-block;
- color: #000000;
+ color: #BFBFBF;
 }
 h1.indexpage {
 font-size: 1.1em;
@@ -70,7 +70,7 @@ h3.inline {
 }
 h4 {
  font-size: .85em;
- color: #000000;
+ color: white;
  font-weight: normal;
  margin-bottom: 5px;
  margin-top: -2px;
@@ -100,6 +100,9 @@ h4.inline {
 }
 .blacktext {
  color: black;
+}
+.brighttext {
+ color: #BFBFBF;
 }
 .orangetext {
  color: #ff6600;
