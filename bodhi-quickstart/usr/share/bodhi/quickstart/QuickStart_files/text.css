@@ -1,12 +1,11 @@
 h1 {
  font-size: 1.26em;
- border-bottom: 1px solid #5a860a;
  border-bottom-width: auto;
  display: inline-block;
  color: #BFBFBF;
 }
 h1.indexpage {
-font-size: 1.1em;
+ font-size: 1.1em;
  border-bottom: 1px solid #5a860a;
 }
 @media screen and (max-width: 600px) {

@@ -77,7 +77,8 @@ a.img,a.img:visited, a.img:hover {
 SIZE/POSITIONING
 */
 code {
-  font-size: 95%;
+  font-size: 125%;
+  text-align: center;
 }
 p.underheader {
   margin-top: -5px;
