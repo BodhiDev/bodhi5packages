@@ -79,6 +79,7 @@ h4.inline {
   color: #444;
  border-bottom: 1px solid #CCC;
 }
+
 .smalltext {
  font-size: small;
 }
@@ -107,7 +108,7 @@ h4.inline {
  color: #ff6600;
 }
 .greentext {
- color: #5a860a; 
+ color: #4EB041; 
 }
 .lefttext {
  text-align: left;
@@ -118,3 +119,4 @@ h4.inline {
 .centertext {
 text-align: center;
 }
+

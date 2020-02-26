@@ -50,7 +50,7 @@ ul.speciallist {
 }
 a.normal, a.normal:visited {
   text-decoration: none;
-  color: #5a860a; 
+  color: #4EB041; 
 }
 a.normal:hover {
   color: #ff6600;
@@ -185,7 +185,7 @@ color: #BFBFBF;
   display: block;
   margin-top:5px;
   margin-bottom:auto;
-  border: 3px solid #7AA318;
+  border: 3px solid #419236;
   background-color: #383C4A;
   color: #BFBFBF;
   border-radius: 15px 15px 15px 0px;
