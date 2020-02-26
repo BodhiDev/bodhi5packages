@@ -1,6 +1,6 @@
 Package: bodhi-quickstart
 Version: 1.6.0
-Section: main
+Section: misc
 Priority: optional
 Architecture: all
 Depends: ttf-ubuntu-font-family
