@@ -1,8 +1,8 @@
 Package: bodhi-slideshow
-Version: 0.63
-Section: main
+Version: 0.64
+Section: misc
 Priority: optional
 Architecture: all
-Maintainer: Jeff Hoogland
+Maintainer: Robert Wiley <ylee@bodhilinux.com>
 Description: Bodhi Slideshow
  Contains Bodhi's installer slides.
