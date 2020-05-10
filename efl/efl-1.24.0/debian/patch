@@ -1,0 +1,2730 @@
+--- libefl.symbols (libefl_1.24.0-1bionic0_amd64)
++++ dpkg-gensymbolsPG7InK	2020-05-10 14:38:32.857222007 -0400
+@@ -223,8 +223,10 @@
+  ecore_timer_thaw@Base 1.15.0
+  ecore_version@Base 1.15.0
+  efl_accelerate_interpolator_class_get@Base 1.22.2
+- efl_accelerate_interpolator_factor_get@Base 1.22.2
+- efl_accelerate_interpolator_factor_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_accelerate_interpolator_factor_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_accelerate_interpolator_factor_set@Base 1.22.2
++ efl_accelerate_interpolator_slope_get@Base 1.24.0-1bionic0
++ efl_accelerate_interpolator_slope_set@Base 1.24.0-1bionic0
+  efl_app_build_efl_version_get@Base 1.22.2
+  efl_app_class_get@Base 1.22.2
+  efl_app_efl_version_get@Base 1.22.2
+@@ -234,9 +236,13 @@
+  efl_boolean_model_boolean_del@Base 1.22.2
+  efl_boolean_model_boolean_iterator_get@Base 1.23.0
+  efl_boolean_model_class_get@Base 1.22.2
++ efl_bounce_interpolator_bounces_get@Base 1.24.0-1bionic0
++ efl_bounce_interpolator_bounces_set@Base 1.24.0-1bionic0
+  efl_bounce_interpolator_class_get@Base 1.22.2
+- efl_bounce_interpolator_factors_get@Base 1.22.2
+- efl_bounce_interpolator_factors_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_bounce_interpolator_factors_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_bounce_interpolator_factors_set@Base 1.22.2
++ efl_bounce_interpolator_rigidness_get@Base 1.24.0-1bionic0
++ efl_bounce_interpolator_rigidness_set@Base 1.24.0-1bionic0
+  efl_build_version_set@Base 1.18.0
+  efl_composite_model_class_get@Base 1.22.2
+  efl_composite_model_index_get@Base 1.22.2
+@@ -257,14 +263,22 @@
+  efl_core_env_unset@Base 1.22.2
+  efl_core_proc_env_class_get@Base 1.22.2
+  efl_cubic_bezier_interpolator_class_get@Base 1.22.2
+- efl_cubic_bezier_interpolator_factors_get@Base 1.22.2
+- efl_cubic_bezier_interpolator_factors_set@Base 1.22.2
++ efl_cubic_bezier_interpolator_control_points_get@Base 1.24.0-1bionic0
++ efl_cubic_bezier_interpolator_control_points_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_cubic_bezier_interpolator_factors_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_cubic_bezier_interpolator_factors_set@Base 1.22.2
+  efl_decelerate_interpolator_class_get@Base 1.22.2
+- efl_decelerate_interpolator_factor_get@Base 1.22.2
+- efl_decelerate_interpolator_factor_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_decelerate_interpolator_factor_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_decelerate_interpolator_factor_set@Base 1.22.2
++ efl_decelerate_interpolator_slope_get@Base 1.24.0-1bionic0
++ efl_decelerate_interpolator_slope_set@Base 1.24.0-1bionic0
+  efl_divisor_interpolator_class_get@Base 1.22.2
+- efl_divisor_interpolator_factors_get@Base 1.22.2
+- efl_divisor_interpolator_factors_set@Base 1.22.2
++ efl_divisor_interpolator_divisor_get@Base 1.24.0-1bionic0
++ efl_divisor_interpolator_divisor_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_divisor_interpolator_factors_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_divisor_interpolator_factors_set@Base 1.22.2
++ efl_divisor_interpolator_power_get@Base 1.24.0-1bionic0
++ efl_divisor_interpolator_power_set@Base 1.24.0-1bionic0
+  efl_env_self@Base 1.22.2
+  efl_exe_class_get@Base 1.22.2
+  efl_exe_env_get@Base 1.22.2
+@@ -272,6 +286,7 @@
+  efl_exe_exit_signal_get@Base 1.22.2
+  efl_exe_flags_get@Base 1.22.2
+  efl_exe_flags_set@Base 1.22.2
++ efl_exe_pid_get@Base 1.24.0-1bionic0
+  efl_exe_signal@Base 1.22.2
+  efl_exit@Base 1.22.2
+  efl_filter_model_class_get@Base 1.23.0
+@@ -399,11 +414,17 @@
+  efl_loop_unregister@Base 1.18.0
+  efl_main_loop_get@Base 1.22.2
+  efl_sinusoidal_interpolator_class_get@Base 1.22.2
+- efl_sinusoidal_interpolator_factor_get@Base 1.22.2
+- efl_sinusoidal_interpolator_factor_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_sinusoidal_interpolator_factor_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_sinusoidal_interpolator_factor_set@Base 1.22.2
++ efl_sinusoidal_interpolator_slope_get@Base 1.24.0-1bionic0
++ efl_sinusoidal_interpolator_slope_set@Base 1.24.0-1bionic0
+  efl_spring_interpolator_class_get@Base 1.22.2
+- efl_spring_interpolator_factors_get@Base 1.22.2
+- efl_spring_interpolator_factors_set@Base 1.22.2
++ efl_spring_interpolator_decay_get@Base 1.24.0-1bionic0
++ efl_spring_interpolator_decay_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_spring_interpolator_factors_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_spring_interpolator_factors_set@Base 1.22.2
++ efl_spring_interpolator_oscillations_get@Base 1.24.0-1bionic0
++ efl_spring_interpolator_oscillations_set@Base 1.24.0-1bionic0
+  efl_task_class_get@Base 1.22.2
+  efl_task_end@Base 1.22.2
+  efl_task_exit_code_get@Base 1.22.2
+@@ -466,10 +487,6 @@
+  ecore_audio_out_pulse_class_get@Base 1.15.0
+  ecore_audio_out_sndfile_class_get@Base 1.15.0
+  ecore_audio_shutdown@Base 1.15.0
+-libecore_avahi.so.1 libefl #MINVER#
+- ecore_avahi_add@Base 1.15.0
+- ecore_avahi_del@Base 1.15.0
+- ecore_avahi_poll_get@Base 1.15.0
+ libecore_con.so.1 libefl #MINVER#
+  ECORE_CON_EVENT_CLIENT_ADD@Base 1.15.0
+  ECORE_CON_EVENT_CLIENT_DATA@Base 1.15.0
+@@ -1158,6 +1175,9 @@
+  ecore_evas_callback_destroy_set@Base 1.15.0
+  ecore_evas_callback_device_mouse_in_set@Base 1.19.0
+  ecore_evas_callback_device_mouse_out_set@Base 1.19.0
++ ecore_evas_callback_drop_drop_set@Base 1.24.0-1bionic0
++ ecore_evas_callback_drop_motion_set@Base 1.24.0-1bionic0
++ ecore_evas_callback_drop_state_changed_set@Base 1.24.0-1bionic0
+  ecore_evas_callback_focus_device_in_set@Base 1.19.0
+  ecore_evas_callback_focus_device_out_set@Base 1.19.0
+  ecore_evas_callback_focus_in_set@Base 1.15.0
+@@ -1173,6 +1193,7 @@
+  ecore_evas_callback_pre_free_set@Base 1.15.0
+  ecore_evas_callback_pre_render_set@Base 1.15.0
+  ecore_evas_callback_resize_set@Base 1.15.0
++ ecore_evas_callback_selection_changed_set@Base 1.24.0-1bionic0
+  ecore_evas_callback_show_set@Base 1.15.0
+  ecore_evas_callback_state_change_set@Base 1.15.0
+  ecore_evas_callback_sticky_set@Base 1.15.0
+@@ -1193,10 +1214,18 @@
+  ecore_evas_direct3d_new@Base 1.15.0
+  ecore_evas_directfb_new@Base 1.15.0
+  ecore_evas_directfb_window_get@Base 1.15.0
++ ecore_evas_dnd_enter@Base 1.24.0-1bionic0
++ ecore_evas_dnd_leave@Base 1.24.0-1bionic0
++ ecore_evas_dnd_mark_motion_used@Base 1.24.0-1bionic0
++ ecore_evas_dnd_pos_get@Base 1.24.0-1bionic0
++ ecore_evas_dnd_position_set@Base 1.24.0-1bionic0
+  ecore_evas_done@Base 1.22.2
++ ecore_evas_drag_cancel@Base 1.24.0-1bionic0
++ ecore_evas_drag_start@Base 1.24.0-1bionic0
+  ecore_evas_draw_frame_get@Base 1.15.0
+  ecore_evas_draw_frame_set@Base 1.15.0
+  ecore_evas_drm_new@Base 1.15.0
++ ecore_evas_drop_available_types_get@Base 1.24.0-1bionic0
+  ecore_evas_ecore_evas_get@Base 1.15.0
+  ecore_evas_ecore_evas_list_get@Base 1.15.0
+  ecore_evas_engine_name_get@Base 1.15.0
+@@ -1274,6 +1303,8 @@
+  ecore_evas_name_class_get@Base 1.15.0
+  ecore_evas_name_class_set@Base 1.15.0
+  ecore_evas_new@Base 1.15.0
++ ecore_evas_no_matching_type@Base 1.24.0-1bionic0
++ ecore_evas_no_selection@Base 1.24.0-1bionic0
+  ecore_evas_object_associate@Base 1.15.0
+  ecore_evas_object_associate_get@Base 1.15.0
+  ecore_evas_object_cursor_device_set@Base 1.19.0
+@@ -1295,6 +1326,7 @@
+  ecore_evas_render@Base 1.20.1
+  ecore_evas_render_wait@Base 1.20.1
+  ecore_evas_request_geometry_get@Base 1.15.0
++ ecore_evas_request_replaced@Base 1.24.0-1bionic0
+  ecore_evas_resize@Base 1.15.0
+  ecore_evas_rotation_get@Base 1.15.0
+  ecore_evas_rotation_set@Base 1.15.0
+@@ -1303,6 +1335,9 @@
+  ecore_evas_screen_geometry_get@Base 1.15.0
+  ecore_evas_sdl16_new@Base 1.15.0
+  ecore_evas_sdl_new@Base 1.15.0
++ ecore_evas_selection_exists@Base 1.24.0-1bionic0
++ ecore_evas_selection_get@Base 1.24.0-1bionic0
++ ecore_evas_selection_set@Base 1.24.0-1bionic0
+  ecore_evas_shadow_geometry_get@Base 1.19.0
+  ecore_evas_shadow_geometry_set@Base 1.19.0
+  ecore_evas_shaped_get@Base 1.15.0
+@@ -1694,6 +1729,8 @@
+  ecore_wl2_buffer_unlock@Base 1.23.0
+  ecore_wl2_buffer_unmap@Base 1.23.0
+  ecore_wl2_buffer_wl_buffer_get@Base 1.23.0
++ ecore_wl2_connected_display_get@Base 1.24.0-1bionic0
++ ecore_wl2_display_compositor_get@Base 1.24.0-1bionic0
+  ecore_wl2_display_compositor_version_get@Base 1.23.0
+  ecore_wl2_display_connect@Base 1.23.0
+  ecore_wl2_display_create@Base 1.23.0
+@@ -1712,6 +1749,7 @@
+  ecore_wl2_display_shm_get@Base 1.23.0
+  ecore_wl2_display_sync_is_done@Base 1.23.0
+  ecore_wl2_display_terminate@Base 1.23.0
++ ecore_wl2_display_window_find_by_surface@Base 1.24.0-1bionic0
+  ecore_wl2_dnd_drag_end@Base 1.23.0
+  ecore_wl2_dnd_drag_start@Base 1.23.0
+  ecore_wl2_dnd_drag_types_set@Base 1.23.0
+@@ -1721,14 +1759,16 @@
+  ecore_wl2_dnd_set_actions@Base 1.23.0
+  ecore_wl2_init@Base 1.23.0
+  ecore_wl2_input_cursor_from_name_set@Base 1.23.0
++ ecore_wl2_input_default_input_get@Base 1.24.0-1bionic0
+  ecore_wl2_input_display_get@Base 1.23.0
+  ecore_wl2_input_keyboard_repeat_get@Base 1.23.0
++ ecore_wl2_input_keyboard_repeat_set@Base 1.24.0-1bionic0
+  ecore_wl2_input_keymap_get@Base 1.23.0
+  ecore_wl2_input_name_get@Base 1.23.0
+  ecore_wl2_input_pointer_set@Base 1.23.0
+  ecore_wl2_input_pointer_xy_get@Base 1.23.0
+  ecore_wl2_input_seat_capabilities_get@Base 1.23.0
+- ecore_wl2_input_seat_device_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# ecore_wl2_input_seat_device_get@Base 1.23.0
+  ecore_wl2_input_seat_get@Base 1.23.0
+  ecore_wl2_input_seat_id_get@Base 1.23.0
+  ecore_wl2_offer_accept@Base 1.23.0
+@@ -1770,6 +1810,7 @@
+  ecore_wl2_window_activated_get@Base 1.23.0
+  ecore_wl2_window_alpha_get@Base 1.23.0
+  ecore_wl2_window_alpha_set@Base 1.23.0
++ ecore_wl2_window_aspect_get@Base 1.24.0-1bionic0
+  ecore_wl2_window_aspect_set@Base 1.23.0
+  ecore_wl2_window_aux_hint_add@Base 1.23.0
+  ecore_wl2_window_aux_hint_change@Base 1.23.0
+@@ -1779,6 +1820,7 @@
+  ecore_wl2_window_available_rotations_set@Base 1.23.0
+  ecore_wl2_window_buffer_attach@Base 1.23.0
+  ecore_wl2_window_buffer_transform_set@Base 1.23.0
++ ecore_wl2_window_class_get@Base 1.24.0-1bionic0
+  ecore_wl2_window_class_set@Base 1.23.0
+  ecore_wl2_window_close_callback_set@Base 1.23.0
+  ecore_wl2_window_commit@Base 1.23.0
+@@ -1798,19 +1840,23 @@
+  ecore_wl2_window_geometry_set@Base 1.23.0
+  ecore_wl2_window_hide@Base 1.23.0
+  ecore_wl2_window_iconified_set@Base 1.23.0
++ ecore_wl2_window_input_region_get@Base 1.24.0-1bionic0
+  ecore_wl2_window_input_region_set@Base 1.23.0
+  ecore_wl2_window_maximized_get@Base 1.23.0
+  ecore_wl2_window_maximized_set@Base 1.23.0
+  ecore_wl2_window_move@Base 1.23.0
+  ecore_wl2_window_new@Base 1.23.0
++ ecore_wl2_window_opaque_region_get@Base 1.24.0-1bionic0
+  ecore_wl2_window_opaque_region_set@Base 1.23.0
+  ecore_wl2_window_output_find@Base 1.23.0
+  ecore_wl2_window_pending_get@Base 1.23.0
++ ecore_wl2_window_popup_input_get@Base 1.24.0-1bionic0
+  ecore_wl2_window_popup_input_set@Base 1.23.0
+  ecore_wl2_window_preferred_rotation_get@Base 1.23.0
+  ecore_wl2_window_preferred_rotation_set@Base 1.23.0
+  ecore_wl2_window_resize@Base 1.23.0
+  ecore_wl2_window_resizing_get@Base 1.23.0
++ ecore_wl2_window_role_get@Base 1.24.0-1bionic0
+  ecore_wl2_window_role_set@Base 1.23.0
+  ecore_wl2_window_rotation_app_get@Base 1.23.0
+  ecore_wl2_window_rotation_app_set@Base 1.23.0
+@@ -1822,10 +1868,13 @@
+  ecore_wl2_window_rotation_set@Base 1.23.0
+  ecore_wl2_window_shell_surface_exists@Base 1.23.0
+  ecore_wl2_window_show@Base 1.23.0
++ ecore_wl2_window_surface_find@Base 1.24.0-1bionic0
+  ecore_wl2_window_surface_flush@Base 1.23.0
+  ecore_wl2_window_surface_get@Base 1.23.0
+  ecore_wl2_window_surface_id_get@Base 1.23.0
++ ecore_wl2_window_title_get@Base 1.24.0-1bionic0
+  ecore_wl2_window_title_set@Base 1.23.0
++ ecore_wl2_window_type_get@Base 1.24.0-1bionic0
+  ecore_wl2_window_type_set@Base 1.23.0
+  ecore_wl2_window_update_begin@Base 1.23.0
+  ecore_wl2_window_weight_set@Base 1.23.0
+@@ -1977,7 +2026,9 @@
+  ECORE_X_ATOM_E_WINDOW_ROTATION_PREFERRED_ROTATION@Base 1.15.0
+  ECORE_X_ATOM_E_WINDOW_ROTATION_SUPPORTED@Base 1.15.0
+  ECORE_X_ATOM_FILE_NAME@Base 1.15.0
++ ECORE_X_ATOM_FLOAT@Base 1.24.0-1bionic0
+  ECORE_X_ATOM_GTK_FRAME_EXTENTS@Base 1.19.0
++ ECORE_X_ATOM_INTEGER@Base 1.24.0-1bionic0
+  ECORE_X_ATOM_MOTIF_WM_HINTS@Base 1.15.0
+  ECORE_X_ATOM_NET_ACTIVE_WINDOW@Base 1.15.0
+  ECORE_X_ATOM_NET_CLIENT_LIST@Base 1.15.0
+@@ -2126,6 +2177,7 @@
+  ECORE_X_ATOM_XDND_STATUS@Base 1.15.0
+  ECORE_X_ATOM_XDND_TYPE_LIST@Base 1.15.0
+  ECORE_X_ATOM_X_MOZ_URL@Base 1.15.0
++ ECORE_X_DEVICES_CHANGE@Base 1.24.0-1bionic0
+  ECORE_X_DND_ACTION_ASK@Base 1.15.0
+  ECORE_X_DND_ACTION_COPY@Base 1.15.0
+  ECORE_X_DND_ACTION_LINK@Base 1.15.0
+@@ -2404,6 +2456,7 @@
+  ecore_x_events_allow_all@Base 1.15.0
+  ecore_x_fd_get@Base 1.15.0
+  ecore_x_fixes_selection_notification_request@Base 1.15.0
++ ecore_x_fixes_window_selection_notification_request@Base 1.24.0-1bionic0
+  ecore_x_flush@Base 1.15.0
+  ecore_x_focus_reset@Base 1.15.0
+  ecore_x_gc_free@Base 1.15.0
+@@ -2456,6 +2509,14 @@
+  ecore_x_image_to_argb_convert@Base 1.15.0
+  ecore_x_init@Base 1.15.0
+  ecore_x_init_from_display@Base 1.15.0
++ ecore_x_input_device_id_get@Base 1.24.0-1bionic0
++ ecore_x_input_device_name_get@Base 1.24.0-1bionic0
++ ecore_x_input_device_num_get@Base 1.24.0-1bionic0
++ ecore_x_input_device_properties_free@Base 1.24.0-1bionic0
++ ecore_x_input_device_properties_list@Base 1.24.0-1bionic0
++ ecore_x_input_device_property_get@Base 1.24.0-1bionic0
++ ecore_x_input_device_property_set@Base 1.24.0-1bionic0
++ ecore_x_input_devices_update@Base 1.24.0-1bionic0
+  ecore_x_input_multi_select@Base 1.15.0
+  ecore_x_input_raw_select@Base 1.15.0
+  ecore_x_input_touch_devices_grab@Base 1.15.0
+@@ -2682,6 +2743,7 @@
+  ecore_x_region_subtract@Base 1.15.0
+  ecore_x_region_translate@Base 1.15.0
+  ecore_x_region_window_shape_set@Base 1.15.0
++ ecore_x_root_screen_barriers_set@Base 1.24.0-1bionic0
+  ecore_x_screen_count_get@Base 1.15.0
+  ecore_x_screen_get@Base 1.15.0
+  ecore_x_screen_index_get@Base 1.15.0
+@@ -2886,6 +2948,7 @@
+  ector_buffer_flags_get@Base 1.17.0
+  ector_buffer_map@Base 1.17.0
+  ector_buffer_mixin_get@Base 1.18.0
++ ector_buffer_pixels_get@Base 1.24.0-1bionic0
+  ector_buffer_pixels_set@Base 1.17.0
+  ector_buffer_size_get@Base 1.17.0
+  ector_buffer_unmap@Base 1.17.0
+@@ -2940,6 +3003,7 @@
+  ector_software_surface_class_get@Base 1.15.0
+  ector_surface_draw_image@Base 1.22.4
+  ector_surface_mixin_get@Base 1.18.0
++ ector_surface_reference_point_get@Base 1.24.0-1bionic0
+  ector_surface_reference_point_set@Base 1.15.0
+  ector_surface_renderer_factory_new@Base 1.15.0
+ libedje.so.1 libefl #MINVER#
+@@ -2959,12 +3023,12 @@
+  _edje_program_insert@Base 1.15.0
+  _edje_program_remove@Base 1.15.0
+  _emp_BOX@Base 1.15.0
+- _emp_CAMERA@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# _emp_CAMERA@Base 1.15.0
+  _emp_EXTERNAL@Base 1.15.0
+  _emp_GROUP@Base 1.15.0
+  _emp_IMAGE@Base 1.15.0
+- _emp_LIGHT@Base 1.15.0
+- _emp_MESH_NODE@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# _emp_LIGHT@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# _emp_MESH_NODE@Base 1.15.0
+  _emp_PROXY@Base 1.15.0
+  _emp_RECTANGLE@Base 1.15.0
+  _emp_SNAPSHOT@Base 1.16.0
+@@ -2975,7 +3039,7 @@
+  _emp_TEXTBLOCK@Base 1.15.0
+  _emp_VECTOR@Base 1.18.0
+  _emp_part@Base 1.15.0
+- edje_3d_object_add@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# edje_3d_object_add@Base 1.18.0
+  edje_audio_channel_mute_get@Base 1.15.0
+  edje_audio_channel_mute_set@Base 1.15.0
+  edje_available_modules_get@Base 1.15.0
+@@ -3241,6 +3305,7 @@
+  edje_edit_part_precise_is_inside_set@Base 1.15.0
+  edje_edit_part_repeat_events_get@Base 1.15.0
+  edje_edit_part_repeat_events_set@Base 1.15.0
++ edje_edit_part_required_get@Base 1.24.0-1bionic0
+  edje_edit_part_restack_above@Base 1.15.0
+  edje_edit_part_restack_below@Base 1.15.0
+  edje_edit_part_restack_part_above@Base 1.15.0
+@@ -3632,6 +3697,9 @@
+  edje_file_data_get@Base 1.15.0
+  edje_file_group_exists@Base 1.15.0
+  edje_file_iterator_new@Base 1.15.0
++ edje_file_text_class_del@Base 1.24.0-1bionic0
++ edje_file_text_class_get@Base 1.24.0-1bionic0
++ edje_file_text_class_set@Base 1.24.0-1bionic0
+  edje_fontset_append_get@Base 1.15.0
+  edje_fontset_append_set@Base 1.15.0
+  edje_frametime_get@Base 1.15.0
+@@ -3847,8 +3915,10 @@
+  edje_transition_duration_factor_set@Base 1.15.0
+  edje_version@Base 1.15.0
+  efl_canvas_layout_access_part_iterate@Base 1.22.2
+- efl_canvas_layout_animation_get@Base 1.22.2
+- efl_canvas_layout_animation_set@Base 1.22.2
++ efl_canvas_layout_animated_get@Base 1.24.0-1bionic0
++ efl_canvas_layout_animated_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_canvas_layout_animation_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_layout_animation_set@Base 1.22.2
+  efl_canvas_layout_class_get@Base 1.22.2
+  efl_canvas_layout_content_remove@Base 1.22.2
+  efl_canvas_layout_load_error_get@Base 1.22.2
+@@ -3863,6 +3933,7 @@
+  efl_canvas_layout_part_text_expand_get@Base 1.22.2
+  efl_canvas_layout_part_text_expand_set@Base 1.22.2
+  efl_canvas_layout_part_type_get@Base 1.22.2
++ efl_canvas_layout_part_type_provider_interface_get@Base 1.24.0-1bionic0
+  efl_canvas_layout_seat_get@Base 1.22.2
+  efl_canvas_layout_seat_name_get@Base 1.22.2
+  efl_layout_calc_auto_update_hints_get@Base 1.22.2
+@@ -4137,15 +4208,16 @@
+  EFL_MODEL_ERROR_READ_ONLY@Base 1.18.0
+  EFL_MODEL_ERROR_UNKNOWN@Base 1.18.0
+  EFL_PROPERTY_ERROR_INVALID_KEY@Base 1.22.2
+- _EFL_CANVAS_SCENE_EVENT_DEVICE_ADDED@Base 1.22.2
+- _EFL_CANVAS_SCENE_EVENT_DEVICE_CHANGED@Base 1.22.2
+- _EFL_CANVAS_SCENE_EVENT_DEVICE_REMOVED@Base 1.22.2
+- _EFL_CANVAS_SCENE_EVENT_OBJECT_FOCUS_IN@Base 1.22.2
+- _EFL_CANVAS_SCENE_EVENT_OBJECT_FOCUS_OUT@Base 1.22.2
+- _EFL_CANVAS_SCENE_EVENT_RENDER_POST@Base 1.22.2
+- _EFL_CANVAS_SCENE_EVENT_RENDER_PRE@Base 1.22.2
+- _EFL_CANVAS_SCENE_EVENT_SCENE_FOCUS_IN@Base 1.22.2
+- _EFL_CANVAS_SCENE_EVENT_SCENE_FOCUS_OUT@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_CANVAS_SCENE_EVENT_DEVICE_ADDED@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_CANVAS_SCENE_EVENT_DEVICE_CHANGED@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_CANVAS_SCENE_EVENT_DEVICE_REMOVED@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_CANVAS_SCENE_EVENT_OBJECT_FOCUS_IN@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_CANVAS_SCENE_EVENT_OBJECT_FOCUS_OUT@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_CANVAS_SCENE_EVENT_RENDER_POST@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_CANVAS_SCENE_EVENT_RENDER_PRE@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_CANVAS_SCENE_EVENT_SCENE_FOCUS_IN@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_CANVAS_SCENE_EVENT_SCENE_FOCUS_OUT@Base 1.22.2
++ _EFL_CONFIG_EVENT_CONFIG_CHANGED@Base 1.24.0-1bionic0
+  _EFL_CONTAINER_EVENT_CONTENT_ADDED@Base 1.18.0
+  _EFL_CONTAINER_EVENT_CONTENT_REMOVED@Base 1.18.0
+  _EFL_CONTENT_EVENT_CONTENT_CHANGED@Base 1.22.2
+@@ -4171,15 +4243,21 @@
+  _EFL_MODEL_EVENT_CHILD_REMOVED@Base 1.18.0
+  _EFL_MODEL_EVENT_PROPERTIES_CHANGED@Base 1.18.0
+  _EFL_PACK_EVENT_LAYOUT_UPDATED@Base 1.18.0
++ _EFL_PLAYER_EVENT_PAUSED_CHANGED@Base 1.24.0-1bionic0
++ _EFL_PLAYER_EVENT_PLAYBACK_FINISHED@Base 1.24.0-1bionic0
++ _EFL_PLAYER_EVENT_PLAYBACK_POSITION_CHANGED@Base 1.24.0-1bionic0
++ _EFL_PLAYER_EVENT_PLAYBACK_PROGRESS_CHANGED@Base 1.24.0-1bionic0
++ _EFL_PLAYER_EVENT_PLAYBACK_REPEATED@Base 1.24.0-1bionic0
++ _EFL_PLAYER_EVENT_PLAYING_CHANGED@Base 1.24.0-1bionic0
+  _EFL_UI_AUTOREPEAT_EVENT_REPEATED@Base 1.23.0
+- _EFL_UI_EVENT_DRAG@Base 1.22.2
+- _EFL_UI_EVENT_DRAG_END@Base 1.22.2
+- _EFL_UI_EVENT_DRAG_START@Base 1.22.2
+- _EFL_UI_EVENT_DRAG_START_DOWN@Base 1.22.2
+- _EFL_UI_EVENT_DRAG_START_LEFT@Base 1.22.2
+- _EFL_UI_EVENT_DRAG_START_RIGHT@Base 1.22.2
+- _EFL_UI_EVENT_DRAG_START_UP@Base 1.22.2
+- _EFL_UI_EVENT_DRAG_STOP@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_DRAG@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_DRAG_END@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_DRAG_START@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_DRAG_START_DOWN@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_DRAG_START_LEFT@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_DRAG_START_RIGHT@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_DRAG_START_UP@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_DRAG_STOP@Base 1.22.2
+  _EFL_UI_EVENT_EDGE_DOWN@Base 1.22.2
+  _EFL_UI_EVENT_EDGE_LEFT@Base 1.22.2
+  _EFL_UI_EVENT_EDGE_RIGHT@Base 1.22.2
+@@ -4197,12 +4275,12 @@
+  _EFL_UI_EVENT_SCROLL_RIGHT@Base 1.22.2
+  _EFL_UI_EVENT_SCROLL_STARTED@Base 1.23.0
+  _EFL_UI_EVENT_SCROLL_UP@Base 1.22.2
+- _EFL_UI_EVENT_SELECTION_CHANGED@Base 1.22.2
+- _EFL_UI_EVENT_SELECTION_CLEARED@Base 1.22.2
+- _EFL_UI_EVENT_SELECTION_COPY@Base 1.22.2
+- _EFL_UI_EVENT_SELECTION_CUT@Base 1.22.2
+- _EFL_UI_EVENT_SELECTION_PASTE@Base 1.22.2
+- _EFL_UI_EVENT_SELECTION_START@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_SELECTION_CHANGED@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_SELECTION_CLEARED@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_SELECTION_COPY@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_SELECTION_CUT@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_SELECTION_PASTE@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_EVENT_SELECTION_START@Base 1.22.2
+  _EFL_UI_EVENT_ZOOM_CHANGE@Base 1.22.2
+  _EFL_UI_EVENT_ZOOM_START@Base 1.22.2
+  _EFL_UI_EVENT_ZOOM_STOP@Base 1.22.2
+@@ -4233,21 +4311,21 @@
+  efl_audio_control_volume_set@Base 1.23.0
+  efl_cached_item_interface_get@Base 1.22.2
+  efl_cached_item_memory_size_get@Base 1.22.2
+- efl_canvas_pointer_inside_get@Base 1.22.2
+- efl_canvas_pointer_interface_get@Base 1.22.2
+- efl_canvas_scene_device_get@Base 1.22.2
+- efl_canvas_scene_group_objects_calculate@Base 1.22.2
+- efl_canvas_scene_group_objects_calculating_get@Base 1.22.2
+- efl_canvas_scene_image_max_size_get@Base 1.22.2
+- efl_canvas_scene_interface_get@Base 1.22.2
+- efl_canvas_scene_object_top_at_xy_get@Base 1.22.2
+- efl_canvas_scene_object_top_in_rectangle_get@Base 1.22.2
+- efl_canvas_scene_objects_at_xy_get@Base 1.22.2
+- efl_canvas_scene_objects_in_rectangle_get@Base 1.22.2
+- efl_canvas_scene_pointer_position_get@Base 1.22.2
+- efl_canvas_scene_seat_default_get@Base 1.22.2
+- efl_canvas_scene_seat_get@Base 1.22.2
+- efl_canvas_scene_seats@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_pointer_inside_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_pointer_interface_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene_device_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene_group_objects_calculate@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene_group_objects_calculating_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene_image_max_size_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene_interface_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene_object_top_at_xy_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene_object_top_in_rectangle_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene_objects_at_xy_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene_objects_in_rectangle_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene_pointer_position_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene_seat_default_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene_seat_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene_seats@Base 1.22.2
+  efl_config_get@Base 1.18.0
+  efl_config_interface_get@Base 1.18.0
+  efl_config_set@Base 1.18.0
+@@ -4354,6 +4432,8 @@
+  efl_gfx_frame_controller_interface_get@Base 1.22.2
+  efl_gfx_frame_controller_loop_count_get@Base 1.22.2
+  efl_gfx_frame_controller_loop_type_get@Base 1.22.2
++ efl_gfx_frame_controller_sector_get@Base 1.24.0-1bionic0
++ efl_gfx_frame_controller_sector_set@Base 1.24.0-1bionic0
+  efl_gfx_gradient_interface_get@Base 1.18.0
+  efl_gfx_gradient_linear_end_get@Base 1.15.0
+  efl_gfx_gradient_linear_end_set@Base 1.15.0
+@@ -4500,17 +4580,42 @@
+  efl_gfx_view_interface_get@Base 1.15.0
+  efl_gfx_view_size_get@Base 1.15.0
+  efl_gfx_view_size_set@Base 1.15.0
+- efl_input_device_children_iterate@Base 1.20.1
+- efl_input_device_class_get@Base 1.18.0
+- efl_input_device_is_pointer_type_get@Base 1.23.0
+- efl_input_device_pointer_device_count_get@Base 1.23.0
+- efl_input_device_seat_get@Base 1.19.0
+- efl_input_device_seat_id_get@Base 1.20.1
+- efl_input_device_seat_id_set@Base 1.20.1
+- efl_input_device_source_get@Base 1.18.0
+- efl_input_device_source_set@Base 1.18.0
+- efl_input_device_type_get@Base 1.18.0
+- efl_input_device_type_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_input_device_children_iterate@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_input_device_class_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_input_device_is_pointer_type_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_input_device_pointer_device_count_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_input_device_seat_get@Base 1.19.0
++#MISSING: 1.24.0-1bionic0# efl_input_device_seat_id_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_input_device_seat_id_set@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_input_device_source_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_input_device_source_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_input_device_type_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_input_device_type_set@Base 1.18.0
++ efl_input_text_autocapitalization_get@Base 1.24.0-1bionic0
++ efl_input_text_autocapitalization_set@Base 1.24.0-1bionic0
++ efl_input_text_entity_interface_get@Base 1.24.0-1bionic0
++ efl_input_text_input_content_type_get@Base 1.24.0-1bionic0
++ efl_input_text_input_content_type_set@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_autoshow_get@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_autoshow_set@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_hide@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_imdata_get@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_imdata_set@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_language_get@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_language_set@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_layout_get@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_layout_set@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_layout_variation_get@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_layout_variation_set@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_return_key_state_get@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_return_key_state_set@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_return_key_type_get@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_return_key_type_set@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_show@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_show_on_demand_get@Base 1.24.0-1bionic0
++ efl_input_text_input_panel_show_on_demand_set@Base 1.24.0-1bionic0
++ efl_input_text_predictable_get@Base 1.24.0-1bionic0
++ efl_input_text_predictable_set@Base 1.24.0-1bionic0
+  efl_interpolator_interface_get@Base 1.22.2
+  efl_interpolator_interpolate@Base 1.22.2
+  efl_io_buffer_adopt_readonly@Base 1.19.0
+@@ -4562,6 +4667,7 @@
+  efl_model_child_add@Base 1.15.0
+  efl_model_child_del@Base 1.15.0
+  efl_model_children_count_get@Base 1.15.0
++ efl_model_children_index_get@Base 1.24.0-1bionic0
+  efl_model_children_slice_get@Base 1.15.0
+  efl_model_init@Base 1.18.0
+  efl_model_interface_get@Base 1.18.0
+@@ -4621,12 +4727,17 @@
+  efl_playable_interface_get@Base 1.22.2
+  efl_playable_length_get@Base 1.22.2
+  efl_playable_seekable_get@Base 1.22.2
++ efl_player_autoplay_get@Base 1.24.0-1bionic0
++ efl_player_autoplay_set@Base 1.24.0-1bionic0
+  efl_player_interface_get@Base 1.15.0
+  efl_player_paused_get@Base 1.23.0
+  efl_player_paused_set@Base 1.23.0
++ efl_player_playback_loop_get@Base 1.24.0-1bionic0
++ efl_player_playback_loop_set@Base 1.24.0-1bionic0
+  efl_player_playback_position_get@Base 1.23.0
+  efl_player_playback_position_set@Base 1.23.0
+  efl_player_playback_progress_get@Base 1.23.0
++ efl_player_playback_progress_set@Base 1.24.0-1bionic0
+  efl_player_playback_speed_get@Base 1.23.0
+  efl_player_playback_speed_set@Base 1.23.0
+  efl_player_playing_get@Base 1.23.0
+@@ -4636,49 +4747,55 @@
+  efl_screen_rotation_get@Base 1.18.0
+  efl_screen_scale_factor_get@Base 1.22.2
+  efl_screen_size_in_pixels_get@Base 1.22.2
+- efl_text_annotate_interface_get@Base 1.20.1
+- efl_text_annotation_del@Base 1.20.1
+- efl_text_annotation_get@Base 1.20.1
+- efl_text_annotation_insert@Base 1.20.1
+- efl_text_annotation_is_item@Base 1.22.2
+- efl_text_annotation_positions_get@Base 1.20.1
+- efl_text_annotation_set@Base 1.20.1
+- efl_text_backing_color_get@Base 1.20.1
+- efl_text_backing_color_set@Base 1.20.1
+- efl_text_backing_type_get@Base 1.20.1
+- efl_text_backing_type_set@Base 1.20.1
+- efl_text_cursor_char_delete@Base 1.20.1
+- efl_text_cursor_char_next@Base 1.20.1
+- efl_text_cursor_char_prev@Base 1.20.1
+- efl_text_cursor_cluster_coord_set@Base 1.22.2
+- efl_text_cursor_cluster_next@Base 1.22.2
+- efl_text_cursor_cluster_prev@Base 1.22.2
+- efl_text_cursor_compare@Base 1.20.1
+- efl_text_cursor_content_get@Base 1.20.1
+- efl_text_cursor_coord_set@Base 1.20.1
+- efl_text_cursor_copy@Base 1.20.1
+- efl_text_cursor_equal@Base 1.20.1
+- efl_text_cursor_free@Base 1.20.1
+- efl_text_cursor_geometry_get@Base 1.20.1
+- efl_text_cursor_get@Base 1.20.1
+- efl_text_cursor_interface_get@Base 1.20.1
+- efl_text_cursor_item_annotation_get@Base 1.22.2
+- efl_text_cursor_item_insert@Base 1.22.2
+- efl_text_cursor_line_char_first@Base 1.20.1
+- efl_text_cursor_line_char_last@Base 1.20.1
+- efl_text_cursor_line_jump_by@Base 1.20.1
+- efl_text_cursor_new@Base 1.20.1
+- efl_text_cursor_paragraph_char_first@Base 1.20.1
+- efl_text_cursor_paragraph_char_last@Base 1.20.1
+- efl_text_cursor_paragraph_first@Base 1.20.1
+- efl_text_cursor_paragraph_last@Base 1.20.1
+- efl_text_cursor_paragraph_next@Base 1.20.1
+- efl_text_cursor_paragraph_prev@Base 1.20.1
+- efl_text_cursor_position_get@Base 1.20.1
+- efl_text_cursor_position_set@Base 1.20.1
+- efl_text_cursor_text_insert@Base 1.20.1
+- efl_text_cursor_word_end@Base 1.20.1
+- efl_text_cursor_word_start@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_annotate_interface_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_annotation_del@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_annotation_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_annotation_insert@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_annotation_is_item@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_text_annotation_positions_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_annotation_set@Base 1.20.1
++ efl_text_background_color_get@Base 1.24.0-1bionic0
++ efl_text_background_color_set@Base 1.24.0-1bionic0
++ efl_text_background_type_get@Base 1.24.0-1bionic0
++ efl_text_background_type_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_text_backing_color_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_backing_color_set@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_backing_type_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_backing_type_set@Base 1.20.1
++ efl_text_color_get@Base 1.24.0-1bionic0
++ efl_text_color_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_char_delete@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_char_next@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_char_prev@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_cluster_coord_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_cluster_next@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_cluster_prev@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_compare@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_content_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_coord_set@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_copy@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_equal@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_free@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_geometry_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_interface_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_item_annotation_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_item_insert@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_line_char_first@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_line_char_last@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_line_jump_by@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_new@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_paragraph_char_first@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_paragraph_char_last@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_paragraph_first@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_paragraph_last@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_paragraph_next@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_paragraph_prev@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_position_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_position_set@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_text_insert@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_word_end@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_cursor_word_start@Base 1.20.1
+  efl_text_effect_type_get@Base 1.20.1
+  efl_text_effect_type_set@Base 1.20.1
+  efl_text_ellipsis_get@Base 1.20.1
+@@ -4687,11 +4804,16 @@
+  efl_text_font_bitmap_scalable_set@Base 1.22.2
+  efl_text_font_fallbacks_get@Base 1.20.1
+  efl_text_font_fallbacks_set@Base 1.20.1
+- efl_text_font_get@Base 1.20.1
+- efl_text_font_interface_get@Base 1.20.1
++ efl_text_font_family_get@Base 1.24.0-1bionic0
++ efl_text_font_family_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_text_font_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_font_interface_get@Base 1.20.1
+  efl_text_font_lang_get@Base 1.20.1
+  efl_text_font_lang_set@Base 1.20.1
+- efl_text_font_set@Base 1.20.1
++ efl_text_font_properties_interface_get@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_text_font_set@Base 1.20.1
++ efl_text_font_size_get@Base 1.24.0-1bionic0
++ efl_text_font_size_set@Base 1.24.0-1bionic0
+  efl_text_font_slant_get@Base 1.20.1
+  efl_text_font_slant_set@Base 1.20.1
+  efl_text_font_source_get@Base 1.20.1
+@@ -4704,25 +4826,33 @@
+  efl_text_get@Base 1.15.0
+  efl_text_gfx_filter_get@Base 1.20.1
+  efl_text_gfx_filter_set@Base 1.20.1
+- efl_text_glow2_color_get@Base 1.20.1
+- efl_text_glow2_color_set@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_glow2_color_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_glow2_color_set@Base 1.20.1
+  efl_text_glow_color_get@Base 1.20.1
+  efl_text_glow_color_set@Base 1.20.1
+- efl_text_halign_auto_type_get@Base 1.22.2
+- efl_text_halign_auto_type_set@Base 1.22.2
+- efl_text_halign_get@Base 1.20.1
+- efl_text_halign_set@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_halign_auto_type_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_text_halign_auto_type_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_text_halign_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_halign_set@Base 1.20.1
++ efl_text_horizontal_align_auto_type_get@Base 1.24.0-1bionic0
++ efl_text_horizontal_align_auto_type_set@Base 1.24.0-1bionic0
++ efl_text_horizontal_align_get@Base 1.24.0-1bionic0
++ efl_text_horizontal_align_set@Base 1.24.0-1bionic0
+  efl_text_interface_get@Base 1.15.0
+- efl_text_item_geometry_get@Base 1.22.2
+- efl_text_linegap_get@Base 1.20.1
+- efl_text_linegap_set@Base 1.20.1
+- efl_text_linerelgap_get@Base 1.20.1
+- efl_text_linerelgap_set@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_item_geometry_get@Base 1.22.2
++ efl_text_line_gap_get@Base 1.24.0-1bionic0
++ efl_text_line_gap_set@Base 1.24.0-1bionic0
++ efl_text_line_rel_gap_get@Base 1.24.0-1bionic0
++ efl_text_line_rel_gap_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_text_linegap_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_linegap_set@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_linerelgap_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_linerelgap_set@Base 1.20.1
+  efl_text_markup_get@Base 1.22.2
+- efl_text_markup_interactive_cursor_markup_insert@Base 1.22.2
+- efl_text_markup_interactive_interface_get@Base 1.22.2
+- efl_text_markup_interactive_markup_range_get@Base 1.22.2
+- efl_text_markup_interactive_markup_range_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_text_markup_interactive_cursor_markup_insert@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_text_markup_interactive_interface_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_text_markup_interactive_markup_range_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_text_markup_interactive_markup_range_set@Base 1.22.2
+  efl_text_markup_interface_get@Base 1.22.2
+  efl_text_markup_set@Base 1.22.2
+  efl_text_markup_util_class_get@Base 1.22.2
+@@ -4730,15 +4860,19 @@
+  efl_text_markup_util_text_to_markup@Base 1.22.2
+  efl_text_multiline_get@Base 1.20.1
+  efl_text_multiline_set@Base 1.20.1
+- efl_text_normal_color_get@Base 1.20.1
+- efl_text_normal_color_set@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_normal_color_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_normal_color_set@Base 1.20.1
+  efl_text_outline_color_get@Base 1.20.1
+  efl_text_outline_color_set@Base 1.20.1
+  efl_text_password_get@Base 1.20.1
+  efl_text_password_set@Base 1.20.1
+- efl_text_range_annotations_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_range_annotations_get@Base 1.20.1
+  efl_text_replacement_char_get@Base 1.20.1
+  efl_text_replacement_char_set@Base 1.20.1
++ efl_text_secondary_glow_color_get@Base 1.24.0-1bionic0
++ efl_text_secondary_glow_color_set@Base 1.24.0-1bionic0
++ efl_text_secondary_underline_color_get@Base 1.24.0-1bionic0
++ efl_text_secondary_underline_color_set@Base 1.24.0-1bionic0
+  efl_text_set@Base 1.15.0
+  efl_text_shadow_color_get@Base 1.20.1
+  efl_text_shadow_color_set@Base 1.20.1
+@@ -4749,10 +4883,12 @@
+  efl_text_strikethrough_type_get@Base 1.20.1
+  efl_text_strikethrough_type_set@Base 1.20.1
+  efl_text_style_interface_get@Base 1.20.1
+- efl_text_tabstops_get@Base 1.20.1
+- efl_text_tabstops_set@Base 1.20.1
+- efl_text_underline2_color_get@Base 1.20.1
+- efl_text_underline2_color_set@Base 1.20.1
++ efl_text_tab_stops_get@Base 1.24.0-1bionic0
++ efl_text_tab_stops_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_text_tabstops_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_tabstops_set@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_underline2_color_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_underline2_color_set@Base 1.20.1
+  efl_text_underline_color_get@Base 1.20.1
+  efl_text_underline_color_set@Base 1.20.1
+  efl_text_underline_dashed_color_get@Base 1.20.1
+@@ -4765,8 +4901,10 @@
+  efl_text_underline_height_set@Base 1.20.1
+  efl_text_underline_type_get@Base 1.20.1
+  efl_text_underline_type_set@Base 1.20.1
+- efl_text_valign_get@Base 1.20.1
+- efl_text_valign_set@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_valign_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_text_valign_set@Base 1.20.1
++ efl_text_vertical_align_get@Base 1.24.0-1bionic0
++ efl_text_vertical_align_set@Base 1.24.0-1bionic0
+  efl_text_wrap_get@Base 1.20.1
+  efl_text_wrap_set@Base 1.20.1
+  efl_ui_autorepeat_enabled_get@Base 1.20.1
+@@ -4844,9 +4982,10 @@
+  efl_ui_scrollbar_bar_position_get@Base 1.22.2
+  efl_ui_scrollbar_bar_position_set@Base 1.22.2
+  efl_ui_scrollbar_bar_size_get@Base 1.22.2
++ efl_ui_scrollbar_bar_visibility_get@Base 1.24.0-1bionic0
+  efl_ui_scrollbar_bar_visibility_update@Base 1.22.2
+  efl_ui_scrollbar_interface_get@Base 1.22.2
+- efl_ui_text_selectable_interface_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_selectable_interface_get@Base 1.23.0
+  efl_ui_view_factory_class_get@Base 1.23.0
+  efl_ui_view_factory_create_with_event@Base 1.22.2
+  efl_ui_view_interface_get@Base 1.19.0
+@@ -4859,23 +4998,36 @@
+  efl_ui_zoom_level_set@Base 1.22.2
+  efl_ui_zoom_mode_get@Base 1.22.2
+  efl_ui_zoom_mode_set@Base 1.22.2
+-libefl_wl.so.1 libefl #MINVER#
+- efl_wl_add@Base 1.23.0
+- efl_wl_aspect_set@Base 1.23.0
+- efl_wl_extracted_surface_extracted_parent_get@Base 1.23.0
+- efl_wl_extracted_surface_object_find@Base 1.23.0
+- efl_wl_global_add@Base 1.23.0
+- efl_wl_minmax_set@Base 1.23.0
+- efl_wl_next@Base 1.23.0
+- efl_wl_pid_add@Base 1.23.0
+- efl_wl_pid_del@Base 1.23.0
+- efl_wl_prev@Base 1.23.0
+- efl_wl_rotate@Base 1.23.0
+- efl_wl_run@Base 1.23.0
+- efl_wl_scale_set@Base 1.23.0
+- efl_wl_seat_key_repeat_set@Base 1.23.0
+- efl_wl_seat_keymap_set@Base 1.23.0
+- efl_wl_surface_extract@Base 1.23.0
++libefl_canvas_wl.so.1 libefl #MINVER#
++ _EFL_CANVAS_WL_EVENT_CHILD_ADDED@Base 1.24.0-1bionic0
++ _EFL_CANVAS_WL_EVENT_POPUP_ADDED@Base 1.24.0-1bionic0
++ _EFL_CANVAS_WL_EVENT_SEAT_ADDED@Base 1.24.0-1bionic0
++ _EFL_CANVAS_WL_EVENT_TOPLEVEL_ADDED@Base 1.24.0-1bionic0
++ efl_canvas_wl_active_surface_get@Base 1.24.0-1bionic0
++ efl_canvas_wl_active_surface_set@Base 1.24.0-1bionic0
++ efl_canvas_wl_allowed_pid_add@Base 1.24.0-1bionic0
++ efl_canvas_wl_allowed_pid_del@Base 1.24.0-1bionic0
++ efl_canvas_wl_aspect_propagate_get@Base 1.24.0-1bionic0
++ efl_canvas_wl_aspect_propagate_set@Base 1.24.0-1bionic0
++ efl_canvas_wl_class_get@Base 1.24.0-1bionic0
++ efl_canvas_wl_exec_flags_get@Base 1.24.0-1bionic0
++ efl_canvas_wl_exec_flags_set@Base 1.24.0-1bionic0
++ efl_canvas_wl_extracted_surface_object_find@Base 1.24.0-1bionic0
++ efl_canvas_wl_global_add@Base 1.24.0-1bionic0
++ efl_canvas_wl_minmax_propagate_get@Base 1.24.0-1bionic0
++ efl_canvas_wl_minmax_propagate_set@Base 1.24.0-1bionic0
++ efl_canvas_wl_rotation_get@Base 1.24.0-1bionic0
++ efl_canvas_wl_rotation_set@Base 1.24.0-1bionic0
++ efl_canvas_wl_run@Base 1.24.0-1bionic0
++ efl_canvas_wl_seat_key_repeat_set@Base 1.24.0-1bionic0
++ efl_canvas_wl_seat_keymap_set@Base 1.24.0-1bionic0
++ efl_canvas_wl_surface_class_get@Base 1.24.0-1bionic0
++ efl_canvas_wl_surface_extract@Base 1.24.0-1bionic0
++ efl_canvas_wl_surface_extracted_get@Base 1.24.0-1bionic0
++ efl_canvas_wl_surface_next@Base 1.24.0-1bionic0
++ efl_canvas_wl_surface_parent_surface_get@Base 1.24.0-1bionic0
++ efl_canvas_wl_surface_pid_get@Base 1.24.0-1bionic0
++ efl_canvas_wl_surface_prev@Base 1.24.0-1bionic0
+ libefreet.so.1 libefl #MINVER#
+  EFREET_DESKTOP_TYPE_APPLICATION@Base 1.15.0
+  EFREET_DESKTOP_TYPE_DIRECTORY@Base 1.15.0
+@@ -5054,6 +5206,7 @@
+  EINA_VALUE_TYPE_BLOB@Base 1.15.0
+  EINA_VALUE_TYPE_BOOL@Base 1.22.2
+  EINA_VALUE_TYPE_CHAR@Base 1.15.0
++ EINA_VALUE_TYPE_CONTENT@Base 1.24.0-1bionic0
+  EINA_VALUE_TYPE_DOUBLE@Base 1.15.0
+  EINA_VALUE_TYPE_ERROR@Base 1.22.2
+  EINA_VALUE_TYPE_FILE@Base 1.22.2
+@@ -5064,6 +5217,7 @@
+  EINA_VALUE_TYPE_LIST@Base 1.15.0
+  EINA_VALUE_TYPE_LONG@Base 1.15.0
+  EINA_VALUE_TYPE_OPTIONAL@Base 1.17.0
++ EINA_VALUE_TYPE_PROMISE@Base 1.24.0-1bionic0
+  EINA_VALUE_TYPE_RECTANGLE@Base 1.22.2
+  EINA_VALUE_TYPE_SHORT@Base 1.15.0
+  EINA_VALUE_TYPE_STRING@Base 1.15.0
+@@ -5172,6 +5326,16 @@
+  eina_carray_iterator_new@Base 1.18.0
+  eina_carray_length_accessor_new@Base 1.23.0
+  eina_carray_length_iterator_new@Base 1.22.2
++ eina_carray_length_ptr_accessor_new@Base 1.24.0-1bionic0
++ eina_content_as_file@Base 1.24.0-1bionic0
++ eina_content_convert@Base 1.24.0-1bionic0
++ eina_content_converter_conversion_register@Base 1.24.0-1bionic0
++ eina_content_converter_convert_can@Base 1.24.0-1bionic0
++ eina_content_converter_possible_conversions@Base 1.24.0-1bionic0
++ eina_content_data_get@Base 1.24.0-1bionic0
++ eina_content_free@Base 1.24.0-1bionic0
++ eina_content_new@Base 1.24.0-1bionic0
++ eina_content_type_get@Base 1.24.0-1bionic0
+  eina_convert_atod@Base 1.15.0
+  eina_convert_atofp@Base 1.15.0
+  eina_convert_dtoa@Base 1.15.0
+@@ -5226,6 +5390,7 @@
+  eina_f32p32_cos@Base 1.15.0
+  eina_f32p32_sin@Base 1.15.0
+  eina_file_close@Base 1.15.0
++ eina_file_close_from@Base 1.24.0-1bionic0
+  eina_file_close_on_exec@Base 1.20.1
+  eina_file_copy@Base 1.15.0
+  eina_file_dir_list@Base 1.15.0
+@@ -5373,6 +5538,7 @@
+  eina_iterator_free@Base 1.15.0
+  eina_iterator_lock@Base 1.15.0
+  eina_iterator_next@Base 1.15.0
++ eina_iterator_processed_new@Base 1.24.0-1bionic0
+  eina_iterator_unlock@Base 1.15.0
+  eina_lalloc_element_add@Base 1.15.0
+  eina_lalloc_elements_add@Base 1.15.0
+@@ -5492,6 +5658,7 @@
+  eina_matrix3_values_get@Base 1.15.0
+  eina_matrix3_values_set@Base 1.15.0
+  eina_matrix4_array_set@Base 1.17.0
++ eina_matrix4_compose@Base 1.24.0-1bionic0
+  eina_matrix4_copy@Base 1.17.0
+  eina_matrix4_determinant@Base 1.16.0
+  eina_matrix4_identity@Base 1.16.0
+@@ -5502,6 +5669,9 @@
+  eina_matrix4_normalized@Base 1.16.0
+  eina_matrix4_ortho_set@Base 1.17.0
+  eina_matrix4_quaternion_to@Base 1.16.0
++ eina_matrix4_rotate@Base 1.24.0-1bionic0
++ eina_matrix4_scale@Base 1.24.0-1bionic0
++ eina_matrix4_translate@Base 1.24.0-1bionic0
+  eina_matrix4_transpose@Base 1.16.0
+  eina_matrix4_type_get@Base 1.15.0
+  eina_matrix4_values_get@Base 1.15.0
+@@ -5559,8 +5729,9 @@
+  eina_prefix_lib_get@Base 1.15.0
+  eina_prefix_locale_get@Base 1.15.0
+  eina_prefix_new@Base 1.15.0
+- eina_prime_table@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# eina_prime_table@Base 1.15.0
+  eina_promise_all_array@Base 1.22.2
++ eina_promise_all_iterator@Base 1.24.0-1bionic0
+  eina_promise_as_value@Base 1.22.2
+  eina_promise_continue_new@Base 1.22.2
+  eina_promise_new@Base 1.22.2
+@@ -5840,6 +6011,8 @@
+  eina_ustringshare_ref@Base 1.15.0
+  eina_ustringshare_strlen@Base 1.15.0
+  eina_value_array_new@Base 1.15.0
++ eina_value_content_init@Base 1.24.0-1bionic0
++ eina_value_content_new@Base 1.24.0-1bionic0
+  eina_value_convert@Base 1.15.0
+  eina_value_copy@Base 1.15.0
+  eina_value_free@Base 1.15.0
+@@ -5855,6 +6028,7 @@
+  eina_value_struct_member_find@Base 1.15.0
+  eina_value_struct_new@Base 1.15.0
+  eina_value_to_binbuf@Base 1.22.2
++ eina_value_to_content@Base 1.24.0-1bionic0
+  eina_value_to_string@Base 1.15.0
+  eina_value_type_check@Base 1.15.0
+  eina_value_type_name_get@Base 1.15.0
+@@ -6196,15 +6370,21 @@
+  _EFL_ACCESS_WINDOW_EVENT_WINDOW_MAXIMIZED@Base 1.22.2
+  _EFL_ACCESS_WINDOW_EVENT_WINDOW_MINIMIZED@Base 1.22.2
+  _EFL_ACCESS_WINDOW_EVENT_WINDOW_RESTORED@Base 1.22.2
+- _EFL_TEXT_INTERACTIVE_EVENT_TEXT_SELECTION_CHANGED@Base 1.22.2
++ _EFL_TEXT_INTERACTIVE_EVENT_CHANGED_USER@Base 1.24.0-1bionic0
++ _EFL_TEXT_INTERACTIVE_EVENT_HAVE_SELECTION_CHANGED@Base 1.24.0-1bionic0
++ _EFL_TEXT_INTERACTIVE_EVENT_PREEDIT_CHANGED@Base 1.24.0-1bionic0
++ _EFL_TEXT_INTERACTIVE_EVENT_REDO_REQUEST@Base 1.24.0-1bionic0
++ _EFL_TEXT_INTERACTIVE_EVENT_SELECTION_CHANGED@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# _EFL_TEXT_INTERACTIVE_EVENT_TEXT_SELECTION_CHANGED@Base 1.22.2
++ _EFL_TEXT_INTERACTIVE_EVENT_UNDO_REQUEST@Base 1.24.0-1bionic0
+  _EFL_UI_ALERT_POPUP_EVENT_BUTTON_CLICKED@Base 1.22.2
+- _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_DONE@Base 1.23.0
+- _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_PAUSE@Base 1.23.0
+- _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_REPEAT@Base 1.23.0
+- _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_RESUME@Base 1.23.0
+- _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_START@Base 1.23.0
+- _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_STOP@Base 1.23.0
+- _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_UPDATE@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_DONE@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_PAUSE@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_REPEAT@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_RESUME@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_START@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_STOP@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_ANIMATION_VIEW_EVENT_PLAY_UPDATE@Base 1.23.0
+  _EFL_UI_CALENDAR_EVENT_CHANGED@Base 1.22.2
+  _EFL_UI_CLOCK_EVENT_CHANGED@Base 1.19.0
+  _EFL_UI_CODE_WIDGET_EVENT_CHANGED_USER@Base 1.22.2
+@@ -6220,12 +6400,18 @@
+  _EFL_UI_COLLECTION_VIEW_EVENT_ITEM_REALIZED@Base 1.23.0
+  _EFL_UI_COLLECTION_VIEW_EVENT_ITEM_UNREALIZED@Base 1.23.0
+  _EFL_UI_DATEPICKER_EVENT_DATE_CHANGED@Base 1.23.0
+- _EFL_UI_DND_EVENT_DRAG_ACCEPT@Base 1.22.2
+- _EFL_UI_DND_EVENT_DRAG_DONE@Base 1.22.2
+- _EFL_UI_DND_EVENT_DRAG_DROP@Base 1.22.2
+- _EFL_UI_DND_EVENT_DRAG_ENTER@Base 1.22.2
+- _EFL_UI_DND_EVENT_DRAG_LEAVE@Base 1.22.2
+- _EFL_UI_DND_EVENT_DRAG_POS@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_DND_EVENT_DRAG_ACCEPT@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_DND_EVENT_DRAG_DONE@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_DND_EVENT_DRAG_DROP@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_DND_EVENT_DRAG_ENTER@Base 1.22.2
++ _EFL_UI_DND_EVENT_DRAG_FINISHED@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_DND_EVENT_DRAG_LEAVE@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_UI_DND_EVENT_DRAG_POS@Base 1.22.2
++ _EFL_UI_DND_EVENT_DRAG_STARTED@Base 1.24.0-1bionic0
++ _EFL_UI_DND_EVENT_DROP_DROPPED@Base 1.24.0-1bionic0
++ _EFL_UI_DND_EVENT_DROP_ENTERED@Base 1.24.0-1bionic0
++ _EFL_UI_DND_EVENT_DROP_LEFT@Base 1.24.0-1bionic0
++ _EFL_UI_DND_EVENT_DROP_POSITION_CHANGED@Base 1.24.0-1bionic0
+  _EFL_UI_EVENT_ITEM_CLICKED@Base 1.23.0
+  _EFL_UI_EVENT_ITEM_CLICKED_ANY@Base 1.23.0
+  _EFL_UI_EVENT_ITEM_LONGPRESSED@Base 1.23.0
+@@ -6283,21 +6469,26 @@
+  _EFL_UI_TAGS_EVENT_ITEM_DELETED@Base 1.22.2
+  _EFL_UI_TAGS_EVENT_ITEM_LONGPRESSED@Base 1.22.2
+  _EFL_UI_TAGS_EVENT_ITEM_SELECTED@Base 1.22.2
+- _EFL_UI_TEXT_EVENT_ABORTED@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_ANCHOR_DOWN@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_ANCHOR_HOVER_OPENED@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_ANCHOR_IN@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_ANCHOR_OUT@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_ANCHOR_UP@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_CHANGED@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_CHANGED_USER@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_CONTEXT_OPEN@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_CURSOR_CHANGED_MANUAL@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_PREEDIT_CHANGED@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_PRESS@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_REDO_REQUEST@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_UNDO_REQUEST@Base 1.18.0
+- _EFL_UI_TEXT_EVENT_VALIDATE@Base 1.18.0
++ _EFL_UI_TEXTBOX_EVENT_CHANGED@Base 1.24.0-1bionic0
++ _EFL_UI_TEXTBOX_EVENT_CONTEXT_OPEN@Base 1.24.0-1bionic0
++ _EFL_UI_TEXTBOX_EVENT_SELECTION_COPY@Base 1.24.0-1bionic0
++ _EFL_UI_TEXTBOX_EVENT_SELECTION_CUT@Base 1.24.0-1bionic0
++ _EFL_UI_TEXTBOX_EVENT_SELECTION_PASTE@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_ABORTED@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_ANCHOR_DOWN@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_ANCHOR_HOVER_OPENED@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_ANCHOR_IN@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_ANCHOR_OUT@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_ANCHOR_UP@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_CHANGED@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_CHANGED_USER@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_CONTEXT_OPEN@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_CURSOR_CHANGED_MANUAL@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_PREEDIT_CHANGED@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_PRESS@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_REDO_REQUEST@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_UNDO_REQUEST@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_UI_TEXT_EVENT_VALIDATE@Base 1.18.0
+  _EFL_UI_TIMEPICKER_EVENT_TIME_CHANGED@Base 1.23.0
+  _EFL_UI_WIDGET_EVENT_ACCESS_CHANGED@Base 1.22.2
+  _EFL_UI_WIDGET_EVENT_LANGUAGE_CHANGED@Base 1.22.2
+@@ -6480,8 +6671,8 @@
+  _ELM_NOTIFY_EVENT_DISMISSED@Base 1.18.0
+  _ELM_NOTIFY_EVENT_TIMEOUT@Base 1.18.0
+  _ELM_PANEL_EVENT_TOGGLED@Base 1.19.0
+- _ELM_PANES_EVENT_PRESS@Base 1.18.0
+- _ELM_PANES_EVENT_UNPRESS@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _ELM_PANES_EVENT_PRESS@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _ELM_PANES_EVENT_UNPRESS@Base 1.18.0
+  _ELM_PAN_EVENT_CHANGED@Base 1.18.0
+  _ELM_PLAYER_EVENT_EJECT_CLICKED@Base 1.18.0
+  _ELM_PLAYER_EVENT_FORWARD_CLICKED@Base 1.18.0
+@@ -6572,6 +6763,9 @@
+  _elm_startup_time@Base 1.18.0
+  _elm_widget_item_onscreen_is@Base 1.18.0
+  _elm_widget_onscreen_is@Base 1.18.0
++ ecore_evas_no_matching_type@Base 1.24.0-1bionic0
++ ecore_evas_no_selection@Base 1.24.0-1bionic0
++ ecore_evas_request_replaced@Base 1.24.0-1bionic0
+  efl_access_action_actions_get@Base 1.22.2
+  efl_access_action_description_get@Base 1.22.2
+  efl_access_action_description_set@Base 1.22.2
+@@ -6680,48 +6874,54 @@
+  efl_datetime_manager_value_get@Base 1.22.2
+  efl_datetime_manager_value_set@Base 1.22.2
+  efl_quicklaunch_prepare@Base 1.18.0
++ efl_text_interactive_all_select@Base 1.24.0-1bionic0
++ efl_text_interactive_all_unselect@Base 1.24.0-1bionic0
+  efl_text_interactive_editable_get@Base 1.22.2
+  efl_text_interactive_editable_set@Base 1.22.2
++ efl_text_interactive_have_selection_get@Base 1.24.0-1bionic0
+  efl_text_interactive_interface_get@Base 1.22.2
+- efl_text_interactive_select_none@Base 1.22.2
++ efl_text_interactive_main_cursor_get@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_text_interactive_select_none@Base 1.22.2
+  efl_text_interactive_selection_allowed_get@Base 1.22.2
+  efl_text_interactive_selection_allowed_set@Base 1.22.2
+  efl_text_interactive_selection_cursors_get@Base 1.22.2
++ efl_text_interactive_selection_cursors_set@Base 1.24.0-1bionic0
+  efl_ui_action_connector_bind_clickable_to_object@Base 1.23.0
+  efl_ui_action_connector_bind_clickable_to_theme@Base 1.23.0
+  efl_ui_action_connector_class_get@Base 1.23.0
+  efl_ui_alert_popup_button_set@Base 1.22.2
+  efl_ui_alert_popup_class_get@Base 1.22.2
+- efl_ui_alert_popup_part_class_get@Base 1.22.2
+- efl_ui_animation_view_auto_play_get@Base 1.23.0
+- efl_ui_animation_view_auto_play_set@Base 1.23.0
+- efl_ui_animation_view_auto_repeat_get@Base 1.23.0
+- efl_ui_animation_view_auto_repeat_set@Base 1.23.0
+- efl_ui_animation_view_class_get@Base 1.23.0
+- efl_ui_animation_view_default_view_size_get@Base 1.23.0
+- efl_ui_animation_view_duration_time_get@Base 1.23.0
+- efl_ui_animation_view_frame_count_get@Base 1.23.0
+- efl_ui_animation_view_frame_get@Base 1.23.0
+- efl_ui_animation_view_frame_set@Base 1.23.0
+- efl_ui_animation_view_is_playing_back@Base 1.23.0
+- efl_ui_animation_view_max_frame_get@Base 1.23.0
+- efl_ui_animation_view_max_frame_set@Base 1.23.0
+- efl_ui_animation_view_max_progress_get@Base 1.23.0
+- efl_ui_animation_view_max_progress_set@Base 1.23.0
+- efl_ui_animation_view_min_frame_get@Base 1.23.0
+- efl_ui_animation_view_min_frame_set@Base 1.23.0
+- efl_ui_animation_view_min_progress_get@Base 1.23.0
+- efl_ui_animation_view_min_progress_set@Base 1.23.0
+- efl_ui_animation_view_pause@Base 1.23.0
+- efl_ui_animation_view_play@Base 1.23.0
+- efl_ui_animation_view_play_back@Base 1.23.0
+- efl_ui_animation_view_progress_get@Base 1.23.0
+- efl_ui_animation_view_progress_set@Base 1.23.0
+- efl_ui_animation_view_resume@Base 1.23.0
+- efl_ui_animation_view_speed_get@Base 1.23.0
+- efl_ui_animation_view_speed_set@Base 1.23.0
+- efl_ui_animation_view_state_get@Base 1.23.0
+- efl_ui_animation_view_stop@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_alert_popup_part_class_get@Base 1.22.2
++ efl_ui_alert_popup_part_title_class_get@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_auto_play_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_auto_play_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_auto_repeat_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_auto_repeat_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_class_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_default_view_size_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_duration_time_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_frame_count_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_frame_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_frame_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_is_playing_back@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_max_frame_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_max_frame_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_max_progress_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_max_progress_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_min_frame_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_min_frame_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_min_progress_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_min_progress_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_pause@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_play@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_play_back@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_progress_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_progress_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_resume@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_speed_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_speed_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_state_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_animation_view_stop@Base 1.23.0
+  efl_ui_average_model_class_get@Base 1.22.2
+  efl_ui_bg_class_get@Base 1.22.2
+  efl_ui_bg_legacy_class_get@Base 1.22.2
+@@ -6836,18 +7036,19 @@
+  efl_ui_datepicker_date_min_set@Base 1.23.0
+  efl_ui_datepicker_date_set@Base 1.22.2
+  efl_ui_default_item_class_get@Base 1.23.0
+- efl_ui_dnd_container_drag_delay_time_get@Base 1.22.2
+- efl_ui_dnd_container_drag_delay_time_set@Base 1.22.2
+- efl_ui_dnd_container_drag_item_add@Base 1.22.2
+- efl_ui_dnd_container_drag_item_del@Base 1.22.2
+- efl_ui_dnd_container_drop_item_add@Base 1.22.2
+- efl_ui_dnd_container_drop_item_del@Base 1.22.2
+- efl_ui_dnd_container_mixin_get@Base 1.22.2
+- efl_ui_dnd_drag_action_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_dnd_container_drag_delay_time_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_dnd_container_drag_delay_time_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_dnd_container_drag_item_add@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_dnd_container_drag_item_del@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_dnd_container_drop_item_add@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_dnd_container_drop_item_del@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_dnd_container_mixin_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_dnd_drag_action_set@Base 1.22.2
+  efl_ui_dnd_drag_cancel@Base 1.22.2
+  efl_ui_dnd_drag_start@Base 1.22.2
+- efl_ui_dnd_drop_target_add@Base 1.22.2
+- efl_ui_dnd_drop_target_del@Base 1.22.2
++ efl_ui_dnd_drop_data_get@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_ui_dnd_drop_target_add@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_dnd_drop_target_del@Base 1.22.2
+  efl_ui_dnd_mixin_get@Base 1.22.2
+  efl_ui_exact_model_class_get@Base 1.22.2
+  efl_ui_flip_class_get@Base 1.18.0
+@@ -7007,27 +7208,42 @@
+  efl_ui_layout_theme_get@Base 1.22.2
+  efl_ui_layout_theme_rotation_apply@Base 1.22.2
+  efl_ui_layout_theme_set@Base 1.22.2
++ efl_ui_layout_theme_version_get@Base 1.24.0-1bionic0
+  efl_ui_legacy_interface_get@Base 1.22.2
+  efl_ui_list_class_get@Base 1.22.2
+  efl_ui_list_default_item_class_get@Base 1.22.2
+  efl_ui_list_placeholder_item_class_get@Base 1.23.0
+  efl_ui_list_view_class_get@Base 1.22.2
+- efl_ui_multi_selectable_async_all_select@Base 1.23.0
+- efl_ui_multi_selectable_async_all_unselect@Base 1.23.0
+- efl_ui_multi_selectable_async_interface_get@Base 1.23.0
+- efl_ui_multi_selectable_async_range_select@Base 1.23.0
+- efl_ui_multi_selectable_async_range_unselect@Base 1.23.0
+- efl_ui_multi_selectable_async_select_mode_get@Base 1.23.0
+- efl_ui_multi_selectable_async_select_mode_set@Base 1.23.0
+- efl_ui_multi_selectable_async_selected_iterator_new@Base 1.23.0
+- efl_ui_multi_selectable_async_unselected_iterator_new@Base 1.23.0
++ efl_ui_multi_selectable_all_select@Base 1.24.0-1bionic0
++ efl_ui_multi_selectable_all_unselect@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_ui_multi_selectable_async_all_select@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_multi_selectable_async_all_unselect@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_multi_selectable_async_interface_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_multi_selectable_async_range_select@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_multi_selectable_async_range_unselect@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_multi_selectable_async_select_mode_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_multi_selectable_async_select_mode_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_multi_selectable_async_selected_iterator_new@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_multi_selectable_async_unselected_iterator_new@Base 1.23.0
++ efl_ui_multi_selectable_index_range_interface_get@Base 1.24.0-1bionic0
+  efl_ui_multi_selectable_interface_get@Base 1.23.0
++ efl_ui_multi_selectable_ndx_range_select@Base 1.24.0-1bionic0
++ efl_ui_multi_selectable_ndx_range_unselect@Base 1.24.0-1bionic0
++ efl_ui_multi_selectable_object_range_interface_get@Base 1.24.0-1bionic0
++ efl_ui_multi_selectable_range_select@Base 1.24.0-1bionic0
++ efl_ui_multi_selectable_range_unselect@Base 1.24.0-1bionic0
++ efl_ui_multi_selectable_select_mode_get@Base 1.24.0-1bionic0
++ efl_ui_multi_selectable_select_mode_set@Base 1.24.0-1bionic0
++ efl_ui_multi_selectable_selected_iterator_new@Base 1.24.0-1bionic0
++ efl_ui_multi_selectable_selected_ndx_iterator_new@Base 1.24.0-1bionic0
++ efl_ui_multi_selectable_unselected_ndx_iterator_new@Base 1.24.0-1bionic0
+  efl_ui_navigation_bar_class_get@Base 1.22.2
+  efl_ui_navigation_bar_part_back_button_class_get@Base 1.22.2
+  efl_ui_navigation_bar_part_class_get@Base 1.22.2
+  efl_ui_navigation_layout_bar_get@Base 1.22.2
+  efl_ui_navigation_layout_bar_set@Base 1.22.2
+  efl_ui_navigation_layout_class_get@Base 1.22.2
++ efl_ui_pager_class_get@Base 1.24.0-1bionic0
+  efl_ui_pan_class_get@Base 1.22.2
+  efl_ui_pan_content_size_get@Base 1.22.2
+  efl_ui_pan_position_get@Base 1.22.2
+@@ -7082,13 +7298,15 @@
+  efl_ui_position_manager_grid_class_get@Base 1.23.0
+  efl_ui_position_manager_list_class_get@Base 1.23.0
+  efl_ui_progressbar_class_get@Base 1.20.1
++ efl_ui_progressbar_infinite_mode_get@Base 1.24.0-1bionic0
++ efl_ui_progressbar_infinite_mode_set@Base 1.24.0-1bionic0
+  efl_ui_progressbar_legacy_class_get@Base 1.22.2
+  efl_ui_progressbar_legacy_part_class_get@Base 1.22.2
+  efl_ui_progressbar_part_class_get@Base 1.22.2
+- efl_ui_progressbar_pulse_get@Base 1.20.1
+- efl_ui_progressbar_pulse_mode_get@Base 1.20.1
+- efl_ui_progressbar_pulse_mode_set@Base 1.20.1
+- efl_ui_progressbar_pulse_set@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_ui_progressbar_pulse_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_ui_progressbar_pulse_mode_get@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_ui_progressbar_pulse_mode_set@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# efl_ui_progressbar_pulse_set@Base 1.20.1
+  efl_ui_progressbar_show_progress_label_get@Base 1.23.0
+  efl_ui_progressbar_show_progress_label_set@Base 1.23.0
+  efl_ui_property_bind_part_class_get@Base 1.23.0
+@@ -7104,51 +7322,64 @@
+  efl_ui_radio_legacy_part_class_get@Base 1.22.2
+  efl_ui_radio_state_value_get@Base 1.20.1
+  efl_ui_radio_state_value_set@Base 1.20.1
+- efl_ui_relative_layout_class_get@Base 1.22.2
+- efl_ui_relative_layout_relation_bottom_get@Base 1.22.2
+- efl_ui_relative_layout_relation_bottom_set@Base 1.22.2
+- efl_ui_relative_layout_relation_left_get@Base 1.22.2
+- efl_ui_relative_layout_relation_left_set@Base 1.22.2
+- efl_ui_relative_layout_relation_right_get@Base 1.22.2
+- efl_ui_relative_layout_relation_right_set@Base 1.22.2
+- efl_ui_relative_layout_relation_top_get@Base 1.22.2
+- efl_ui_relative_layout_relation_top_set@Base 1.22.2
++ efl_ui_relative_container_class_get@Base 1.24.0-1bionic0
++ efl_ui_relative_container_relation_bottom_get@Base 1.24.0-1bionic0
++ efl_ui_relative_container_relation_bottom_set@Base 1.24.0-1bionic0
++ efl_ui_relative_container_relation_left_get@Base 1.24.0-1bionic0
++ efl_ui_relative_container_relation_left_set@Base 1.24.0-1bionic0
++ efl_ui_relative_container_relation_right_get@Base 1.24.0-1bionic0
++ efl_ui_relative_container_relation_right_set@Base 1.24.0-1bionic0
++ efl_ui_relative_container_relation_top_get@Base 1.24.0-1bionic0
++ efl_ui_relative_container_relation_top_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_ui_relative_layout_class_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_relative_layout_relation_bottom_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_relative_layout_relation_bottom_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_relative_layout_relation_left_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_relative_layout_relation_left_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_relative_layout_relation_right_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_relative_layout_relation_right_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_relative_layout_relation_top_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_relative_layout_relation_top_set@Base 1.22.2
+  efl_ui_scroll_manager_class_get@Base 1.22.2
+  efl_ui_scroll_manager_pan_set@Base 1.22.2
+  efl_ui_scroller_class_get@Base 1.22.2
+  efl_ui_select_model_class_get@Base 1.23.0
+- efl_ui_selectable_all_select@Base 1.23.0
+- efl_ui_selectable_all_unselect@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_selectable_all_select@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_selectable_all_unselect@Base 1.23.0
++ efl_ui_selectable_allow_manual_deselection_get@Base 1.24.0-1bionic0
++ efl_ui_selectable_allow_manual_deselection_set@Base 1.24.0-1bionic0
+  efl_ui_selectable_fallback_selection_get@Base 1.23.0
+  efl_ui_selectable_fallback_selection_set@Base 1.23.0
+  efl_ui_selectable_interface_get@Base 1.23.0
+  efl_ui_selectable_last_selected_get@Base 1.23.0
+- efl_ui_selectable_range_select@Base 1.23.0
+- efl_ui_selectable_range_unselect@Base 1.23.0
+- efl_ui_selectable_select_mode_get@Base 1.23.0
+- efl_ui_selectable_select_mode_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_selectable_range_select@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_selectable_range_unselect@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_selectable_select_mode_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_selectable_select_mode_set@Base 1.23.0
+  efl_ui_selectable_selected_get@Base 1.23.0
+- efl_ui_selectable_selected_iterator_new@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_selectable_selected_iterator_new@Base 1.23.0
+  efl_ui_selectable_selected_set@Base 1.23.0
+  efl_ui_selection_clear@Base 1.22.2
+  efl_ui_selection_get@Base 1.22.2
+- efl_ui_selection_has_owner@Base 1.22.2
+- efl_ui_selection_manager_class_get@Base 1.22.2
+- efl_ui_selection_manager_container_drag_item_add@Base 1.22.2
+- efl_ui_selection_manager_container_drag_item_del@Base 1.22.2
+- efl_ui_selection_manager_container_drop_item_add@Base 1.22.2
+- efl_ui_selection_manager_container_drop_item_del@Base 1.22.2
+- efl_ui_selection_manager_drag_action_set@Base 1.22.2
+- efl_ui_selection_manager_drag_cancel@Base 1.22.2
+- efl_ui_selection_manager_drag_start@Base 1.22.2
+- efl_ui_selection_manager_drop_target_add@Base 1.22.2
+- efl_ui_selection_manager_drop_target_del@Base 1.22.2
+- efl_ui_selection_manager_selection_clear@Base 1.22.2
+- efl_ui_selection_manager_selection_get@Base 1.22.2
+- efl_ui_selection_manager_selection_has_owner@Base 1.22.2
+- efl_ui_selection_manager_selection_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_has_owner@Base 1.22.2
++ efl_ui_selection_has_selection@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_class_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_container_drag_item_add@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_container_drag_item_del@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_container_drop_item_add@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_container_drop_item_del@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_drag_action_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_drag_cancel@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_drag_start@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_drop_target_add@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_drop_target_del@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_selection_clear@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_selection_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_selection_has_owner@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_selection_manager_selection_set@Base 1.22.2
+  efl_ui_selection_mixin_get@Base 1.22.2
+  efl_ui_selection_set@Base 1.22.2
++ efl_ui_separator_class_get@Base 1.24.0-1bionic0
+  efl_ui_single_selectable_interface_get@Base 1.23.0
+  efl_ui_size_model_class_get@Base 1.22.2
+  efl_ui_slider_class_get@Base 1.20.1
+@@ -7163,36 +7394,49 @@
+  efl_ui_spin_class_get@Base 1.22.2
+  efl_ui_spotlight_active_element_get@Base 1.23.0
+  efl_ui_spotlight_active_element_set@Base 1.23.0
++ efl_ui_spotlight_animated_transition_get@Base 1.24.0-1bionic0
++ efl_ui_spotlight_animated_transition_set@Base 1.24.0-1bionic0
++ efl_ui_spotlight_animation_manager_class_get@Base 1.24.0-1bionic0
+  efl_ui_spotlight_container_class_get@Base 1.23.0
++ efl_ui_spotlight_fade_manager_class_get@Base 1.24.0-1bionic0
++ efl_ui_spotlight_icon_indicator_class_get@Base 1.24.0-1bionic0
+  efl_ui_spotlight_indicator_bind@Base 1.23.0
+  efl_ui_spotlight_indicator_class_get@Base 1.23.0
+  efl_ui_spotlight_indicator_content_add@Base 1.23.0
+  efl_ui_spotlight_indicator_content_del@Base 1.23.0
+  efl_ui_spotlight_indicator_get@Base 1.23.0
+- efl_ui_spotlight_indicator_icon_class_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_spotlight_indicator_icon_class_get@Base 1.23.0
+  efl_ui_spotlight_indicator_position_update@Base 1.23.0
+  efl_ui_spotlight_indicator_set@Base 1.23.0
+- efl_ui_spotlight_manager_animation_enabled_get@Base 1.23.0
+- efl_ui_spotlight_manager_animation_enabled_set@Base 1.23.0
++ efl_ui_spotlight_manager_animated_transition_get@Base 1.24.0-1bionic0
++ efl_ui_spotlight_manager_animated_transition_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_ui_spotlight_manager_animation_enabled_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_spotlight_manager_animation_enabled_set@Base 1.23.0
++ efl_ui_spotlight_manager_animation_jump_setup_set@Base 1.24.0-1bionic0
++ efl_ui_spotlight_manager_animation_pop_setup_set@Base 1.24.0-1bionic0
++ efl_ui_spotlight_manager_animation_push_setup_set@Base 1.24.0-1bionic0
+  efl_ui_spotlight_manager_bind@Base 1.23.0
+  efl_ui_spotlight_manager_class_get@Base 1.23.0
+  efl_ui_spotlight_manager_content_add@Base 1.23.0
+  efl_ui_spotlight_manager_content_del@Base 1.23.0
+  efl_ui_spotlight_manager_get@Base 1.23.0
+- efl_ui_spotlight_manager_plain_class_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_spotlight_manager_plain_class_get@Base 1.23.0
+  efl_ui_spotlight_manager_scroll_block_get@Base 1.23.0
+  efl_ui_spotlight_manager_scroll_block_set@Base 1.23.0
+- efl_ui_spotlight_manager_scroll_class_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_spotlight_manager_scroll_class_get@Base 1.23.0
+  efl_ui_spotlight_manager_set@Base 1.23.0
+  efl_ui_spotlight_manager_size_set@Base 1.23.0
+- efl_ui_spotlight_manager_stack_class_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_ui_spotlight_manager_stack_class_get@Base 1.23.0
+  efl_ui_spotlight_manager_switch_to@Base 1.23.0
++ efl_ui_spotlight_plain_manager_class_get@Base 1.24.0-1bionic0
+  efl_ui_spotlight_pop@Base 1.23.0
+  efl_ui_spotlight_push@Base 1.23.0
++ efl_ui_spotlight_scroll_manager_class_get@Base 1.24.0-1bionic0
+  efl_ui_spotlight_size_get@Base 1.23.0
+  efl_ui_spotlight_size_set@Base 1.23.0
+  efl_ui_spotlight_util_class_get@Base 1.23.0
+  efl_ui_spotlight_util_stack_gen@Base 1.23.0
++ efl_ui_stack_class_get@Base 1.24.0-1bionic0
+  efl_ui_tab_bar_class_get@Base 1.22.2
+  efl_ui_tab_bar_default_item_class_get@Base 1.23.0
+  efl_ui_tab_bar_default_item_icon_get@Base 1.23.0
+@@ -7200,6 +7444,7 @@
+  efl_ui_tab_page_class_get@Base 1.22.2
+  efl_ui_tab_page_tab_bar_item_get@Base 1.23.0
+  efl_ui_tab_pager_class_get@Base 1.22.2
++ efl_ui_tab_pager_spotlight_manager_set@Base 1.24.0-1bionic0
+  efl_ui_tab_pager_tab_bar_get@Base 1.22.2
+  efl_ui_table_class_get@Base 1.22.2
+  efl_ui_table_homogeneous_get@Base 1.22.2
+@@ -7212,19 +7457,19 @@
+  efl_ui_tags_expanded_set@Base 1.22.2
+  efl_ui_tags_items_get@Base 1.22.2
+  efl_ui_tags_items_set@Base 1.22.2
+- efl_ui_text_async_class_get@Base 1.22.2
+- efl_ui_text_autocapital_type_get@Base 1.18.0
+- efl_ui_text_autocapital_type_set@Base 1.18.0
+- efl_ui_text_class_get@Base 1.18.0
+- efl_ui_text_cnp_mode_get@Base 1.18.0
+- efl_ui_text_cnp_mode_set@Base 1.18.0
+- efl_ui_text_context_menu_clear@Base 1.18.0
+- efl_ui_text_context_menu_disabled_get@Base 1.18.0
+- efl_ui_text_context_menu_disabled_set@Base 1.18.0
+- efl_ui_text_context_menu_item_add@Base 1.18.0
+- efl_ui_text_cursor_new@Base 1.18.0
+- efl_ui_text_cursor_selection_end@Base 1.18.0
+- efl_ui_text_editable_class_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_async_class_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_text_autocapital_type_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_autocapital_type_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_class_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_cnp_mode_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_cnp_mode_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_context_menu_clear@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_context_menu_disabled_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_context_menu_disabled_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_context_menu_item_add@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_cursor_new@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_cursor_selection_end@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_editable_class_get@Base 1.18.0
+  efl_ui_text_factory_emoticons_class_get@Base 1.22.2
+  efl_ui_text_factory_fallback_class_get@Base 1.22.2
+  efl_ui_text_factory_images_class_get@Base 1.22.2
+@@ -7232,41 +7477,58 @@
+  efl_ui_text_factory_images_matches_del@Base 1.22.2
+  efl_ui_text_factory_images_matches_mmap_add@Base 1.22.2
+  efl_ui_text_factory_images_matches_mmap_del@Base 1.22.2
+- efl_ui_text_input_hint_get@Base 1.18.0
+- efl_ui_text_input_hint_set@Base 1.18.0
+- efl_ui_text_input_panel_enabled_get@Base 1.18.0
+- efl_ui_text_input_panel_enabled_set@Base 1.18.0
+- efl_ui_text_input_panel_hide@Base 1.18.0
+- efl_ui_text_input_panel_imdata_get@Base 1.18.0
+- efl_ui_text_input_panel_imdata_set@Base 1.18.0
+- efl_ui_text_input_panel_language_get@Base 1.18.0
+- efl_ui_text_input_panel_language_set@Base 1.18.0
+- efl_ui_text_input_panel_layout_get@Base 1.18.0
+- efl_ui_text_input_panel_layout_set@Base 1.18.0
+- efl_ui_text_input_panel_layout_variation_get@Base 1.18.0
+- efl_ui_text_input_panel_layout_variation_set@Base 1.18.0
+- efl_ui_text_input_panel_return_key_autoenabled_set@Base 1.18.0
+- efl_ui_text_input_panel_return_key_disabled_get@Base 1.18.0
+- efl_ui_text_input_panel_return_key_disabled_set@Base 1.18.0
+- efl_ui_text_input_panel_return_key_type_get@Base 1.18.0
+- efl_ui_text_input_panel_return_key_type_set@Base 1.18.0
+- efl_ui_text_input_panel_show@Base 1.18.0
+- efl_ui_text_input_panel_show_on_demand_get@Base 1.18.0
+- efl_ui_text_input_panel_show_on_demand_set@Base 1.18.0
+- efl_ui_text_item_factory_get@Base 1.22.2
+- efl_ui_text_item_factory_set@Base 1.22.2
+- efl_ui_text_part_class_get@Base 1.22.2
+- efl_ui_text_password_mode_get@Base 1.22.2
+- efl_ui_text_password_mode_set@Base 1.22.2
+- efl_ui_text_prediction_allow_get@Base 1.18.0
+- efl_ui_text_prediction_allow_set@Base 1.18.0
+- efl_ui_text_scrollable_get@Base 1.18.0
+- efl_ui_text_scrollable_set@Base 1.18.0
+- efl_ui_text_selection_copy@Base 1.18.0
+- efl_ui_text_selection_cut@Base 1.18.0
+- efl_ui_text_selection_handler_disabled_get@Base 1.18.0
+- efl_ui_text_selection_handler_disabled_set@Base 1.18.0
+- efl_ui_text_selection_paste@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_hint_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_hint_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_enabled_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_enabled_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_hide@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_imdata_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_imdata_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_language_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_language_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_layout_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_layout_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_layout_variation_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_layout_variation_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_return_key_autoenabled_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_return_key_disabled_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_return_key_disabled_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_return_key_type_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_return_key_type_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_show@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_show_on_demand_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_input_panel_show_on_demand_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_item_factory_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_text_item_factory_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_text_part_class_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_text_password_mode_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_text_password_mode_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_ui_text_prediction_allow_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_prediction_allow_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_scrollable_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_scrollable_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_selection_copy@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_selection_cut@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_selection_handler_disabled_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_selection_handler_disabled_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_ui_text_selection_paste@Base 1.18.0
++ efl_ui_textbox_async_class_get@Base 1.24.0-1bionic0
++ efl_ui_textbox_class_get@Base 1.24.0-1bionic0
++ efl_ui_textbox_cnp_dnd_mode_get@Base 1.24.0-1bionic0
++ efl_ui_textbox_cnp_dnd_mode_set@Base 1.24.0-1bionic0
++ efl_ui_textbox_context_menu_enabled_get@Base 1.24.0-1bionic0
++ efl_ui_textbox_context_menu_enabled_set@Base 1.24.0-1bionic0
++ efl_ui_textbox_cursor_create@Base 1.24.0-1bionic0
++ efl_ui_textbox_item_factory_get@Base 1.24.0-1bionic0
++ efl_ui_textbox_item_factory_set@Base 1.24.0-1bionic0
++ efl_ui_textbox_part_class_get@Base 1.24.0-1bionic0
++ efl_ui_textbox_scrollable_get@Base 1.24.0-1bionic0
++ efl_ui_textbox_scrollable_set@Base 1.24.0-1bionic0
++ efl_ui_textbox_selection_copy@Base 1.24.0-1bionic0
++ efl_ui_textbox_selection_cut@Base 1.24.0-1bionic0
++ efl_ui_textbox_selection_handles_enabled_get@Base 1.24.0-1bionic0
++ efl_ui_textbox_selection_handles_enabled_set@Base 1.24.0-1bionic0
++ efl_ui_textbox_selection_paste@Base 1.24.0-1bionic0
+  efl_ui_textpath_circular_set@Base 1.23.0
+  efl_ui_textpath_class_get@Base 1.22.2
+  efl_ui_textpath_ellipsis_get@Base 1.22.2
+@@ -7289,6 +7551,23 @@
+  efl_ui_timepicker_is_24hour_set@Base 1.23.0
+  efl_ui_timepicker_time_get@Base 1.22.2
+  efl_ui_timepicker_time_set@Base 1.22.2
++ efl_ui_vg_animation_class_get@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_default_view_size_get@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_frame_count_get@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_frame_get@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_frame_set@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_legacy_class_get@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_max_frame_get@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_max_frame_set@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_max_progress_get@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_max_progress_set@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_min_frame_get@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_min_frame_set@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_min_progress_get@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_min_progress_set@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_playing_sector@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_state_get@Base 1.24.0-1bionic0
++ efl_ui_vg_animation_value_provider_override@Base 1.24.0-1bionic0
+  efl_ui_video_class_get@Base 1.18.0
+  efl_ui_video_emotion_get@Base 1.18.0
+  efl_ui_video_legacy_class_get@Base 1.22.2
+@@ -8703,6 +8982,7 @@
+  elm_interface_scrollable_policy_get@Base 1.18.0
+  elm_interface_scrollable_policy_set@Base 1.18.0
+  elm_interface_scrollable_region_bring_in@Base 1.18.0
++ elm_interface_scrollable_reset_signals@Base 1.24.0-1bionic0
+  elm_interface_scrollable_scroll_cb_set@Base 1.18.0
+  elm_interface_scrollable_scroll_down_cb_set@Base 1.18.0
+  elm_interface_scrollable_scroll_left_cb_set@Base 1.18.0
+@@ -10292,7 +10572,7 @@
+  elm_segment_control_item_object_get@Base 1.18.0
+  elm_segment_control_item_selected_get@Base 1.18.0
+  elm_segment_control_item_selected_set@Base 1.18.0
+- elm_selection_selection_has_owner@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# elm_selection_selection_has_owner@Base 1.18.0
+  elm_separator_add@Base 1.18.0
+  elm_separator_class_get@Base 1.18.0
+  elm_separator_horizontal_get@Base 1.18.0
+@@ -10987,30 +11267,6 @@
+  elm_win_wm_rotation_preferred_rotation_set@Base 1.18.0
+  elm_win_wm_rotation_supported_get@Base 1.18.0
+  elm_win_xwindow_get@Base 1.18.0
+-libelocation.so.1 libefl #MINVER#
+- ELOCATION_EVENT_ADDRESS@Base 1.15.0
+- ELOCATION_EVENT_GEOCODE@Base 1.15.0
+- ELOCATION_EVENT_META_READY@Base 1.15.0
+- ELOCATION_EVENT_NMEA@Base 1.15.0
+- ELOCATION_EVENT_POI@Base 1.15.0
+- ELOCATION_EVENT_POSITION@Base 1.15.0
+- ELOCATION_EVENT_REVERSEGEOCODE@Base 1.15.0
+- ELOCATION_EVENT_SATELLITE@Base 1.15.0
+- ELOCATION_EVENT_STATUS@Base 1.15.0
+- ELOCATION_EVENT_VELOCITY@Base 1.15.0
+- elocation_address_free@Base 1.15.0
+- elocation_address_get@Base 1.15.0
+- elocation_address_new@Base 1.15.0
+- elocation_address_to_position@Base 1.15.0
+- elocation_freeform_address_to_position@Base 1.15.0
+- elocation_init@Base 1.15.0
+- elocation_landmarks_get@Base 1.15.0
+- elocation_position_free@Base 1.15.0
+- elocation_position_get@Base 1.15.0
+- elocation_position_new@Base 1.15.0
+- elocation_position_to_address@Base 1.15.0
+- elocation_shutdown@Base 1.15.0
+- elocation_status_get@Base 1.15.0
+ libelput.so.1 libefl #MINVER#
+  ELPUT_EVENT_DEVICE_CHANGE@Base 1.23.0
+  ELPUT_EVENT_MODIFIERS_SEND@Base 1.23.0
+@@ -11436,6 +11692,7 @@
+  efl_event_callback_array_del@Base 1.19.0
+  efl_event_callback_array_priority_add@Base 1.19.0
+  efl_event_callback_call@Base 1.19.0
++ efl_event_callback_count@Base 1.24.0-1bionic0
+  efl_event_callback_del@Base 1.19.0
+  efl_event_callback_forwarder_del@Base 1.19.0
+  efl_event_callback_forwarder_priority_add@Base 1.22.2
+@@ -11444,6 +11701,7 @@
+  efl_event_callback_stop@Base 1.19.0
+  efl_event_freeze@Base 1.19.0
+  efl_event_freeze_count_get@Base 1.19.0
++ efl_event_future_scheduler_get@Base 1.24.0-1bionic0
+  efl_event_global_freeze@Base 1.19.0
+  efl_event_global_freeze_count_get@Base 1.19.0
+  efl_event_global_thaw@Base 1.19.0
+@@ -11565,6 +11823,7 @@
+  efl_event_callback_array_del@Base 1.19.0
+  efl_event_callback_array_priority_add@Base 1.19.0
+  efl_event_callback_call@Base 1.19.0
++ efl_event_callback_count@Base 1.24.0-1bionic0
+  efl_event_callback_del@Base 1.19.0
+  efl_event_callback_forwarder_del@Base 1.19.0
+  efl_event_callback_forwarder_priority_add@Base 1.22.2
+@@ -11573,6 +11832,7 @@
+  efl_event_callback_stop@Base 1.19.0
+  efl_event_freeze@Base 1.19.0
+  efl_event_freeze_count_get@Base 1.19.0
++ efl_event_future_scheduler_get@Base 1.24.0-1bionic0
+  efl_event_global_freeze@Base 1.19.0
+  efl_event_global_freeze_count_get@Base 1.19.0
+  efl_event_global_thaw@Base 1.19.0
+@@ -11814,195 +12074,6 @@
+  eolian_unit_struct_by_name_get@Base 1.22.2
+  eolian_unit_structs_get@Base 1.22.2
+  eolian_unit_version_get@Base 1.23.0
+-libephysics.so.1 libefl #MINVER#
+- ephysics_body_angular_movement_enable_get@Base 1.15.0
+- ephysics_body_angular_movement_enable_set@Base 1.15.0
+- ephysics_body_angular_velocity_get@Base 1.15.0
+- ephysics_body_angular_velocity_set@Base 1.15.0
+- ephysics_body_back_boundary_add@Base 1.15.0
+- ephysics_body_back_face_culling_get@Base 1.15.0
+- ephysics_body_back_face_culling_set@Base 1.15.0
+- ephysics_body_bottom_boundary_add@Base 1.15.0
+- ephysics_body_box_add@Base 1.15.0
+- ephysics_body_center_mass_get@Base 1.15.0
+- ephysics_body_central_force_apply@Base 1.15.0
+- ephysics_body_central_impulse_apply@Base 1.15.0
+- ephysics_body_clockwise_get@Base 1.15.0
+- ephysics_body_cloth_add@Base 1.15.0
+- ephysics_body_cloth_anchor_add@Base 1.15.0
+- ephysics_body_cloth_anchor_del@Base 1.15.0
+- ephysics_body_cloth_anchor_full_add@Base 1.15.0
+- ephysics_body_collision_contact_body_get@Base 1.15.0
+- ephysics_body_collision_group_add@Base 1.15.0
+- ephysics_body_collision_group_del@Base 1.15.0
+- ephysics_body_collision_group_list_get@Base 1.15.0
+- ephysics_body_collision_position_get@Base 1.15.0
+- ephysics_body_cylinder_add@Base 1.15.0
+- ephysics_body_damping_get@Base 1.15.0
+- ephysics_body_damping_set@Base 1.15.0
+- ephysics_body_data_get@Base 1.15.0
+- ephysics_body_data_set@Base 1.15.0
+- ephysics_body_del@Base 1.15.0
+- ephysics_body_density_get@Base 1.15.0
+- ephysics_body_density_set@Base 1.15.0
+- ephysics_body_evas_object_get@Base 1.15.0
+- ephysics_body_evas_object_set@Base 1.15.0
+- ephysics_body_evas_object_unset@Base 1.15.0
+- ephysics_body_evas_object_update@Base 1.15.0
+- ephysics_body_event_callback_add@Base 1.15.0
+- ephysics_body_event_callback_del@Base 1.15.0
+- ephysics_body_event_callback_del_full@Base 1.15.0
+- ephysics_body_face_evas_object_get@Base 1.15.0
+- ephysics_body_face_evas_object_set@Base 1.15.0
+- ephysics_body_face_evas_object_unset@Base 1.15.0
+- ephysics_body_force_apply@Base 1.15.0
+- ephysics_body_forces_clear@Base 1.15.0
+- ephysics_body_forces_get@Base 1.15.0
+- ephysics_body_friction_get@Base 1.15.0
+- ephysics_body_friction_set@Base 1.15.0
+- ephysics_body_front_boundary_add@Base 1.15.0
+- ephysics_body_geometry_get@Base 1.15.0
+- ephysics_body_geometry_set@Base 1.15.0
+- ephysics_body_impulse_apply@Base 1.15.0
+- ephysics_body_left_boundary_add@Base 1.15.0
+- ephysics_body_light_get@Base 1.15.0
+- ephysics_body_light_set@Base 1.15.0
+- ephysics_body_linear_movement_enable_get@Base 1.15.0
+- ephysics_body_linear_movement_enable_set@Base 1.15.0
+- ephysics_body_linear_velocity_get@Base 1.15.0
+- ephysics_body_linear_velocity_set@Base 1.15.0
+- ephysics_body_mass_get@Base 1.15.0
+- ephysics_body_mass_set@Base 1.15.0
+- ephysics_body_material_get@Base 1.15.0
+- ephysics_body_material_set@Base 1.15.0
+- ephysics_body_move@Base 1.15.0
+- ephysics_body_resize@Base 1.15.0
+- ephysics_body_restitution_get@Base 1.15.0
+- ephysics_body_restitution_set@Base 1.15.0
+- ephysics_body_right_boundary_add@Base 1.15.0
+- ephysics_body_rotation_get@Base 1.15.0
+- ephysics_body_rotation_set@Base 1.15.0
+- ephysics_body_shape_add@Base 1.15.0
+- ephysics_body_sleeping_threshold_get@Base 1.15.0
+- ephysics_body_sleeping_threshold_set@Base 1.15.0
+- ephysics_body_soft_body_anchor_hardness_get@Base 1.15.0
+- ephysics_body_soft_body_anchor_hardness_set@Base 1.15.0
+- ephysics_body_soft_body_bending_constraints_add@Base 1.15.0
+- ephysics_body_soft_body_drag_coefficient_get@Base 1.15.0
+- ephysics_body_soft_body_drag_coefficient_set@Base 1.15.0
+- ephysics_body_soft_body_dragging_set@Base 1.15.0
+- ephysics_body_soft_body_dragging_unset@Base 1.15.0
+- ephysics_body_soft_body_hardness_get@Base 1.15.0
+- ephysics_body_soft_body_hardness_set@Base 1.15.0
+- ephysics_body_soft_body_position_iterations_get@Base 1.15.0
+- ephysics_body_soft_body_position_iterations_set@Base 1.15.0
+- ephysics_body_soft_body_slice_index_get@Base 1.15.0
+- ephysics_body_soft_body_triangle_impulse_apply@Base 1.15.0
+- ephysics_body_soft_body_triangle_index_get@Base 1.15.0
+- ephysics_body_soft_body_triangle_list_impulse_apply@Base 1.15.0
+- ephysics_body_soft_body_triangle_move@Base 1.15.0
+- ephysics_body_soft_body_triangles_inside_get@Base 1.15.0
+- ephysics_body_soft_box_add@Base 1.15.0
+- ephysics_body_soft_cylinder_add@Base 1.15.0
+- ephysics_body_soft_sphere_add@Base 1.15.0
+- ephysics_body_sphere_add@Base 1.15.0
+- ephysics_body_stop@Base 1.15.0
+- ephysics_body_top_boundary_add@Base 1.15.0
+- ephysics_body_torque_apply@Base 1.15.0
+- ephysics_body_torque_impulse_apply@Base 1.15.0
+- ephysics_body_torques_get@Base 1.15.0
+- ephysics_body_volume_get@Base 1.15.0
+- ephysics_body_world_get@Base 1.15.0
+- ephysics_camera_body_track@Base 1.15.0
+- ephysics_camera_perspective_enabled_get@Base 1.15.0
+- ephysics_camera_perspective_enabled_set@Base 1.15.0
+- ephysics_camera_perspective_get@Base 1.15.0
+- ephysics_camera_perspective_set@Base 1.15.0
+- ephysics_camera_position_get@Base 1.15.0
+- ephysics_camera_position_set@Base 1.15.0
+- ephysics_camera_tracked_body_get@Base 1.15.0
+- ephysics_constraint_add@Base 1.15.0
+- ephysics_constraint_anchor_get@Base 1.15.0
+- ephysics_constraint_anchor_set@Base 1.15.0
+- ephysics_constraint_angular_limit_get@Base 1.15.0
+- ephysics_constraint_angular_limit_set@Base 1.15.0
+- ephysics_constraint_del@Base 1.15.0
+- ephysics_constraint_linear_limit_get@Base 1.15.0
+- ephysics_constraint_linear_limit_set@Base 1.15.0
+- ephysics_constraint_linked_add@Base 1.15.0
+- ephysics_init@Base 1.15.0
+- ephysics_quaternion_angle_get@Base 1.15.0
+- ephysics_quaternion_axis_angle_get@Base 1.15.0
+- ephysics_quaternion_axis_angle_set@Base 1.15.0
+- ephysics_quaternion_diff@Base 1.15.0
+- ephysics_quaternion_dot@Base 1.15.0
+- ephysics_quaternion_euler_set@Base 1.15.0
+- ephysics_quaternion_get@Base 1.15.0
+- ephysics_quaternion_inverse_scale@Base 1.15.0
+- ephysics_quaternion_invert@Base 1.15.0
+- ephysics_quaternion_length2_get@Base 1.15.0
+- ephysics_quaternion_length_get@Base 1.15.0
+- ephysics_quaternion_multiply@Base 1.15.0
+- ephysics_quaternion_new@Base 1.15.0
+- ephysics_quaternion_normalize@Base 1.15.0
+- ephysics_quaternion_scale@Base 1.15.0
+- ephysics_quaternion_set@Base 1.15.0
+- ephysics_quaternion_slerp@Base 1.15.0
+- ephysics_quaternion_sum@Base 1.15.0
+- ephysics_shape_del@Base 1.15.0
+- ephysics_shape_load@Base 1.15.0
+- ephysics_shape_new@Base 1.15.0
+- ephysics_shape_point_add@Base 1.15.0
+- ephysics_shape_save@Base 1.15.0
+- ephysics_shutdown@Base 1.15.0
+- ephysics_world_ambient_light_color_get@Base 1.15.0
+- ephysics_world_ambient_light_color_set@Base 1.15.0
+- ephysics_world_bodies_get@Base 1.15.0
+- ephysics_world_bodies_outside_back_autodel_get@Base 1.15.0
+- ephysics_world_bodies_outside_back_autodel_set@Base 1.15.0
+- ephysics_world_bodies_outside_bottom_autodel_get@Base 1.15.0
+- ephysics_world_bodies_outside_bottom_autodel_set@Base 1.15.0
+- ephysics_world_bodies_outside_front_autodel_get@Base 1.15.0
+- ephysics_world_bodies_outside_front_autodel_set@Base 1.15.0
+- ephysics_world_bodies_outside_left_autodel_get@Base 1.15.0
+- ephysics_world_bodies_outside_left_autodel_set@Base 1.15.0
+- ephysics_world_bodies_outside_right_autodel_get@Base 1.15.0
+- ephysics_world_bodies_outside_right_autodel_set@Base 1.15.0
+- ephysics_world_bodies_outside_top_autodel_get@Base 1.15.0
+- ephysics_world_bodies_outside_top_autodel_set@Base 1.15.0
+- ephysics_world_camera_get@Base 1.15.0
+- ephysics_world_constraint_solver_iterations_get@Base 1.15.0
+- ephysics_world_constraint_solver_iterations_set@Base 1.15.0
+- ephysics_world_constraint_solver_mode_enable_get@Base 1.15.0
+- ephysics_world_constraint_solver_mode_enable_set@Base 1.15.0
+- ephysics_world_del@Base 1.15.0
+- ephysics_world_event_callback_add@Base 1.15.0
+- ephysics_world_event_callback_del@Base 1.15.0
+- ephysics_world_event_callback_del_full@Base 1.15.0
+- ephysics_world_gravity_get@Base 1.15.0
+- ephysics_world_gravity_set@Base 1.15.0
+- ephysics_world_light_all_bodies_get@Base 1.15.0
+- ephysics_world_light_all_bodies_set@Base 1.15.0
+- ephysics_world_linear_slop_get@Base 1.15.0
+- ephysics_world_linear_slop_set@Base 1.15.0
+- ephysics_world_max_sleeping_time_get@Base 1.15.0
+- ephysics_world_max_sleeping_time_set@Base 1.15.0
+- ephysics_world_new@Base 1.15.0
+- ephysics_world_point_light_color_get@Base 1.15.0
+- ephysics_world_point_light_color_set@Base 1.15.0
+- ephysics_world_point_light_position_get@Base 1.15.0
+- ephysics_world_point_light_position_set@Base 1.15.0
+- ephysics_world_rate_get@Base 1.15.0
+- ephysics_world_rate_set@Base 1.15.0
+- ephysics_world_render_geometry_get@Base 1.15.0
+- ephysics_world_render_geometry_set@Base 1.15.0
+- ephysics_world_running_get@Base 1.15.0
+- ephysics_world_running_set@Base 1.15.0
+- ephysics_world_serialize@Base 1.15.0
+- ephysics_world_simulation_get@Base 1.15.0
+- ephysics_world_simulation_set@Base 1.15.0
+- ephysics_world_stack_enable_get@Base 1.15.0
+- ephysics_world_stack_enable_set@Base 1.15.0
+ libethumb.so.1 libefl #MINVER#
+  ethumb_calculate_aspect@Base 1.15.0
+  ethumb_calculate_aspect_from_ratio@Base 1.15.0
+@@ -12125,25 +12196,42 @@
+  EFL_GFX_IMAGE_LOAD_ERROR_RESOURCE_ALLOCATION_FAILED@Base 1.22.2
+  EFL_GFX_IMAGE_LOAD_ERROR_UNKNOWN_COLLECTION@Base 1.22.2
+  EFL_GFX_IMAGE_LOAD_ERROR_UNKNOWN_FORMAT@Base 1.22.2
+- _EFL_ANIMATION_PLAYER_EVENT_ENDED@Base 1.22.2
+- _EFL_ANIMATION_PLAYER_EVENT_PRE_STARTED@Base 1.22.2
+- _EFL_ANIMATION_PLAYER_EVENT_RUNNING@Base 1.22.2
+- _EFL_ANIMATION_PLAYER_EVENT_STARTED@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_ANIMATION_PLAYER_EVENT_ENDED@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_ANIMATION_PLAYER_EVENT_PRE_STARTED@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_ANIMATION_PLAYER_EVENT_RUNNING@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# _EFL_ANIMATION_PLAYER_EVENT_STARTED@Base 1.22.2
+  _EFL_CANVAS_GROUP_EVENT_MEMBER_ADDED@Base 1.22.2
+  _EFL_CANVAS_GROUP_EVENT_MEMBER_REMOVED@Base 1.22.2
++ _EFL_CANVAS_OBJECT_ANIMATION_EVENT_ANIMATION_CHANGED@Base 1.24.0-1bionic0
++ _EFL_CANVAS_OBJECT_ANIMATION_EVENT_ANIMATION_PROGRESS_UPDATED@Base 1.24.0-1bionic0
+  _EFL_CANVAS_OBJECT_EVENT_ANIMATOR_TICK@Base 1.22.2
+- _EFL_CANVAS_TEXT_EVENT_CHANGED@Base 1.18.0
+- _EFL_CANVAS_TEXT_EVENT_CURSOR_CHANGED@Base 1.20.1
+- _EFL_CANVAS_TEXT_EVENT_STYLE_INSETS_CHANGED@Base 1.19.0
++ _EFL_CANVAS_SCENE_EVENT_DEVICE_ADDED@Base 1.24.0-1bionic0
++ _EFL_CANVAS_SCENE_EVENT_DEVICE_CHANGED@Base 1.24.0-1bionic0
++ _EFL_CANVAS_SCENE_EVENT_DEVICE_REMOVED@Base 1.24.0-1bionic0
++ _EFL_CANVAS_SCENE_EVENT_OBJECT_FOCUS_IN@Base 1.24.0-1bionic0
++ _EFL_CANVAS_SCENE_EVENT_OBJECT_FOCUS_OUT@Base 1.24.0-1bionic0
++ _EFL_CANVAS_SCENE_EVENT_RENDER_POST@Base 1.24.0-1bionic0
++ _EFL_CANVAS_SCENE_EVENT_RENDER_PRE@Base 1.24.0-1bionic0
++ _EFL_CANVAS_SCENE_EVENT_SCENE_FOCUS_IN@Base 1.24.0-1bionic0
++ _EFL_CANVAS_SCENE_EVENT_SCENE_FOCUS_OUT@Base 1.24.0-1bionic0
++ _EFL_CANVAS_TEXTBLOCK_EVENT_CHANGED@Base 1.24.0-1bionic0
++ _EFL_CANVAS_TEXTBLOCK_EVENT_LAYOUT_FINISHED@Base 1.24.0-1bionic0
++ _EFL_CANVAS_TEXTBLOCK_EVENT_STYLE_INSETS_CHANGED@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# _EFL_CANVAS_TEXT_EVENT_CHANGED@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# _EFL_CANVAS_TEXT_EVENT_CURSOR_CHANGED@Base 1.20.1
++#MISSING: 1.24.0-1bionic0# _EFL_CANVAS_TEXT_EVENT_STYLE_INSETS_CHANGED@Base 1.19.0
+  _EFL_EVENT_FINGER_DOWN@Base 1.19.0
+  _EFL_EVENT_FINGER_MOVE@Base 1.19.0
+  _EFL_EVENT_FINGER_UP@Base 1.19.0
+  _EFL_EVENT_FOCUS_IN@Base 1.19.0
+  _EFL_EVENT_FOCUS_OUT@Base 1.19.0
++ _EFL_EVENT_GESTURE_CUSTOM@Base 1.24.0-1bionic0
+  _EFL_EVENT_GESTURE_DOUBLE_TAP@Base 1.23.0
+  _EFL_EVENT_GESTURE_FLICK@Base 1.23.0
+- _EFL_EVENT_GESTURE_LONG_TAP@Base 1.22.2
++ _EFL_EVENT_GESTURE_LONG_PRESS@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# _EFL_EVENT_GESTURE_LONG_TAP@Base 1.22.2
+  _EFL_EVENT_GESTURE_MOMENTUM@Base 1.23.0
++ _EFL_EVENT_GESTURE_ROTATE@Base 1.24.0-1bionic0
+  _EFL_EVENT_GESTURE_TAP@Base 1.22.2
+  _EFL_EVENT_GESTURE_TRIPLE_TAP@Base 1.23.0
+  _EFL_EVENT_GESTURE_ZOOM@Base 1.23.0
+@@ -12167,10 +12255,11 @@
+  _EFL_INPUT_EVENT_LONGPRESSED@Base 1.23.0
+  _EFL_INPUT_EVENT_PRESSED@Base 1.23.0
+  _EFL_INPUT_EVENT_UNPRESSED@Base 1.23.0
++ _EFL_TEXT_CURSOR_OBJECT_EVENT_CHANGED@Base 1.24.0-1bionic0
+  _EVAS_BOX_EVENT_CHILD_ADDED@Base 1.15.0
+  _EVAS_BOX_EVENT_CHILD_REMOVED@Base 1.15.0
+- _EVAS_CANVAS3D_OBJECT_EVENT_CLICKED@Base 1.15.0
+- _EVAS_CANVAS3D_OBJECT_EVENT_COLLISION@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# _EVAS_CANVAS3D_OBJECT_EVENT_CLICKED@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# _EVAS_CANVAS3D_OBJECT_EVENT_COLLISION@Base 1.15.0
+  _EVAS_CANVAS_EVENT_AXIS_UPDATE@Base 1.15.0
+  _EVAS_CANVAS_EVENT_RENDER_FLUSH_POST@Base 1.15.0
+  _EVAS_CANVAS_EVENT_RENDER_FLUSH_PRE@Base 1.15.0
+@@ -12191,6 +12280,8 @@
+  efl_animation_alpha_get@Base 1.22.2
+  efl_animation_alpha_set@Base 1.22.2
+  efl_animation_apply@Base 1.22.2
++ efl_animation_default_duration_get@Base 1.24.0-1bionic0
++ efl_animation_default_duration_set@Base 1.24.0-1bionic0
+  efl_animation_duration_get@Base 1.22.2
+  efl_animation_duration_set@Base 1.22.2
+  efl_animation_final_state_keep_get@Base 1.22.2
+@@ -12200,14 +12291,16 @@
+  efl_animation_group_animations_get@Base 1.22.2
+  efl_animation_interpolator_get@Base 1.22.2
+  efl_animation_interpolator_set@Base 1.22.2
+- efl_animation_player_animation_get@Base 1.22.2
+- efl_animation_player_animation_set@Base 1.22.2
+- efl_animation_player_auto_del_get@Base 1.22.2
+- efl_animation_player_auto_del_set@Base 1.22.2
+- efl_animation_player_target_get@Base 1.22.2
+- efl_animation_player_target_set@Base 1.22.2
+- efl_animation_repeat_count_get@Base 1.22.2
+- efl_animation_repeat_count_set@Base 1.22.2
++ efl_animation_play_count_get@Base 1.24.0-1bionic0
++ efl_animation_play_count_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_animation_player_animation_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_animation_player_animation_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_animation_player_auto_del_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_animation_player_auto_del_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_animation_player_target_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_animation_player_target_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_animation_repeat_count_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_animation_repeat_count_set@Base 1.22.2
+  efl_animation_repeat_mode_get@Base 1.22.2
+  efl_animation_repeat_mode_set@Base 1.22.2
+  efl_animation_rotate_absolute_get@Base 1.22.2
+@@ -12224,37 +12317,46 @@
+  efl_animation_translate_absolute_set@Base 1.22.2
+  efl_animation_translate_get@Base 1.22.2
+  efl_animation_translate_set@Base 1.22.2
+- efl_canvas_animation_alpha_class_get@Base 1.22.2
++ efl_canvas_alpha_animation_class_get@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_canvas_animation_alpha_class_get@Base 1.22.2
+  efl_canvas_animation_class_get@Base 1.22.2
+- efl_canvas_animation_group_class_get@Base 1.22.2
+- efl_canvas_animation_group_parallel_class_get@Base 1.22.2
+- efl_canvas_animation_group_sequential_class_get@Base 1.22.2
+- efl_canvas_animation_player_class_get@Base 1.22.2
+- efl_canvas_animation_rotate_class_get@Base 1.22.2
+- efl_canvas_animation_scale_class_get@Base 1.22.2
+- efl_canvas_animation_translate_class_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_animation_group_class_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_animation_group_parallel_class_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_animation_group_sequential_class_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_animation_player_class_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_animation_rotate_class_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_animation_scale_class_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_animation_translate_class_get@Base 1.22.2
+  efl_canvas_event_grabber_class_get@Base 1.22.2
+  efl_canvas_event_grabber_freeze_when_visible_get@Base 1.22.2
+  efl_canvas_event_grabber_freeze_when_visible_set@Base 1.22.2
+  efl_canvas_gesture_class_get@Base 1.22.2
++ efl_canvas_gesture_custom_class_get@Base 1.24.0-1bionic0
+  efl_canvas_gesture_double_tap_class_get@Base 1.23.0
++ efl_canvas_gesture_events_interface_get@Base 1.24.0-1bionic0
+  efl_canvas_gesture_flick_class_get@Base 1.23.0
+- efl_canvas_gesture_long_tap_class_get@Base 1.22.2
++ efl_canvas_gesture_long_press_class_get@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_canvas_gesture_long_tap_class_get@Base 1.22.2
+  efl_canvas_gesture_manager_class_get@Base 1.22.2
+  efl_canvas_gesture_momentum_class_get@Base 1.23.0
+  efl_canvas_gesture_recognizer_class_get@Base 1.22.2
++ efl_canvas_gesture_recognizer_custom_class_get@Base 1.24.0-1bionic0
+  efl_canvas_gesture_recognizer_double_tap_class_get@Base 1.23.0
+  efl_canvas_gesture_recognizer_flick_class_get@Base 1.23.0
+- efl_canvas_gesture_recognizer_long_tap_class_get@Base 1.23.0
++ efl_canvas_gesture_recognizer_long_press_class_get@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_canvas_gesture_recognizer_long_tap_class_get@Base 1.23.0
+  efl_canvas_gesture_recognizer_momentum_class_get@Base 1.23.0
++ efl_canvas_gesture_recognizer_rotate_class_get@Base 1.24.0-1bionic0
+  efl_canvas_gesture_recognizer_tap_class_get@Base 1.23.0
+  efl_canvas_gesture_recognizer_triple_tap_class_get@Base 1.23.0
+  efl_canvas_gesture_recognizer_zoom_class_get@Base 1.23.0
++ efl_canvas_gesture_rotate_class_get@Base 1.24.0-1bionic0
+  efl_canvas_gesture_tap_class_get@Base 1.22.2
+  efl_canvas_gesture_touch_class_get@Base 1.22.2
+  efl_canvas_gesture_triple_tap_class_get@Base 1.23.0
+  efl_canvas_gesture_zoom_class_get@Base 1.23.0
+  efl_canvas_group_add@Base 1.18.0
++ efl_canvas_group_animation_class_get@Base 1.24.0-1bionic0
+  efl_canvas_group_calculate@Base 1.18.0
+  efl_canvas_group_change@Base 1.18.0
+  efl_canvas_group_class_get@Base 1.18.0
+@@ -12270,6 +12372,13 @@
+  efl_canvas_image_class_get@Base 1.18.0
+  efl_canvas_image_internal_class_get@Base 1.18.0
+  efl_canvas_iterator_create@Base 1.22.2
++ efl_canvas_object_animation_get@Base 1.24.0-1bionic0
++ efl_canvas_object_animation_mixin_get@Base 1.24.0-1bionic0
++ efl_canvas_object_animation_pause_get@Base 1.24.0-1bionic0
++ efl_canvas_object_animation_pause_set@Base 1.24.0-1bionic0
++ efl_canvas_object_animation_progress_get@Base 1.24.0-1bionic0
++ efl_canvas_object_animation_start@Base 1.24.0-1bionic0
++ efl_canvas_object_animation_stop@Base 1.24.0-1bionic0
+  efl_canvas_object_anti_alias_get@Base 1.18.0
+  efl_canvas_object_anti_alias_set@Base 1.18.0
+  efl_canvas_object_class_get@Base 1.18.0
+@@ -12278,7 +12387,7 @@
+  efl_canvas_object_clipper_get@Base 1.22.2
+  efl_canvas_object_clipper_set@Base 1.22.2
+  efl_canvas_object_coords_inside_get@Base 1.22.2
+- efl_canvas_object_gesture_manager_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_object_gesture_manager_get@Base 1.23.0
+  efl_canvas_object_has_fixed_size_get@Base 1.23.0
+  efl_canvas_object_has_fixed_size_set@Base 1.23.0
+  efl_canvas_object_is_frame_object_get@Base 1.18.0
+@@ -12320,6 +12429,9 @@
+  efl_canvas_output_unlock@Base 1.19.0
+  efl_canvas_output_view_get@Base 1.19.0
+  efl_canvas_output_view_set@Base 1.19.0
++ efl_canvas_parallel_group_animation_class_get@Base 1.24.0-1bionic0
++ efl_canvas_pointer_inside_get@Base 1.24.0-1bionic0
++ efl_canvas_pointer_interface_get@Base 1.24.0-1bionic0
+  efl_canvas_polygon_class_get@Base 1.18.0
+  efl_canvas_polygon_point_add@Base 1.18.0
+  efl_canvas_polygon_points_clear@Base 1.18.0
+@@ -12331,33 +12443,70 @@
+  efl_canvas_proxy_source_get@Base 1.18.0
+  efl_canvas_proxy_source_set@Base 1.18.0
+  efl_canvas_rectangle_class_get@Base 1.18.0
+- efl_canvas_scene3d_class_get@Base 1.18.0
+- efl_canvas_scene3d_get@Base 1.18.0
+- efl_canvas_scene3d_set@Base 1.18.0
++ efl_canvas_rotate_animation_class_get@Base 1.24.0-1bionic0
++ efl_canvas_scale_animation_class_get@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene3d_class_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene3d_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_scene3d_set@Base 1.18.0
++ efl_canvas_scene_device_get@Base 1.24.0-1bionic0
++ efl_canvas_scene_group_objects_calculate@Base 1.24.0-1bionic0
++ efl_canvas_scene_group_objects_calculating_get@Base 1.24.0-1bionic0
++ efl_canvas_scene_image_max_size_get@Base 1.24.0-1bionic0
++ efl_canvas_scene_interface_get@Base 1.24.0-1bionic0
++ efl_canvas_scene_object_top_at_xy_get@Base 1.24.0-1bionic0
++ efl_canvas_scene_object_top_in_rectangle_get@Base 1.24.0-1bionic0
++ efl_canvas_scene_objects_at_xy_get@Base 1.24.0-1bionic0
++ efl_canvas_scene_objects_in_rectangle_get@Base 1.24.0-1bionic0
++ efl_canvas_scene_pointer_position_get@Base 1.24.0-1bionic0
++ efl_canvas_scene_seat_default_get@Base 1.24.0-1bionic0
++ efl_canvas_scene_seat_get@Base 1.24.0-1bionic0
++ efl_canvas_scene_seats@Base 1.24.0-1bionic0
++ efl_canvas_sequential_group_animation_class_get@Base 1.24.0-1bionic0
+  efl_canvas_snapshot_class_get@Base 1.18.0
+- efl_canvas_text_async_layout@Base 1.22.2
+- efl_canvas_text_bidi_delimiters_get@Base 1.18.0
+- efl_canvas_text_bidi_delimiters_set@Base 1.18.0
+- efl_canvas_text_class_get@Base 1.18.0
+- efl_canvas_text_factory_create@Base 1.22.2
+- efl_canvas_text_factory_interface_get@Base 1.22.2
+- efl_canvas_text_is_empty_get@Base 1.18.0
+- efl_canvas_text_legacy_newline_get@Base 1.18.0
+- efl_canvas_text_legacy_newline_set@Base 1.18.0
+- efl_canvas_text_obstacle_add@Base 1.18.0
+- efl_canvas_text_obstacle_del@Base 1.18.0
+- efl_canvas_text_obstacles_update@Base 1.18.0
+- efl_canvas_text_range_delete@Base 1.18.0
+- efl_canvas_text_range_geometry_get@Base 1.18.0
+- efl_canvas_text_range_simple_geometry_get@Base 1.19.0
+- efl_canvas_text_range_text_get@Base 1.18.0
+- efl_canvas_text_size_formatted_get@Base 1.18.0
+- efl_canvas_text_size_native_get@Base 1.18.0
+- efl_canvas_text_style_get@Base 1.18.0
+- efl_canvas_text_style_insets_get@Base 1.18.0
+- efl_canvas_text_style_set@Base 1.18.0
+- efl_canvas_text_visible_range_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_async_layout@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_bidi_delimiters_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_bidi_delimiters_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_class_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_factory_create@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_factory_interface_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_is_empty_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_legacy_newline_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_legacy_newline_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_obstacle_add@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_obstacle_del@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_obstacles_update@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_range_delete@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_range_geometry_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_range_simple_geometry_get@Base 1.19.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_range_text_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_size_formatted_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_size_native_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_style_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_style_insets_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_style_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# efl_canvas_text_visible_range_get@Base 1.18.0
++ efl_canvas_textblock_all_styles_get@Base 1.24.0-1bionic0
++ efl_canvas_textblock_async_layout@Base 1.24.0-1bionic0
++ efl_canvas_textblock_bidi_delimiters_get@Base 1.24.0-1bionic0
++ efl_canvas_textblock_bidi_delimiters_set@Base 1.24.0-1bionic0
++ efl_canvas_textblock_class_get@Base 1.24.0-1bionic0
++ efl_canvas_textblock_cursor_create@Base 1.24.0-1bionic0
++ efl_canvas_textblock_factory_create@Base 1.24.0-1bionic0
++ efl_canvas_textblock_factory_interface_get@Base 1.24.0-1bionic0
++ efl_canvas_textblock_is_empty_get@Base 1.24.0-1bionic0
++ efl_canvas_textblock_newline_as_paragraph_separator_get@Base 1.24.0-1bionic0
++ efl_canvas_textblock_newline_as_paragraph_separator_set@Base 1.24.0-1bionic0
++ efl_canvas_textblock_obstacle_add@Base 1.24.0-1bionic0
++ efl_canvas_textblock_obstacle_del@Base 1.24.0-1bionic0
++ efl_canvas_textblock_obstacles_update@Base 1.24.0-1bionic0
++ efl_canvas_textblock_size_formatted_get@Base 1.24.0-1bionic0
++ efl_canvas_textblock_size_native_get@Base 1.24.0-1bionic0
++ efl_canvas_textblock_style_apply@Base 1.24.0-1bionic0
++ efl_canvas_textblock_style_insets_get@Base 1.24.0-1bionic0
++ efl_canvas_textblock_visible_range_get@Base 1.24.0-1bionic0
++ efl_canvas_translate_animation_class_get@Base 1.24.0-1bionic0
+  efl_canvas_vg_container_child_get@Base 1.22.2
++ efl_canvas_vg_container_children_direct_get@Base 1.24.0-1bionic0
+  efl_canvas_vg_container_children_get@Base 1.22.2
+  efl_canvas_vg_container_class_get@Base 1.22.2
+  efl_canvas_vg_gradient_class_get@Base 1.22.2
+@@ -12388,37 +12537,55 @@
+  efl_canvas_vg_shape_stroke_fill_set@Base 1.22.2
+  efl_canvas_vg_shape_stroke_marker_get@Base 1.22.2
+  efl_canvas_vg_shape_stroke_marker_set@Base 1.22.2
+- efl_gesture_events_interface_get@Base 1.23.0
++ efl_gesture_custom_gesture_name_get@Base 1.24.0-1bionic0
++ efl_gesture_custom_gesture_name_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_gesture_events_interface_get@Base 1.23.0
+  efl_gesture_flick_angle_get@Base 1.23.0
+  efl_gesture_flick_momentum_get@Base 1.23.0
+  efl_gesture_hotspot_get@Base 1.22.2
+  efl_gesture_hotspot_set@Base 1.22.2
+- efl_gesture_manager_config_get@Base 1.22.2
+- efl_gesture_manager_config_set@Base 1.22.2
+- efl_gesture_manager_recognizer_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_gesture_manager_config_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_gesture_manager_config_set@Base 1.22.2
++ efl_gesture_manager_recognizer_cleanup@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_gesture_manager_recognizer_get@Base 1.23.0
+  efl_gesture_manager_recognizer_register@Base 1.22.2
+  efl_gesture_manager_recognizer_unregister@Base 1.22.2
+  efl_gesture_momentum_get@Base 1.23.0
+- efl_gesture_recognizer_add@Base 1.23.0
+- efl_gesture_recognizer_config_get@Base 1.22.2
+- efl_gesture_recognizer_double_tap_timeout_get@Base 1.23.0
+- efl_gesture_recognizer_double_tap_timeout_set@Base 1.23.0
+- efl_gesture_recognizer_long_tap_timeout_get@Base 1.23.0
+- efl_gesture_recognizer_long_tap_timeout_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_gesture_recognizer_add@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_gesture_recognizer_config_get@Base 1.22.2
++ efl_gesture_recognizer_continues_get@Base 1.24.0-1bionic0
++ efl_gesture_recognizer_continues_set@Base 1.24.0-1bionic0
++ efl_gesture_recognizer_custom_gesture_name_get@Base 1.24.0-1bionic0
++ efl_gesture_recognizer_custom_gesture_name_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_gesture_recognizer_double_tap_timeout_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_gesture_recognizer_double_tap_timeout_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_gesture_recognizer_long_tap_timeout_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_gesture_recognizer_long_tap_timeout_set@Base 1.23.0
+  efl_gesture_recognizer_recognize@Base 1.22.2
+- efl_gesture_recognizer_reset@Base 1.22.2
+- efl_gesture_recognizer_triple_tap_timeout_get@Base 1.23.0
+- efl_gesture_recognizer_triple_tap_timeout_set@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_gesture_recognizer_reset@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_gesture_recognizer_triple_tap_timeout_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_gesture_recognizer_triple_tap_timeout_set@Base 1.23.0
++ efl_gesture_recognizer_type_get@Base 1.24.0-1bionic0
++ efl_gesture_rotate_angle_get@Base 1.24.0-1bionic0
++ efl_gesture_rotate_radius_get@Base 1.24.0-1bionic0
+  efl_gesture_state_get@Base 1.22.2
+  efl_gesture_state_set@Base 1.22.2
+  efl_gesture_timestamp_get@Base 1.23.0
+  efl_gesture_timestamp_set@Base 1.23.0
+- efl_gesture_touch_cur_point_get@Base 1.23.0
+- efl_gesture_touch_cur_timestamp_get@Base 1.23.0
++ efl_gesture_touch_count_get@Base 1.24.0-1bionic0
++ efl_gesture_touch_count_set@Base 1.24.0-1bionic0
++#MISSING: 1.24.0-1bionic0# efl_gesture_touch_cur_point_get@Base 1.23.0
++#MISSING: 1.24.0-1bionic0# efl_gesture_touch_cur_timestamp_get@Base 1.23.0
++ efl_gesture_touch_current_data_get@Base 1.24.0-1bionic0
++ efl_gesture_touch_current_point_get@Base 1.24.0-1bionic0
++ efl_gesture_touch_current_timestamp_get@Base 1.24.0-1bionic0
++ efl_gesture_touch_data_get@Base 1.24.0-1bionic0
+  efl_gesture_touch_delta@Base 1.22.2
+  efl_gesture_touch_distance@Base 1.22.2
+- efl_gesture_touch_multi_touch_get@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# efl_gesture_touch_multi_touch_get@Base 1.22.2
+  efl_gesture_touch_point_record@Base 1.22.2
++ efl_gesture_touch_points_count_get@Base 1.24.0-1bionic0
++ efl_gesture_touch_previous_data_get@Base 1.24.0-1bionic0
+  efl_gesture_touch_start_point_get@Base 1.22.2
+  efl_gesture_touch_state_get@Base 1.22.2
+  efl_gesture_zoom_get@Base 1.23.0
+@@ -12452,14 +12619,43 @@
+  efl_gfx_mapping_uv_set@Base 1.22.2
+  efl_gfx_mapping_zoom@Base 1.22.2
+  efl_gfx_mapping_zoom_absolute@Base 1.22.2
++ efl_gfx_vg_value_provider_class_get@Base 1.24.0-1bionic0
++ efl_gfx_vg_value_provider_fill_color_get@Base 1.24.0-1bionic0
++ efl_gfx_vg_value_provider_fill_color_set@Base 1.24.0-1bionic0
++ efl_gfx_vg_value_provider_keypath_get@Base 1.24.0-1bionic0
++ efl_gfx_vg_value_provider_keypath_set@Base 1.24.0-1bionic0
++ efl_gfx_vg_value_provider_stroke_color_get@Base 1.24.0-1bionic0
++ efl_gfx_vg_value_provider_stroke_color_set@Base 1.24.0-1bionic0
++ efl_gfx_vg_value_provider_stroke_width_get@Base 1.24.0-1bionic0
++ efl_gfx_vg_value_provider_stroke_width_set@Base 1.24.0-1bionic0
++ efl_gfx_vg_value_provider_transform_get@Base 1.24.0-1bionic0
++ efl_gfx_vg_value_provider_transform_set@Base 1.24.0-1bionic0
+  efl_input_clickable_button_state_reset@Base 1.23.0
+  efl_input_clickable_interaction_get@Base 1.23.0
+  efl_input_clickable_longpress_abort@Base 1.23.0
+  efl_input_clickable_mixin_get@Base 1.23.0
+  efl_input_clickable_press@Base 1.23.0
+  efl_input_clickable_unpress@Base 1.23.0
++ efl_input_device_children_get@Base 1.24.0-1bionic0
++ efl_input_device_children_iterate@Base 1.24.0-1bionic0
++ efl_input_device_class_get@Base 1.24.0-1bionic0
++ efl_input_device_evas_get@Base 1.24.0-1bionic0
++ efl_input_device_evas_set@Base 1.24.0-1bionic0
+  efl_input_device_get@Base 1.19.0
++ efl_input_device_grab_register@Base 1.24.0-1bionic0
++ efl_input_device_grab_unregister@Base 1.24.0-1bionic0
++ efl_input_device_is_pointer_type_get@Base 1.24.0-1bionic0
++ efl_input_device_pointer_device_count_get@Base 1.24.0-1bionic0
++ efl_input_device_seat_get@Base 1.24.0-1bionic0
++ efl_input_device_seat_id_get@Base 1.24.0-1bionic0
++ efl_input_device_seat_id_set@Base 1.24.0-1bionic0
+  efl_input_device_set@Base 1.19.0
++ efl_input_device_source_get@Base 1.24.0-1bionic0
++ efl_input_device_source_set@Base 1.24.0-1bionic0
++ efl_input_device_subclass_get@Base 1.24.0-1bionic0
++ efl_input_device_subclass_set@Base 1.24.0-1bionic0
++ efl_input_device_type_get@Base 1.24.0-1bionic0
++ efl_input_device_type_set@Base 1.24.0-1bionic0
+  efl_input_event_flags_get@Base 1.19.0
+  efl_input_event_flags_set@Base 1.19.0
+  efl_input_event_mixin_get@Base 1.19.0
+@@ -12532,6 +12728,43 @@
+  efl_input_state_interface_get@Base 1.19.0
+  efl_input_timestamp_get@Base 1.19.0
+  efl_input_timestamp_set@Base 1.19.0
++ efl_text_cursor_object_char_coord_set@Base 1.24.0-1bionic0
++ efl_text_cursor_object_char_delete@Base 1.24.0-1bionic0
++ efl_text_cursor_object_class_get@Base 1.24.0-1bionic0
++ efl_text_cursor_object_cluster_coord_set@Base 1.24.0-1bionic0
++ efl_text_cursor_object_compare@Base 1.24.0-1bionic0
++ efl_text_cursor_object_content_geometry_get@Base 1.24.0-1bionic0
++ efl_text_cursor_object_content_get@Base 1.24.0-1bionic0
++ efl_text_cursor_object_create@Base 1.24.0-1bionic0
++ efl_text_cursor_object_cursor_geometry_get@Base 1.24.0-1bionic0
++ efl_text_cursor_object_equal@Base 1.24.0-1bionic0
++ efl_text_cursor_object_handle_get@Base 1.24.0-1bionic0
++ efl_text_cursor_object_handle_set@Base 1.24.0-1bionic0
++ efl_text_cursor_object_line_jump_by@Base 1.24.0-1bionic0
++ efl_text_cursor_object_line_number_get@Base 1.24.0-1bionic0
++ efl_text_cursor_object_line_number_set@Base 1.24.0-1bionic0
++ efl_text_cursor_object_lower_cursor_geometry_get@Base 1.24.0-1bionic0
++ efl_text_cursor_object_markup_insert@Base 1.24.0-1bionic0
++ efl_text_cursor_object_move@Base 1.24.0-1bionic0
++ efl_text_cursor_object_position_get@Base 1.24.0-1bionic0
++ efl_text_cursor_object_position_set@Base 1.24.0-1bionic0
++ efl_text_cursor_object_range_delete@Base 1.24.0-1bionic0
++ efl_text_cursor_object_range_geometry_get@Base 1.24.0-1bionic0
++ efl_text_cursor_object_range_markup_get@Base 1.24.0-1bionic0
++ efl_text_cursor_object_range_precise_geometry_get@Base 1.24.0-1bionic0
++ efl_text_cursor_object_range_text_get@Base 1.24.0-1bionic0
++ efl_text_cursor_object_text_insert@Base 1.24.0-1bionic0
++ efl_text_cursor_object_text_object_get@Base 1.24.0-1bionic0
++ efl_text_cursor_object_text_object_set@Base 1.24.0-1bionic0
++ efl_text_formatter_attribute_clear@Base 1.24.0-1bionic0
++ efl_text_formatter_attribute_cursors_get@Base 1.24.0-1bionic0
++ efl_text_formatter_attribute_get@Base 1.24.0-1bionic0
++ efl_text_formatter_attribute_insert@Base 1.24.0-1bionic0
++ efl_text_formatter_attribute_is_item@Base 1.24.0-1bionic0
++ efl_text_formatter_class_get@Base 1.24.0-1bionic0
++ efl_text_formatter_item_geometry_get@Base 1.24.0-1bionic0
++ efl_text_formatter_range_attributes_get@Base 1.24.0-1bionic0
++ efl_text_formatter_remove@Base 1.24.0-1bionic0
+  evas_alloc_error@Base 1.15.0
+  evas_async_events_fd_get@Base 1.15.0
+  evas_async_events_process@Base 1.15.0
+@@ -12551,6 +12784,7 @@
+  evas_cache_engine_image_get@Base 1.15.0
+  evas_cache_engine_image_init@Base 1.15.0
+  evas_cache_engine_image_load_data@Base 1.15.0
++ evas_cache_engine_image_request@Base 1.24.0-1bionic0
+  evas_cache_engine_image_set@Base 1.15.0
+  evas_cache_engine_image_shutdown@Base 1.15.0
+  evas_cache_engine_image_size_set@Base 1.15.0
+@@ -12574,6 +12808,7 @@
+  evas_cache_image_preload_cancel@Base 1.15.0
+  evas_cache_image_preload_data@Base 1.15.0
+  evas_cache_image_ref@Base 1.15.0
++ evas_cache_image_request@Base 1.24.0-1bionic0
+  evas_cache_image_set@Base 1.15.0
+  evas_cache_image_shutdown@Base 1.15.0
+  evas_cache_image_size_set@Base 1.15.0
+@@ -12584,179 +12819,179 @@
+  evas_cache_private_from_image_entry_get@Base 1.15.0
+  evas_cache_private_get@Base 1.15.0
+  evas_cache_private_set@Base 1.15.0
+- evas_canvas3d_camera_class_get@Base 1.15.0
+- evas_canvas3d_camera_node_visible_get@Base 1.15.0
+- evas_canvas3d_camera_projection_frustum_set@Base 1.15.0
+- evas_canvas3d_camera_projection_matrix_get@Base 1.15.0
+- evas_canvas3d_camera_projection_matrix_set@Base 1.15.0
+- evas_canvas3d_camera_projection_ortho_set@Base 1.15.0
+- evas_canvas3d_camera_projection_perspective_set@Base 1.15.0
+- evas_canvas3d_light_ambient_get@Base 1.15.0
+- evas_canvas3d_light_ambient_set@Base 1.15.0
+- evas_canvas3d_light_attenuation_enable_get@Base 1.15.0
+- evas_canvas3d_light_attenuation_enable_set@Base 1.15.0
+- evas_canvas3d_light_attenuation_get@Base 1.15.0
+- evas_canvas3d_light_attenuation_set@Base 1.15.0
+- evas_canvas3d_light_class_get@Base 1.15.0
+- evas_canvas3d_light_diffuse_get@Base 1.15.0
+- evas_canvas3d_light_diffuse_set@Base 1.15.0
+- evas_canvas3d_light_directional_get@Base 1.15.0
+- evas_canvas3d_light_directional_set@Base 1.15.0
+- evas_canvas3d_light_projection_frustum_set@Base 1.15.0
+- evas_canvas3d_light_projection_matrix_get@Base 1.15.0
+- evas_canvas3d_light_projection_matrix_set@Base 1.15.0
+- evas_canvas3d_light_projection_ortho_set@Base 1.15.0
+- evas_canvas3d_light_projection_perspective_set@Base 1.15.0
+- evas_canvas3d_light_specular_get@Base 1.15.0
+- evas_canvas3d_light_specular_set@Base 1.15.0
+- evas_canvas3d_light_spot_cutoff_get@Base 1.15.0
+- evas_canvas3d_light_spot_cutoff_set@Base 1.15.0
+- evas_canvas3d_light_spot_exponent_get@Base 1.15.0
+- evas_canvas3d_light_spot_exponent_set@Base 1.15.0
+- evas_canvas3d_material_class_get@Base 1.15.0
+- evas_canvas3d_material_color_get@Base 1.15.0
+- evas_canvas3d_material_color_set@Base 1.15.0
+- evas_canvas3d_material_enable_get@Base 1.15.0
+- evas_canvas3d_material_enable_set@Base 1.15.0
+- evas_canvas3d_material_shininess_get@Base 1.15.0
+- evas_canvas3d_material_shininess_set@Base 1.15.0
+- evas_canvas3d_material_texture_get@Base 1.15.0
+- evas_canvas3d_material_texture_set@Base 1.15.0
+- evas_canvas3d_mesh_alpha_func_get@Base 1.15.0
+- evas_canvas3d_mesh_alpha_func_set@Base 1.15.0
+- evas_canvas3d_mesh_alpha_test_enable_get@Base 1.15.0
+- evas_canvas3d_mesh_alpha_test_enable_set@Base 1.15.0
+- evas_canvas3d_mesh_blending_enable_get@Base 1.15.0
+- evas_canvas3d_mesh_blending_enable_set@Base 1.15.0
+- evas_canvas3d_mesh_blending_func_get@Base 1.15.0
+- evas_canvas3d_mesh_blending_func_set@Base 1.15.0
+- evas_canvas3d_mesh_class_get@Base 1.15.0
+- evas_canvas3d_mesh_color_pick_enable_get@Base 1.15.0
+- evas_canvas3d_mesh_color_pick_enable_set@Base 1.15.0
+- evas_canvas3d_mesh_convex_hull_data_get@Base 1.17.0
+- evas_canvas3d_mesh_fog_color_get@Base 1.15.0
+- evas_canvas3d_mesh_fog_color_set@Base 1.15.0
+- evas_canvas3d_mesh_fog_enable_get@Base 1.15.0
+- evas_canvas3d_mesh_fog_enable_set@Base 1.15.0
+- evas_canvas3d_mesh_frame_add@Base 1.15.0
+- evas_canvas3d_mesh_frame_del@Base 1.15.0
+- evas_canvas3d_mesh_frame_exist@Base 1.16.0
+- evas_canvas3d_mesh_frame_material_get@Base 1.15.0
+- evas_canvas3d_mesh_frame_material_set@Base 1.15.0
+- evas_canvas3d_mesh_frame_vertex_data_copy_set@Base 1.15.0
+- evas_canvas3d_mesh_frame_vertex_data_map@Base 1.15.0
+- evas_canvas3d_mesh_frame_vertex_data_set@Base 1.15.0
+- evas_canvas3d_mesh_frame_vertex_data_unmap@Base 1.15.0
+- evas_canvas3d_mesh_frame_vertex_stride_get@Base 1.15.0
+- evas_canvas3d_mesh_from_primitive_set@Base 1.15.0
+- evas_canvas3d_mesh_index_count_get@Base 1.15.0
+- evas_canvas3d_mesh_index_data_copy_set@Base 1.15.0
+- evas_canvas3d_mesh_index_data_map@Base 1.15.0
+- evas_canvas3d_mesh_index_data_set@Base 1.15.0
+- evas_canvas3d_mesh_index_data_unmap@Base 1.15.0
+- evas_canvas3d_mesh_index_format_get@Base 1.15.0
+- evas_canvas3d_mesh_lod_boundary_get@Base 1.18.0
+- evas_canvas3d_mesh_lod_boundary_set@Base 1.18.0
+- evas_canvas3d_mesh_shader_mode_get@Base 1.18.0
+- evas_canvas3d_mesh_shader_mode_set@Base 1.18.0
+- evas_canvas3d_mesh_shadows_constant_bias_get@Base 1.16.0
+- evas_canvas3d_mesh_shadows_constant_bias_set@Base 1.16.0
+- evas_canvas3d_mesh_shadows_edges_filtering_get@Base 1.16.0
+- evas_canvas3d_mesh_shadows_edges_filtering_set@Base 1.16.0
+- evas_canvas3d_mesh_vertex_assembly_get@Base 1.15.0
+- evas_canvas3d_mesh_vertex_assembly_set@Base 1.15.0
+- evas_canvas3d_mesh_vertex_count_get@Base 1.15.0
+- evas_canvas3d_mesh_vertex_count_set@Base 1.15.0
+- evas_canvas3d_node_billboard_target_get@Base 1.15.0
+- evas_canvas3d_node_billboard_target_set@Base 1.15.0
+- evas_canvas3d_node_bounding_box_get@Base 1.15.0
+- evas_canvas3d_node_bounding_sphere_get@Base 1.15.0
+- evas_canvas3d_node_camera_get@Base 1.15.0
+- evas_canvas3d_node_camera_set@Base 1.15.0
+- evas_canvas3d_node_class_get@Base 1.15.0
+- evas_canvas3d_node_light_get@Base 1.15.0
+- evas_canvas3d_node_light_set@Base 1.15.0
+- evas_canvas3d_node_lod_enable_get@Base 1.18.0
+- evas_canvas3d_node_lod_enable_set@Base 1.18.0
+- evas_canvas3d_node_look_at_set@Base 1.15.0
+- evas_canvas3d_node_member_add@Base 1.15.0
+- evas_canvas3d_node_member_del@Base 1.15.0
+- evas_canvas3d_node_member_list_get@Base 1.15.0
+- evas_canvas3d_node_mesh_add@Base 1.15.0
+- evas_canvas3d_node_mesh_del@Base 1.15.0
+- evas_canvas3d_node_mesh_frame_get@Base 1.15.0
+- evas_canvas3d_node_mesh_frame_set@Base 1.15.0
+- evas_canvas3d_node_mesh_list_get@Base 1.15.0
+- evas_canvas3d_node_orientation_angle_axis_set@Base 1.15.0
+- evas_canvas3d_node_orientation_get@Base 1.15.0
+- evas_canvas3d_node_orientation_inherit_get@Base 1.15.0
+- evas_canvas3d_node_orientation_inherit_set@Base 1.15.0
+- evas_canvas3d_node_orientation_set@Base 1.15.0
+- evas_canvas3d_node_parent_get@Base 1.15.0
+- evas_canvas3d_node_position_get@Base 1.15.0
+- evas_canvas3d_node_position_inherit_get@Base 1.15.0
+- evas_canvas3d_node_position_inherit_set@Base 1.15.0
+- evas_canvas3d_node_position_set@Base 1.15.0
+- evas_canvas3d_node_scale_get@Base 1.15.0
+- evas_canvas3d_node_scale_inherit_get@Base 1.15.0
+- evas_canvas3d_node_scale_inherit_set@Base 1.15.0
+- evas_canvas3d_node_scale_set@Base 1.15.0
+- evas_canvas3d_node_scene_root_get@Base 1.17.0
+- evas_canvas3d_node_type_get@Base 1.15.0
+- evas_canvas3d_node_type_set@Base 1.22.2
+- evas_canvas3d_object_callback_register@Base 1.15.0
+- evas_canvas3d_object_callback_unregister@Base 1.15.0
+- evas_canvas3d_object_change@Base 1.15.0
+- evas_canvas3d_object_change_notify@Base 1.15.0
+- evas_canvas3d_object_class_get@Base 1.15.0
+- evas_canvas3d_object_dirty_get@Base 1.15.0
+- evas_canvas3d_object_type_get@Base 1.15.0
+- evas_canvas3d_object_type_set@Base 1.15.0
+- evas_canvas3d_object_update@Base 1.15.0
+- evas_canvas3d_object_update_notify@Base 1.15.0
+- evas_canvas3d_primitive_class_get@Base 1.15.0
+- evas_canvas3d_primitive_form_get@Base 1.15.0
+- evas_canvas3d_primitive_form_set@Base 1.15.0
+- evas_canvas3d_primitive_mode_get@Base 1.15.0
+- evas_canvas3d_primitive_mode_set@Base 1.15.0
+- evas_canvas3d_primitive_precision_get@Base 1.15.0
+- evas_canvas3d_primitive_precision_set@Base 1.15.0
+- evas_canvas3d_primitive_ratio_get@Base 1.15.0
+- evas_canvas3d_primitive_ratio_set@Base 1.15.0
+- evas_canvas3d_primitive_surface_set@Base 1.15.0
+- evas_canvas3d_primitive_tex_scale_get@Base 1.15.0
+- evas_canvas3d_primitive_tex_scale_set@Base 1.15.0
+- evas_canvas3d_scene_background_color_get@Base 1.15.0
+- evas_canvas3d_scene_background_color_set@Base 1.15.0
+- evas_canvas3d_scene_camera_node_get@Base 1.15.0
+- evas_canvas3d_scene_camera_node_set@Base 1.15.0
+- evas_canvas3d_scene_class_get@Base 1.15.0
+- evas_canvas3d_scene_color_pick_enable_get@Base 1.15.0
+- evas_canvas3d_scene_color_pick_enable_set@Base 1.15.0
+- evas_canvas3d_scene_exist@Base 1.15.0
+- evas_canvas3d_scene_pick@Base 1.15.0
+- evas_canvas3d_scene_pick_member_list_get@Base 1.15.0
+- evas_canvas3d_scene_root_node_get@Base 1.15.0
+- evas_canvas3d_scene_root_node_set@Base 1.15.0
+- evas_canvas3d_scene_shadows_depth_get@Base 1.16.0
+- evas_canvas3d_scene_shadows_depth_set@Base 1.16.0
+- evas_canvas3d_scene_shadows_enable_get@Base 1.15.0
+- evas_canvas3d_scene_shadows_enable_set@Base 1.15.0
+- evas_canvas3d_scene_size_get@Base 1.15.0
+- evas_canvas3d_scene_size_set@Base 1.15.0
+- evas_canvas3d_texture_atlas_enable_get@Base 1.15.0
+- evas_canvas3d_texture_atlas_enable_set@Base 1.15.0
+- evas_canvas3d_texture_class_get@Base 1.15.0
+- evas_canvas3d_texture_color_format_get@Base 1.15.0
+- evas_canvas3d_texture_data_set@Base 1.15.0
+- evas_canvas3d_texture_filter_get@Base 1.15.0
+- evas_canvas3d_texture_filter_set@Base 1.15.0
+- evas_canvas3d_texture_size_get@Base 1.15.0
+- evas_canvas3d_texture_source_set@Base 1.15.0
+- evas_canvas3d_texture_source_visible_get@Base 1.15.0
+- evas_canvas3d_texture_source_visible_set@Base 1.15.0
+- evas_canvas3d_texture_wrap_get@Base 1.15.0
+- evas_canvas3d_texture_wrap_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_camera_class_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_camera_node_visible_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_camera_projection_frustum_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_camera_projection_matrix_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_camera_projection_matrix_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_camera_projection_ortho_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_camera_projection_perspective_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_ambient_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_ambient_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_attenuation_enable_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_attenuation_enable_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_attenuation_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_attenuation_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_class_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_diffuse_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_diffuse_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_directional_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_directional_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_projection_frustum_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_projection_matrix_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_projection_matrix_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_projection_ortho_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_projection_perspective_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_specular_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_specular_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_spot_cutoff_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_spot_cutoff_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_spot_exponent_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_light_spot_exponent_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_material_class_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_material_color_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_material_color_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_material_enable_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_material_enable_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_material_shininess_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_material_shininess_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_material_texture_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_material_texture_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_alpha_func_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_alpha_func_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_alpha_test_enable_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_alpha_test_enable_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_blending_enable_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_blending_enable_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_blending_func_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_blending_func_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_class_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_color_pick_enable_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_color_pick_enable_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_convex_hull_data_get@Base 1.17.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_fog_color_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_fog_color_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_fog_enable_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_fog_enable_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_frame_add@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_frame_del@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_frame_exist@Base 1.16.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_frame_material_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_frame_material_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_frame_vertex_data_copy_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_frame_vertex_data_map@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_frame_vertex_data_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_frame_vertex_data_unmap@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_frame_vertex_stride_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_from_primitive_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_index_count_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_index_data_copy_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_index_data_map@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_index_data_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_index_data_unmap@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_index_format_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_lod_boundary_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_lod_boundary_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_shader_mode_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_shader_mode_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_shadows_constant_bias_get@Base 1.16.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_shadows_constant_bias_set@Base 1.16.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_shadows_edges_filtering_get@Base 1.16.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_shadows_edges_filtering_set@Base 1.16.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_vertex_assembly_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_vertex_assembly_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_vertex_count_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_mesh_vertex_count_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_billboard_target_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_billboard_target_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_bounding_box_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_bounding_sphere_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_camera_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_camera_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_class_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_light_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_light_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_lod_enable_get@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_lod_enable_set@Base 1.18.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_look_at_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_member_add@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_member_del@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_member_list_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_mesh_add@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_mesh_del@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_mesh_frame_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_mesh_frame_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_mesh_list_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_orientation_angle_axis_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_orientation_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_orientation_inherit_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_orientation_inherit_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_orientation_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_parent_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_position_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_position_inherit_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_position_inherit_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_position_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_scale_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_scale_inherit_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_scale_inherit_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_scale_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_scene_root_get@Base 1.17.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_type_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_node_type_set@Base 1.22.2
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_object_callback_register@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_object_callback_unregister@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_object_change@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_object_change_notify@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_object_class_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_object_dirty_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_object_type_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_object_type_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_object_update@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_object_update_notify@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_primitive_class_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_primitive_form_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_primitive_form_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_primitive_mode_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_primitive_mode_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_primitive_precision_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_primitive_precision_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_primitive_ratio_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_primitive_ratio_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_primitive_surface_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_primitive_tex_scale_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_primitive_tex_scale_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_background_color_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_background_color_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_camera_node_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_camera_node_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_class_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_color_pick_enable_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_color_pick_enable_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_exist@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_pick@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_pick_member_list_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_root_node_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_root_node_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_shadows_depth_get@Base 1.16.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_shadows_depth_set@Base 1.16.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_shadows_enable_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_shadows_enable_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_size_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_scene_size_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_texture_atlas_enable_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_texture_atlas_enable_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_texture_class_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_texture_color_format_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_texture_data_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_texture_filter_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_texture_filter_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_texture_size_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_texture_source_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_texture_source_visible_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_texture_source_visible_set@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_texture_wrap_get@Base 1.15.0
++#MISSING: 1.24.0-1bionic0# evas_canvas3d_texture_wrap_set@Base 1.15.0
+  evas_canvas_changed_get@Base 1.15.0
+  evas_canvas_class_get@Base 1.15.0
+  evas_canvas_coord_screen_x_to_world@Base 1.15.0
+@@ -12977,6 +13212,7 @@
+  evas_common_line_draw_line_aa@Base 1.15.0
+  evas_common_line_init@Base 1.15.0
+  evas_common_line_point_draw@Base 1.15.0
++ evas_common_load_image_from_file@Base 1.24.0-1bionic0
+  evas_common_load_image_from_mmap@Base 1.15.0
+  evas_common_load_rgba_image_data_from_file@Base 1.15.0
+  evas_common_load_rgba_image_frame_duration_from_file@Base 1.15.0
+@@ -13239,6 +13475,7 @@
+  evas_nochange_pop@Base 1.15.0
+  evas_nochange_push@Base 1.15.0
+  evas_norender@Base 1.15.0
++ evas_norender_with_updates@Base 1.24.0-1bionic0
+  evas_obj_box_accessor_new@Base 1.15.0
+  evas_obj_box_add_to@Base 1.15.0
+  evas_obj_box_align_get@Base 1.15.0
+@@ -13428,6 +13665,7 @@
+  evas_object_image_alpha_set@Base 1.15.0
+  evas_object_image_animated_frame_count_get@Base 1.15.0
+  evas_object_image_animated_frame_duration_get@Base 1.15.0
++ evas_object_image_animated_frame_get@Base 1.24.0-1bionic0
+  evas_object_image_animated_frame_set@Base 1.15.0
+  evas_object_image_animated_get@Base 1.15.0
+  evas_object_image_animated_loop_count_get@Base 1.15.0
+@@ -13865,6 +14103,14 @@
+  evas_textblock_cursor_word_start@Base 1.15.0
+  evas_textblock_escape_string_get@Base 1.15.0
+  evas_textblock_escape_string_range_get@Base 1.15.0
++ evas_textblock_fit_options_get@Base 1.24.0-1bionic0
++ evas_textblock_fit_options_set@Base 1.24.0-1bionic0
++ evas_textblock_fit_size_array_get@Base 1.24.0-1bionic0
++ evas_textblock_fit_size_array_set@Base 1.24.0-1bionic0
++ evas_textblock_fit_size_range_get@Base 1.24.0-1bionic0
++ evas_textblock_fit_size_range_set@Base 1.24.0-1bionic0
++ evas_textblock_fit_step_size_get@Base 1.24.0-1bionic0
++ evas_textblock_fit_step_size_set@Base 1.24.0-1bionic0
+  evas_textblock_node_format_first_get@Base 1.15.0
+  evas_textblock_node_format_last_get@Base 1.15.0
+  evas_textblock_node_format_list_get@Base 1.15.0
+@@ -13973,3 +14219,17 @@
+  generic_cache_destroy@Base 1.22.2
+  generic_cache_dump@Base 1.22.2
+  generic_cache_new@Base 1.22.2
++libexactness_play.so.1 libefl #MINVER#
++ ecore_evas_init@Base 1.24.0-1bionic0
++ ecore_main_loop_begin@Base 1.24.0-1bionic0
++ efl_loop_begin@Base 1.24.0-1bionic0
++ eina_init@Base 1.24.0-1bionic0
++ eina_shutdown@Base 1.24.0-1bionic0
++ elm_init@Base 1.24.0-1bionic0
++libexactness_record.so.1 libefl #MINVER#
++ ecore_evas_init@Base 1.24.0-1bionic0
++ ecore_main_loop_begin@Base 1.24.0-1bionic0
++ efl_loop_begin@Base 1.24.0-1bionic0
++ eina_init@Base 1.24.0-1bionic0
++ eina_shutdown@Base 1.24.0-1bionic0
++ elm_init@Base 1.24.0-1bionic0
