@@ -1,0 +1,13 @@
+Package: python-efl-dbgsym
+Package-Type: ddeb
+Source: python-efl
+Version: 1.24.0-0bionic0
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Arthur (Niko2040) Nikitenko <niko2040@bynets.ru>
+Installed-Size: 6485
+Depends: python-efl (= 1.24.0-0bionic0)
+Section: debug
+Priority: optional
+Description: debug symbols for python-efl
+Build-Ids: 1602291b16c806984175581006d4657fdde52082 32bf872c6070bb33c0ef18d73f3d201459907921 69bcf2bacfc462d19f65fb23933c534e688646c9 7080c7104ebb8a007bd220e7477bfe5ef56b647c 732b52aeb10acf2f838977d909c1b915c572a2f4 75eae942245e448a62fa354e90544ccf94262232 861f9a27de6bd382cc3b873638be547def355f8b 87b4ef45e0b69324d9f50a0cad04a7b7041a1e1d b7a3585e5b21845e7ce32a73f5dd480b42a0d195 be78d0bbbf11905599be271a38abbec4fed2a7be be8597933485dbc3d22860263f93add2dcf3a112 c3b1382e0c2da02f5d95628876827c8da677f0c0 e1a2db74a9fc3f6fc40ccf1b0836ebb5e0c69341 e331dc608601e1d3c4d7416866da7ab850622a0c f59bfe421e429933a43932549e267f3440f59b6a fd90d8f826803bd2a5fef82db89b2f156bfcca61

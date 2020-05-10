@@ -1,0 +1,13 @@
+Package: python3-efl-dbgsym
+Package-Type: ddeb
+Source: python-efl
+Version: 1.24.0-0bionic0
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Arthur (Niko2040) Nikitenko <niko2040@bynets.ru>
+Installed-Size: 9268
+Depends: python3-efl (= 1.24.0-0bionic0)
+Section: debug
+Priority: optional
+Description: debug symbols for python3-efl
+Build-Ids: 33538f8c71c4288d03e8d23ea8cb00e77dc5404c 342dac011451daa2806ef59e04f37210901086a8 4b5896f39f6440d13d1bd2ab440845fd0a9a81c1 5162f00e10cce712019c74a70414657f34bf4e95 5a54b82381edbd8c85acdeb96ca4869e4fceaf2a 789662bad67f3d1ccecde83142d23ae189a89686 7b72b4bbd16190e3d227c20ccf41b12a4f2a2579 94ece6fd066df5d3340d16b80b6325169ebbd385 94ee1457f1d955e1b75ab6d5c25b9a6c7fbb07fa bf1a487ca5dab8b0cae2d6e72fa9f02e7d29452c c9ab8a835f02efbfa14e9152014d8e1c34b3bd42 d106029f01c8e5e1eb2370abdab8183c4cf0b1d2 d6d88b3cb2f6b643fa580a7c1bac988ea2d34041 e222945200510823792fb10e44a21c7efeb20664 eb66b5a76239dceaf67295b867119c50d98ee658 ed23cf444bb209e68cfe26748a9b5159ef0d8a10
