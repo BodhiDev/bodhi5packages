@@ -1,8 +1,8 @@
 Source: python-efl
-Maintainer: Arthur (Niko2040) Nikitenko <niko2040@bynets.ru>
+Maintainer: Robert Wiley <ylee@bodhilinux.com>
 Section: python
 Priority: optional
-Build-Depends: dh-python, python-all (>= 2.6.6-3), debhelper (>= 9), libefl-dev (= 1.24.0-1bionic0), python-dbus-dev (>= 0.83.0), python-all-dev, python3-all, python3-all-dev
+Build-Depends: dh-python, python-all (>= 2.6.6-3), debhelper (>= 9), libefl-dev (>= 1.24.0-1bionic0), python-dbus-dev (>= 0.83.0), python-all-dev, python3-all, python3-all-dev
 Standards-Version: 3.9.5
 
 Package: python-efl
@@ -18,9 +18,9 @@ Description: Python bindings for Enlightenment Foundation Libraries
 
 Package: python3-efl
 Architecture: any
-Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}, python3
 Description: Python3 bindings for Enlightenment Foundation Libraries
-  EFL is a collection of libraries for handling many common tasks a
+ EFL is a collection of libraries for handling many common tasks a
  developer man have such as data structures, communication, rendering,
  widgets and more.
  . 
