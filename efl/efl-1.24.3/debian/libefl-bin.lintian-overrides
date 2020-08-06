@@ -1,0 +1,2 @@
+libefl-bin: python-script-but-no-python-dep 
+libefl-bin: binary-without-manpage

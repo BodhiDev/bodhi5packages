@@ -1,0 +1,47 @@
+Source: efl
+Priority: optional
+Maintainer: Arthur (Niko2040) Nikitenko <niko2040@bynets.ru>
+Build-Depends: debhelper (>= 9), meson, ninja-build, dh-autoreconf, autotools-dev, check, libxcursor-dev, x11proto-core-dev, libsystemd-dev, libx11-dev, libxshmfence-dev, libavahi-client-dev, libfribidi-dev, libgstreamer-plugins-base1.0-dev, libgstreamer-plugins-bad1.0-dev, guile-2.0-dev, libpthread-stubs0-dev, libwebp-dev, libxi-dev, libxxf86vm-dev, x11proto-render-dev, libxtst-dev, libdrm-dev, x11proto-xext-dev, libfontconfig1-dev, libxrandr-dev, libdbus-1-dev, libgif-dev, libtiff5-dev, libxcb-present-dev, libpcre3-dev, x11proto-kb-dev, libxkbcommon-dev, libegl1-mesa-dev, x11proto-damage-dev, libxdamage-dev, pkg-config, libssl-dev, x11proto-composite-dev, x11proto-input-dev, libxcb1-dev, libbullet-dev, libxcb-glx0-dev, zlib1g-dev, libmount-dev, libluajit-5.1-dev, libglib2.0-dev, libgbm-dev, libgl1-mesa-dev, libpulse-dev, libjpeg-turbo8-dev, libxcb-sync-dev, systemd, libxext-dev, uuid-dev, libexpat1-dev, libx11-xcb-dev, libgstreamer1.0-dev, x11proto-fixes-dev, libxdmcp-dev, libharfbuzz-dev, libsndfile1-dev, libxcb-dri2-0-dev, libxinerama-dev, gettext, libudev-dev, mesa-common-dev, libfreetype6-dev, libxau-dev, x11proto-xf86vidmode-dev, libxss-dev, libxrender-dev, libxfixes-dev, libxcomposite-dev, x11proto-randr-dev, x11proto-scrnsaver-dev, libblkid-dev, libxcb-dri3-dev, libpng-dev, libgles2-mesa-dev, libinput-dev, libpoppler-cpp-dev, librsvg2-dev, libspectre-dev, libraw-dev, libunwind-dev, libwayland-dev, x11proto-present-dev, wayland-protocols, libxkbcommon-x11-dev, libibus-1.0-dev, cmake, valgrind, libunwind-dev, libunwind8, libjpeg8-dev, libtiff-dev, libwebp-dev, libx11-xcb-dev, libopenjp2-7-dev, scim-dev
+Standards-Version: 3.9.8
+Section: libs
+Homepage: http://enlightenment.org
+Vcs-Git: git://git.enlightenment.org/core/efl.git
+Vcs-Browser: http://git.enlightenment.org/core/efl.git/
+
+Package: libefl-dev
+Section: libdevel
+Architecture: any
+Depends: libefl (= ${binary:Version}), pkg-config, libxml2-dev, libudev-dev, libmount-dev, libsystemd-dev, libdbus-1-dev, libluajit-5.1-dev, libdrm-dev, libpng-dev, libblkid-dev, libsndfile1-dev, libglib2.0-dev, libssl-dev, libxkbcommon-dev, libharfbuzz-dev, libfribidi-dev, libpulse-dev, libfontconfig1-dev, libbullet-dev, libinput-dev, libgbm-dev, libwayland-dev
+Replaces: libelementary-dev
+Description: Enlightenment Foundation Libraries (development files)
+ Development files for EFL.
+
+Package: libefl
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libefl-data, libefl-bin (= ${binary:Version})
+Replaces: libecore1, libecore-audio1, libecore-con1, libecore-evas1, libevas1-engines-core, libevas1-engines-x, libevas1-engine-fb, libecore-fb1, libecore-file1, libecore-imf1, libecore-imf-evas1, libecore-input1, libecore-input-evas1, libecore-ipc1, libecore-wayland1, libecore-x1, libedje1, libeet1, libeeze1, libefreet1, libefreet-mime1, libefreet-trash1, libeina1, libeio1, libeldbus1, libembryo1, libemotion1, libeo1, libephysics1, libethumb1, libethumb-client1, libevas1, libelementary1, libelementary2
+Description: Enlightenment Foundation Libraries
+ EFL is small and powerful libraries for creation beauty and functional apps.
+
+Package: libefl-data
+Section: misc
+Architecture: all
+Depends: ${misc:Depends}
+Replaces: libelementary-data
+Description: Enlightenment Foundation Libraries (data files)
+ Miscellaneous files for EFL.
+ 
+Package: libefl-bin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3
+Replaces: libelementary-bin
+Description: Enlightenment Foundation Libraries (binary files)
+ Binary files for EFL.
+ 
+Package: libefl-dbg
+Architecture: any
+Depends: libefl (=${binary:Version})
+Replaces: libelementary-dbg
+Description: Enlightenment Foundation Libraries (debug symbols)
+ Debug symbols for EFL
