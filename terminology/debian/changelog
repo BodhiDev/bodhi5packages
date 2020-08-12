@@ -1,3 +1,11 @@
+terminology (1.8.1-0bionic0) bionic; urgency=low
+
+  * Be stricter on which characters can be considered wide or not
+  * Apply change about hiding mouse pointer after idle timeout on all terminals
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Wed, 12 Aug 2020 12:45:57 +0400
+
+
 terminology (1.8.0-0bionic0) bionic; urgency=low
 
   * Release v1.8.0
