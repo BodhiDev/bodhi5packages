@@ -1,3 +1,9 @@
+efl (1.22.6-2bionic0) bionic; urgency=low
+
+  * Evisum patch
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Sun, 10 Jan 2021 1:58:41 +0400
+
 efl (1.22.6-1bionic0) bionic; urgency=low
 
   * Upstream release
