@@ -1,0 +1,6 @@
+Patches done manually and too lazy to put in debian:
+
+NoDisplay=true in desktop files and edit 
+also fix pkg-config-bad-directive 
+	usr/lib/i386-linux-gnu/pkgconfig/elementary-cxx.pc @pkgdatadir@
+by editing /pc/elementary-cxx.pc.in
