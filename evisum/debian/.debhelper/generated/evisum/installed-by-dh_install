@@ -1,0 +1,5 @@
+debian/tmp/usr/bin/evisum
+debian/tmp/usr/share/applications
+debian/tmp/usr/share/evisum
+debian/tmp/usr/share/icons/hicolor/256x256/apps
+debian/tmp/usr/share/locale
