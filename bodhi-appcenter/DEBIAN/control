@@ -1,5 +1,5 @@
 Package: bodhi-appcenter
-Version: 0.2.2
+Version: 0.2.3
 Section: misc
 Priority: optional
 Recommends: bodhi-chromium|firefox|epiphany|palemoon
