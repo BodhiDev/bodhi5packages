@@ -1,0 +1,12 @@
+Package: bodhi-chromium
+Version: 0.0.1
+Section: web
+Priority: optional
+Architecture: all
+Depends: chromium-browser
+Maintainer: Robert Wiley <ylee@bodhilinux.com>
+Description: Chromium web browser
+ Chromium Web browser that aims to build a safer, faster, and more stable 
+ internet browsing experience.
+ .
+ This package is a meta-package for Bodhi Linux 6.0 compatibility.
