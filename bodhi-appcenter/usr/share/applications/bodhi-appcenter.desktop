@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Bodhi AppCenter
+Name[pt-BR]=Bodhi AppCenter
 Name[ca]=Centre d'Aplicacions de Bodhi
 Name[cy]=Bodhi Canolfan App
 Name[es]=Bodhi AppCenter
@@ -11,6 +12,7 @@ Name[nl_BE]=Bodhi applicatiebeheer
 Name[ru]=Центр приложений Bodhi
 Name[sk]=Bodhi AppCenter
 GenericName=Install Software
+GenericName[pt-BR]=Instalar software
 GenericName[ca]=Instal·lar programari
 GenericName[cy]=Gosod meddalwedd
 GenericName[es]=Instalar Software
@@ -22,6 +24,7 @@ GenericName[nl_BE]=Software installeren
 GenericName[ru]=Установка программ
 GenericName[sk]=Inštalácia Softvéru
 Comment=Online Software Center
+Comment[pt-BR]=Central de software online
 Comment[ca]=Centre de programari en línia
 Comment[cy]=Canolfan feddalwedd ar-lein
 Comment[es]=Repositorio de Software en Línea
