@@ -1,3 +1,19 @@
+terminology (1.10.0-0bionic0) bionic; urgency=low
+
+   * Colorshemes: add Black scheme
+   * New translations: Sinhala, Hebrew
+   * Translation updates for Chinese (Simplified), Croatian, Danish, French,
+      Greek, Italian, Norwegian Bokmål, Polish, Portuguese,
+      Portuguese (Brazil), Russian, Spanish, Swedish, Ukrainian
+   * Focus font search in the Font settings panel
+   * Fix issue when configuration was marked as Temporary
+   * Stop jumping down to the bottom when configuration changed
+   * Respect login shell on start
+   * Fix drag'n'drop of paths or media on the terminal
+   * Fix libintl detection
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Mon, 04 Oct 2021 06:42:47 -0400
+
 terminology (1.9.0-0bionic0) bionic; urgency=low
 
    * Colorshemes: easily change the colors of the terminal
