@@ -1,3 +1,20 @@
+moksha (20220116bodhi30.3.4-6) bionic; urgency=low
+
+  * Update BL version to 6.1
+  * Updated Localization
+  * Border snap edge smaller gap for quarters
+  * Language settings Apply button fix
+  * iBar: adjacent label code clean up
+  * Windows list and switcher ready for multi monitors
+  * Evry and bodhi profile: support for MOKSHA_PKEXEC
+  * Systray show/hide support added
+  * Update Bodhi Team
+  * Theme: notification body should respect scaling
+  * Splash dialog resizable and height fixed
+  * xkbswitch seq fix when switching among layouts
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Sun, 16 Jan 2022 10:25:36 -0500
+
 moksha (20211127bodhi30.3.4-5) bionic; urgency=low
 
   * Key bindings list dialog
