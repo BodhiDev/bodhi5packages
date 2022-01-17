@@ -1,3 +1,11 @@
+moksha (20220117bodhi30.3.4-6) bionic; urgency=low
+
+  * Update e config_version
+  * Tiling settings dialog respect icon set
+  * Tiling conf item respect icon set
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Mon, 17 Jan 2022 08:57:16 -0500
+
 moksha (20220116bodhi30.3.4-6) bionic; urgency=low
 
   * Update BL version to 6.1
