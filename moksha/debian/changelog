@@ -1,4 +1,13 @@
-moksha (20220117bodhi30.3.4-6) bionic; urgency=low
+moksha (20220120bodhi30.3.4-9) bionic; urgency=low
+
+  * Keybindings viewer: minor cleanup
+  * Show history key bindings fix
+  * Key bindings preview: eina_stringshare error
+  * Systray MOKSHA_SYSTRAY_ARROW env suppor
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Thu, 20 Jan 2022 07:26:33 -0500
+
+moksha (20220117bodhi30.3.4-8) bionic; urgency=low
 
   * Update e config_version
   * Tiling settings dialog respect icon set
