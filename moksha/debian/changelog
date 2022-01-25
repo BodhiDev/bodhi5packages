@@ -1,3 +1,9 @@
+moksha (20220125bodhi30.3.4-10) bionic; urgency=low
+
+  * Module icon fixed for better consistency
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Tue, 25 Jan 2022 11:35:10 -0500
+
 moksha (20220120bodhi30.3.4-9) bionic; urgency=low
 
   * Keybindings viewer: minor cleanup
