@@ -1,3 +1,28 @@
+moksha (20220222bodhi30.3.4-11) bionic; urgency=low
+
+  * Language: ilist search box bug fixed
+  * Language: ilist focus simplified
+  * Language: Return  and Enter key works to confirm item
+  * Border: window edge snap for some borderless win types
+  * Shot: info label change for Alt PrtSc
+  * Tasks, iBar adjacent label - screen limit fix
+  * Battery code clean up
+  * Border: prevent window move if app is reopened from the systray
+  * Shot module settings icon fix
+  * Quickaccess settings icon fix
+  * Settings launcher icon fix
+  * Clipboard gc_icon fix
+  * Screen module icon fix
+  * Edge bindings module icon fix
+  * Key bindings module icon fix
+  * Win manipulation module icon fix
+  * Theme module icon fix
+  * Language module icon fix
+  * xkbswitch module icon fix
+  * Get icon theme name right in profile
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Tue, 22 Feb 2022 16:38:49 -0500
+
 moksha (20220125bodhi30.3.4-10) bionic; urgency=low
 
   * Module icon fixed for better consistency
