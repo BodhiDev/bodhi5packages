@@ -1,3 +1,15 @@
+moksha (20220508bodhi30.3.4-14) bionic; urgency=low
+
+  * Clock module settings icon fix
+  * Pager settings icon fix
+  * Env variables settings icon fix
+  * Battery and Lang desklock settings icon fix
+  * Edge and Signal bindings settings icon fix
+  * Quickaccess: system-run typo
+  * Adjacent_popup_destroy to tasks_free function
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Sun, 08 May 2022 11:46:28 -0400
+ 
 moksha (20220424bodhi30.3.4-12) bionic; urgency=low
 
   * Battery Module popup
