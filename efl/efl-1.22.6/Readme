@@ -4,3 +4,7 @@ NoDisplay=true in desktop files and edit
 also fix pkg-config-bad-directive 
 	usr/lib/i386-linux-gnu/pkgconfig/elementary-cxx.pc @pkgdatadir@
 by editing /pc/elementary-cxx.pc.in
+
+backport ecore-x - add some xi2 api's for fiddling with device properties
+ commit 42e691d9b4de72755747a376655663b1079bb592
+ for touchpad support in moksha

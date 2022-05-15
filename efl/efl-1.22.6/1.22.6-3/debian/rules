@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+export HOME=/tmp
+
+override_dh_auto_configure:
+	dh_auto_configure -- --enable-xinput22 --enable-image-loader-webp --enable-drm --enable-v4l2 --with-x --enable-harfbuzz --enable-multisense --enable-systemd  --enable-fb --disable-tslib --enable-elput --enable-wayland --enable-gl-drm --with-opengl=es --enable-egl
+
+override_dh_makeshlibs:
+	dh_makeshlibs -Xmodule.so
+
+%:
+	dh $@  --with autoreconf --parallel --with-quilt --dbg-package=libefl-dbg
