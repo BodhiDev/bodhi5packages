@@ -1,3 +1,9 @@
+moksha (20220516bodhi30.3.4-15) bionic; urgency=low
+
+  * Touchpad support
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Mon, 16 May 2022 15:49:13 -0400
+
 moksha (20220508bodhi30.3.4-14) bionic; urgency=low
 
   * Clock module settings icon fix

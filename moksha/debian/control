@@ -3,7 +3,7 @@ Section: x11
 Priority: optional
 Maintainer: Robert Wiley <ylee@bodhilinux.com>
 Homepage: http://mokshadesktop.org/
-Build-Depends:  debhelper (>= 9), dh-autoreconf, libefl-dev, libasound2-dev [linux-any], libxext-dev, libpam0g-dev, libxcb-shape0-dev, dbus-x11, libxcb-keysyms1-dev, libedbus-dev
+Build-Depends:  debhelper (>= 9), dh-autoreconf, libefl-dev (>= 1.22.6-3bionic0), libasound2-dev [linux-any], libxext-dev, libpam0g-dev, libxcb-shape0-dev, dbus-x11, libxcb-keysyms1-dev, libedbus-dev
 Standards-Version: 4.1.4
 
 Package: moksha
@@ -11,7 +11,7 @@ Architecture: any
 Provides: enlightenment, bodhi-profile-moksha, x-window-manager
 Replaces: enlightenment, e17, bodhi-profile-e17, bodhi-profile-moksha
 Conflicts: e17, e18, e19, e21, e22, bodhi-profile-e17, bodhi-profile-moksha
-Depends: ${shlibs:Depends}, ${misc:Depends}, bodhi-background-edj, dbus-x11, pulseaudio, pm-utils
+Depends: ${shlibs:Depends}, libefl (>= 1.22.6-3bionic0), ${misc:Depends}, bodhi-background-edj, dbus-x11, pulseaudio, pm-utils
 Recommends: elaptopcheck, gtk-recent, pavucontrol, bodhi-quickstart, xclip, terminology, bc, thunar | pcmanfm, udisks, moksha-menu, bodhi-theme-moksha-arc-green, xdg-user-dirs, policykit-1-gnome | polkit-1-auth-agent, policykit-desktop-privileges
 Suggests: qdbus
 Description: Moksha Desktop
