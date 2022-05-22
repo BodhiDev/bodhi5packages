@@ -1,3 +1,9 @@
+moksha (20220522bodhi30.3.4-17) bionic; urgency=low
+
+  * Touchpad: better initial config for old PCs
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Sun, 22 May 2022 08:39:03 -0400
+
 moksha (20220516bodhi30.3.4-15) bionic; urgency=low
 
   * Touchpad support
