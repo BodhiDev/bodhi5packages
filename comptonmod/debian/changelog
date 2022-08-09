@@ -1,0 +1,17 @@
+moksha-module-comptonmod (20220807bodhi1-1) bionic; urgency=medium
+
+  * Use config home for picom.conf
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Sun, 07 Aug 2022 09:01:57 -0400
+
+moksha-module-comptonmod (20210531bodhi1-1) bionic; urgency=medium
+
+  * pt localization
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Mon, 31 May 2021 16:42:00 -0400
+
+moksha-module-comptonmod (20201209bodhi1-1) bionic; urgency=medium
+
+  * change to picom
+
+ -- Robert Wiley <ylee@bodhilinux.com>  Wed, 09 Dec 2020 08:16:15 +0400
